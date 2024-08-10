@@ -1,7 +1,5 @@
 declare namespace Telegram {
     /**
-     * ### Message
-     *
      * This object represents a message.
      *
      * [Message - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#message)
