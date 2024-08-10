@@ -1,4 +1,4 @@
-import { setEnv, getEnv } from '../envManagar';
+import { getEnv } from '../envManagar';
 import { apiUrl } from '../index';
 
 export async function setWebhook(url: URL, suffix: string) {
@@ -16,16 +16,16 @@ export async function unsetWebhook() {
     return new Response(JSON.stringify(response, null, 2));
 }
 
-export async function handleWebhook(request: Request) {
+export async function handleWebhook(request: Request): Promise<Response> {
     if (request.headers.get('X-Telegram-Bot-Api-Secret-Token') !== getEnv().SECRET) {
         return new Response('Unauthorized', { status: 403 });
     }
-    const update: any = await request.json();
+    const update: Telegram.Update = await request.json();
     await onUpdate(update);
 
     return new Response(JSON.stringify(update, null, 2));
 }
 
-async function onUpdate(update: any) {
+async function onUpdate(update: Telegram.Update) {
     console.log(update);
 }
