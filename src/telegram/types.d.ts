@@ -318,44 +318,176 @@ declare namespace Telegram {
          * Optional. Message is a shared location, information about the location
          */
         location?: Telegram.Location;
+        /**
+         * Optional. New members that were added to the group or supergroup and information about them
+         * (the bot itself may be one of these members)
+         */
         new_chat_members?: Telegram.User[];
+        /**
+         * Optional. A member was removed from the group, information about them (this member may be the bot itself)
+         */
         left_chat_member?: Telegram.User;
+        /**
+         * Optional. A chat title was changed to this value
+         */
         new_chat_title?: string;
+        /**
+         * Optional. A chat photo was change to this value
+         */
         new_chat_photo?: Telegram.PhotoSize[];
+        /**
+         * Optional. Service message: the chat photo was deleted
+         */
         delete_chat_photo?: boolean;
+        /**
+         * Optional. Service message: the group has been created
+         */
         group_chat_created?: boolean;
+        /**
+         * Optional. Service message: the supergroup has been created.
+         * This field can't be received in a message coming through updates,
+         * because bot can't be a member of a supergroup when it is created.
+         * It can only be found in reply_to_message if someone replies to a very first message in a directly created supergroup.
+         */
         supergroup_chat_created?: boolean;
+        /**
+         * Optional. Service message: the channel has been created.
+         * This field can't be received in a message coming through updates,
+         * because bot can't be a member of a channel when it is created.
+         * It can only be found in reply_to_message if someone replies to a very first message in a channel.
+         */
         channel_chat_created?: boolean;
+        /**
+         * Optional. Service message: auto-delete timer settings changed in the chat
+         */
         message_auto_delete_timer_changed?: Telegram.MessageAutoDeleteTimerChanged;
+        /**
+         * Optional. The group has been migrated to a supergroup with the specified identifier.
+         */
         migrate_to_chat_id?: number;
+        /**
+         * Optional. The supergroup has been migrated from a group with the specified identifier.
+         */
         migrate_from_chat_id?: number;
+        /**
+         * Optional. Specified message was pinned.
+         * Note that the Message object in this field will not contain further reply_to_message fields even if it itself is a reply.
+         */
         pinned_message?: Telegram.MaybeInaccessibleMessage;
+        /**
+         * Optional. Message is an invoice for a [payment](https://core.telegram.org/bots/api#payments),
+         * information about the invoice. [More about payments »](https://core.telegram.org/bots/api#payments)
+         */
         invoice?: Telegram.Invoice;
+        /**
+         * Optional. Message is a service message about a successful payment, information about the payment.
+         * [More about payments »](https://core.telegram.org/bots/api#payments)
+         */
         successful_payment?: Telegram.SuccessfulPayment;
+        /**
+         * Optional. Message is a service message about a refunded payment, information about the payment.
+         * [More about payments »](https://core.telegram.org/bots/api#payments)
+         */
         refunded_payment?: Telegram.RefundedPayment;
+        /**
+         * Optional. Service message: users were shared with the bot
+         */
         users_shared?: Telegram.UsersShared;
+        /**
+         * Optional. Service message: a chat was shared with the bot
+         */
         chat_shared?: Telegram.ChatShared;
+        /**
+         * Optional. The domain name of the website on which the user has logged in.
+         * [More about Telegram Login »](https://core.telegram.org/widgets/login)
+         */
         connected_website?: string;
+        /**
+         * Optional. Service message: the user allowed the bot to write messages after adding it to the attachment or side menu,
+         * launching a Web App from a link, or accepting an explicit request from a Web App sent by the method
+         * [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps)
+         */
         write_access_allowed?: Telegram.WriteAccessAllowed;
+        /**
+         * Optional. Telegram Passport data
+         */
         passport_data?: Telegram.PassportData;
+        /**
+         * Optional. Service message. A user in the chat triggered another user's proximity alert while sharing Live Location.
+         */
         proximity_alert_triggered?: Telegram.ProximityAlertTriggered;
+        /**
+         * Optional. Service message: user boosted the chat
+         */
         boost_added?: Telegram.ChatBoostAdded;
+        /**
+         * Optional. Service message: chat background set
+         */
         chat_background_set?: Telegram.ChatBackground;
+        /**
+         * Optional. Service message: forum topic created
+         */
         forum_topic_created?: Telegram.ForumTopicCreated;
+        /**
+         * Optional. Service message: forum topic edited
+         */
         forum_topic_edited?: Telegram.ForumTopicEdited;
+        /**
+         * Optional. Service message: forum topic closed
+         */
         forum_topic_closed?: Telegram.ForumTopicClosed;
+        /**
+         * Optional. Service message: forum topic reopened
+         */
         forum_topic_reopened?: Telegram.ForumTopicReopened;
+        /**
+         * Optional. Service message: the 'General' forum topic hidden
+         */
         general_forum_topic_hidden?: Telegram.GeneralForumTopicHidden;
+        /**
+         * Optional. Service message: the 'General' forum topic unhidden
+         */
         general_forum_topic_unhidden?: Telegram.GeneralForumTopicUnhidden;
+        /**
+         * Optional. Service message: a scheduled giveaway was created
+         */
         giveaway_created?: Telegram.GiveawayCreated;
+        /**
+         * Optional. The message is a scheduled giveaway message
+         */
         giveaway?: Telegram.Giveaway;
+        /**
+         * Optional. A giveaway with public winners was completed
+         */
         giveaway_winners?: Telegram.GiveawayWinners;
+        /**
+         * Optional. Service message: a giveaway without public winners was completed
+         */
         giveaway_completed?: Telegram.GiveawayCompleted;
+        /**
+         * Optional. Service message: video chat scheduled
+         */
         video_chat_scheduled?: Telegram.VideoChatScheduled;
+        /**
+         * Optional. Service message: video chat started
+         */
         video_chat_started?: Telegram.VideoChatStarted;
+        /**
+         * Optional. Service message: video chat ended
+         */
         video_chat_ended?: Telegram.VideoChatEnded;
+        /**
+         * Optional. Service message: new participants invited to a video chat
+         */
         video_chat_participants_invited?: Telegram.VideoChatParticipantsInvited;
+        /**
+         * Optional. Service message: data sent by a Web App
+         */
         web_app_data?: Telegram.WebAppData;
+        /**
+         * Optional. Inline keyboard attached to the message.
+         * login_url buttons are represented as ordinary url buttons.
+         */
         reply_markup?: Telegram.InlineKeyboardMarkup;
     }
 }
