@@ -3,6 +3,8 @@ declare namespace Telegram {
      * ### User
      *
      * This object represents a Telegram user or bot.
+     *
+     * [User - on Telegram Bot API Documentation](https://core.telegram.org/bots/api#user)
      */
     interface User {
         /**
