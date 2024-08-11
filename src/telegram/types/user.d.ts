@@ -32,11 +32,11 @@ declare namespace Telegram {
         /**
          * _Optional_. True, if this user is a Telegram Premium user
          */
-        is_premium?: boolean;
+        is_premium?: true;
         /**
          * _Optional_. True, if this user added the bot to the attachment menu
          */
-        added_to_attachment_menu?: boolean;
+        added_to_attachment_menu?: true;
         /**
          * _Optional_. True, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
          */

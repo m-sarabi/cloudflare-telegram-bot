@@ -54,11 +54,11 @@ declare namespace Telegram {
         /**
          * _Optional_. True, if the message is sent to a forum topic
          */
-        is_topic_message?: boolean;
+        is_topic_message?: true;
         /**
          * _Optional_. True, if the message is a channel post that was automatically forwarded to the connected discussion group
          */
-        is_automatic_forward?: boolean;
+        is_automatic_forward?: true;
         /**
          * _Optional_. For replies in the same chat and message thread, the original message.
          * Note that the Message object in this field will not contain further reply_to_message fields even if it itself is a reply.
@@ -87,12 +87,12 @@ declare namespace Telegram {
         /**
          * _Optional_. True, if the message can't be forwarded
          */
-        has_protected_content?: boolean;
+        has_protected_content?: true;
         /**
          * _Optional_. True, if the message was sent by an implicit action,
          * for example, as an away or a greeting business message, or as a scheduled message
          */
-        is_from_offline?: boolean;
+        is_from_offline?: true;
         /**
          * _Optional_. The unique identifier of a media message group this message belongs to
          */
@@ -169,11 +169,11 @@ declare namespace Telegram {
         /**
          * _Optional_. True, if the caption must be shown above the message media
          */
-        show_caption_above_media?: boolean;
+        show_caption_above_media?: true;
         /**
          * _Optional_. True, if the message media is covered by a spoiler animation
          */
-        has_media_spoiler?: boolean;
+        has_media_spoiler?: true;
         /**
          * _Optional_. Message is a shared contact, information about the contact
          */
@@ -219,25 +219,25 @@ declare namespace Telegram {
         /**
          * _Optional_. Service message: the chat photo was deleted
          */
-        delete_chat_photo?: boolean;
+        delete_chat_photo?: true;
         /**
          * _Optional_. Service message: the group has been created
          */
-        group_chat_created?: boolean;
+        group_chat_created?: true;
         /**
          * _Optional_. Service message: the supergroup has been created.
          * This field can't be received in a message coming through updates,
          * because bot can't be a member of a supergroup when it is created.
          * It can only be found in reply_to_message if someone replies to a very first message in a directly created supergroup.
          */
-        supergroup_chat_created?: boolean;
+        supergroup_chat_created?: true;
         /**
          * _Optional_. Service message: the channel has been created.
          * This field can't be received in a message coming through updates,
          * because bot can't be a member of a channel when it is created.
          * It can only be found in reply_to_message if someone replies to a very first message in a channel.
          */
-        channel_chat_created?: boolean;
+        channel_chat_created?: true;
         /**
          * _Optional_. Service message: auto-delete timer settings changed in the chat
          */

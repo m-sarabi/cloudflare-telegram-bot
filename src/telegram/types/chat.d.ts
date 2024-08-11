@@ -49,7 +49,7 @@ declare namespace Telegram {
         /**
          * Type of the chat, can be either "private", "group", "supergroup" or "channel"
          */
-        type: string;
+        type: 'private' | 'group' | 'supergroup' | 'channel';
         /**
          * _Optional_. Title, for supergroups, channels and group chats
          */
@@ -70,7 +70,7 @@ declare namespace Telegram {
          * _Optional_. True, if the supergroup chat is a forum
          * (has [topics](https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled)
          */
-        is_forum?: boolean;
+        is_forum?: true;
         /**
          * Identifier of the accent color for the chat name and backgrounds of the chat photo, reply header, and link preview.
          * See [accent colors](https://core.telegram.org/bots/api#accent-colors) for more details.
@@ -144,20 +144,20 @@ declare namespace Telegram {
          * _Optional_. True, if privacy settings of the other party in the private chat allows to use
          * `tg://user?id=<user_id>` links only in chats with the user
          */
-        has_private_forwards?: boolean;
+        has_private_forwards?: true;
         /**
          * _Optional_. True, if the privacy settings of the other party restrict sending voice and video note messages in the private chat
          */
-        has_restricted_voice_and_video_messages?: boolean;
+        has_restricted_voice_and_video_messages?: true;
         /**
          * _Optional_. True, if users need to join the supergroup before they can send messages
          */
-        join_to_send_messages?: boolean;
+        join_to_send_messages?: true;
         /**
          * _Optional_. True, if all users directly joining the supergroup without using an invite link
          * need to be approved by supergroup administrators
          */
-        join_by_request?: boolean;
+        join_by_request?: true;
         /**
          * _Optional_. Description, for groups, supergroups and channel chats
          */
@@ -177,7 +177,7 @@ declare namespace Telegram {
         /**
          * _Optional_. True, if paid media messages can be sent or forwarded to the channel chat. The field is available only for channel chats.
          */
-        can_send_paid_media?: boolean;
+        can_send_paid_media?: true;
         /**
          * _Optional_. For supergroups, the minimum allowed delay between consecutive messages sent by each unprivileged user; in seconds
          */
@@ -195,19 +195,19 @@ declare namespace Telegram {
          * _Optional_. True, if aggressive anti-spam checks are enabled in the supergroup.
          * The field is only available to chat administrators.
          */
-        has_aggressive_anti_spam_enabled?: boolean;
+        has_aggressive_anti_spam_enabled?: true;
         /**
          * _Optional_. True, if non-administrators can only get the list of bots and administrators in the chat
          */
-        has_hidden_members?: boolean;
+        has_hidden_members?: true;
         /**
          * _Optional_. True, if messages from the chat can't be forwarded to other chats
          */
-        has_protected_content?: boolean;
+        has_protected_content?: true;
         /**
          * _Optional_. True, if new chat members will have access to old messages; available only to chat administrators
          */
-        has_visible_history?: boolean;
+        has_visible_history?: true;
         /**
          * _Optional_. For supergroups, name of the group sticker set
          */
@@ -215,7 +215,7 @@ declare namespace Telegram {
         /**
          * _Optional_. True, if the bot can change the group sticker set
          */
-        can_set_sticker_set?: boolean;
+        can_set_sticker_set?: true;
         /**
          * _Optional_. For supergroups, the name of the group's custom emoji sticker set. Custom emoji from this set can be used by all users and bots in the group.
          */
