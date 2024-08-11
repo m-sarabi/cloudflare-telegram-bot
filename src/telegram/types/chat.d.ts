@@ -5,13 +5,35 @@ declare namespace Telegram {
      * [Chat - on Telegram Bot API Documentation](https://core.telegram.org/bots/api#chat)
      */
     interface Chat {
+        /**
+         * Unique identifier for this chat.
+         */
         id: number;
-        type: string;
+        /**
+         * Type of the chat, can be either "private", "group", "supergroup" or "channel"
+         */
+        type: 'private' | 'group' | 'supergroup' | 'channel';
+        /**
+         * Optional. Title, for supergroups, channels and group chats
+         */
         title?: string;
+        /**
+         * Optional. Username, for private chats, supergroups and channels if available
+         */
         username?: string;
+        /**
+         * Optional. First name of the other party in a private chat
+         */
         first_name?: string;
+        /**
+         * Optional. Last name of the other party in a private chat
+         */
         last_name?: string;
-        is_forum?: boolean;
+        /**
+         * Optional. True, if the supergroup chat is a forum
+         * (has [topics](https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled)
+         */
+        is_forum?: true;
     }
 
     /**
@@ -25,7 +47,7 @@ declare namespace Telegram {
          */
         id: number;
         /**
-         * Type of the chat, can be either “private”, “group”, “supergroup” or “channel”
+         * Type of the chat, can be either "private", "group", "supergroup" or "channel"
          */
         type: string;
         /**
