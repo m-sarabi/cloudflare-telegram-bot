@@ -18,45 +18,45 @@ declare namespace Telegram {
          */
         first_name: string;
         /**
-         * Optional. User's or bot's last name
+         * _Optional_. User's or bot's last name
          */
         last_name?: string;
         /**
-         * Optional. User's or bot's username
+         * _Optional_. User's or bot's username
          */
         username?: string;
         /**
-         * Optional. [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) of the user's language
+         * _Optional_. [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) of the user's language
          */
         language_code?: string;
         /**
-         * Optional. True, if this user is a Telegram Premium user
+         * _Optional_. True, if this user is a Telegram Premium user
          */
         is_premium?: boolean;
         /**
-         * Optional. True, if this user added the bot to the attachment menu
+         * _Optional_. True, if this user added the bot to the attachment menu
          */
         added_to_attachment_menu?: boolean;
         /**
-         * Optional. True, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
+         * _Optional_. True, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
          */
         can_join_groups?: boolean;
         /**
-         * Optional. True, if [privacy mode](https://core.telegram.org/bots/features#privacy-mode) is disabled for the bot.
+         * _Optional_. True, if [privacy mode](https://core.telegram.org/bots/features#privacy-mode) is disabled for the bot.
          * Returned only in [getMe](https://core.telegram.org/bots/api#getme).
          */
         can_read_all_group_messages?: boolean;
         /**
-         * Optional. True, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
+         * _Optional_. True, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
          */
         supports_inline_queries?: boolean;
         /**
-         * Optional. True, if the bot can be connected to a Telegram Business account to receive its messages.
+         * _Optional_. True, if the bot can be connected to a Telegram Business account to receive its messages.
          * Returned only in [getMe](https://core.telegram.org/bots/api#getme).
          */
         can_connect_to_business?: boolean;
         /**
-         * Optional. True, if the bot has a main Web App. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
+         * _Optional_. True, if the bot has a main Web App. Returned only in [getMe](https://core.telegram.org/bots/api#getme).
          */
         has_main_web_app?: boolean;
     }
