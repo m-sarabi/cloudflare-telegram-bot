@@ -220,7 +220,7 @@ declare namespace Telegram {
     }
 
     /**
-     * This object describes the origin of a message. It can be one of
+     * This object describes the origin of a message.
      *
      * [MessageOrigin - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#messageorigin)
      */
