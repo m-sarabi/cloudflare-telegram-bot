@@ -291,7 +291,7 @@ declare namespace Telegram {
         /**
          * _Optional_. For messages originally sent by an anonymous chat administrator, original message author signature
          */
-        author_signature: string;
+        author_signature?: string;
     }
 
     /**
@@ -319,6 +319,6 @@ declare namespace Telegram {
         /**
          * _Optional_. Signature of the original post author
          */
-        author_signature: string;
+        author_signature?: string;
     }
 }

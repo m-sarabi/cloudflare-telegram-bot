@@ -23,7 +23,7 @@ declare namespace Telegram {
          * the supergroup itself for messages from anonymous group administrators,
          * the linked channel for messages automatically forwarded to the discussion group.
          */
-        sender_chat: Telegram.Chat;
+        sender_chat?: Telegram.Chat;
         /**
          * _Optional_. If the sender of the message boosted the chat, the number of boosts added by the user
          */
@@ -71,7 +71,7 @@ declare namespace Telegram {
         /**
          * _Optional_. For replies that quote part of the original message, the quoted part of the message
          */
-        quote?: Telegram.TextQuot;
+        quote?: Telegram.TextQuote;
         /**
          * _Optional_. For replies to a story, the original story
          */
