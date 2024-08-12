@@ -14,4 +14,17 @@ declare namespace Telegram {
          */
         button_text: string;
     }
+
+    /**
+     * Describes a [Web App](https://core.telegram.org/bots/webapps).
+     *
+     * [WebAppInfo - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#webappinfo)
+     */
+    interface WebAppInfo {
+        /**
+         * An HTTPS URL of a Web App to be opened with additional data as specified in
+         * [Initializing Web Apps](https://core.telegram.org/bots/webapps#initializing-mini-apps)
+         */
+        url: string;
+    }
 }
