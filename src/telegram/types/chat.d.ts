@@ -230,4 +230,16 @@ declare namespace Telegram {
          */
         location?: Telegram.ChatLocation;
     }
+
+    /**
+     * This object represents a service message about a user boosting a chat.
+     *
+     * [ChatBoostAdded - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#chatboostadded)
+     */
+    interface ChatBoostAdded {
+        /**
+         * Number of boosts added by the user
+         */
+        boost_count: number;
+    }
 }
