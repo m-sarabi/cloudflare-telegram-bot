@@ -60,4 +60,89 @@ declare namespace Telegram {
          */
         has_main_web_app?: boolean;
     }
+
+    /**
+     * This object contains information about a user that was shared with the bot using a
+     * [KeyboardButtonRequestUsers](https://core.telegram.org/bots/api#keyboardbuttonrequestusers) button.
+     *
+     * [SharedUser - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#shareduser)
+     */
+    interface SharedUser {
+        /**
+         * Identifier of the shared user.
+         */
+        user_id: number;
+        /**
+         * _Optional_. First name of the user, if the name was requested by the bot
+         */
+        first_name?: string;
+        /**
+         * _Optional_. Last name of the user, if the name was requested by the bot
+         */
+        last_name?: string;
+        /**
+         * _Optional_. Username of the user, if the username was requested by the bot
+         */
+        username?: string;
+        /**
+         * _Optional_. Available sizes of the chat photo, if the photo was requested by the bot
+         */
+        photo?: Telegram.PhotoSize[];
+    }
+
+    /**
+     * This object contains information about the users whose identifiers were shared with the bot using a
+     * [KeyboardButtonRequestUsers](https://core.telegram.org/bots/api#keyboardbuttonrequestusers) button.
+     *
+     * [UsersShared - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#usersshared)
+     */
+    interface UsersShared {
+        /**
+         * Identifier of the request
+         */
+        request_id: number;
+        /**
+         * Information about users shared with the bot.
+         */
+        users: Telegram.SharedUser[];
+    }
+
+    /**
+     * This object represents a service message about a user allowing a bot to write messages after adding it to the attachment menu,
+     * launching a Web App from a link, or accepting an explicit request from a Web App sent by the method
+     * [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps).
+     *
+     * [WriteAccessAllowed - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#writeaccessallowed)
+     */
+    interface WriteAccessAllowed {
+        /**
+         * _Optional_. True, if the access was granted after the user accepted an explicit request from a Web App sent by the method
+         * [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps)
+         */
+        from_request?: boolean;
+        /**
+         * _Optional_. Name of the Web App, if the access was granted when the Web App was launched from a link
+         */
+        web_app_name?: string;
+        /**
+         * _Optional_. True, if the access was granted when the bot was added to the attachment or side menu
+         */
+        from_attachment_menu?: boolean;
+    }
+
+    /**
+     * This object represent a user's profile pictures.
+     *
+     * [UserProfilePhotos - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#userprofilephotos)
+     */
+    interface UserProfilePhotos {
+        /**
+         * Total number of profile pictures the target user has
+         */
+        total_count: number;
+        /**
+         * Requested profile pictures (in up to 4 sizes each)
+         */
+        photos: Telegram.PhotoSize[][];
+    }
 }
