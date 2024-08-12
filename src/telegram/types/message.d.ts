@@ -733,4 +733,16 @@ declare namespace Telegram {
          */
         author_signature?: string;
     }
+
+    /**
+     * This object represents a service message about a change in auto-delete timer settings.
+     *
+     * [MessageAutoDeleteTimerChanged - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#messageautodeletetimerchanged)
+     */
+    interface MessageAutoDeleteTimerChanged {
+        /**
+         * New auto-delete time for messages in the chat; in seconds
+         */
+        message_auto_delete_time: number;
+    }
 }
