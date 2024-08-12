@@ -217,7 +217,8 @@ declare namespace Telegram {
          */
         can_set_sticker_set?: true;
         /**
-         * _Optional_. For supergroups, the name of the group's custom emoji sticker set. Custom emoji from this set can be used by all users and bots in the group.
+         * _Optional_. For supergroups, the name of the group's custom emoji sticker set.
+         * Custom emoji from this set can be used by all users and bots in the group.
          */
         custom_emoji_sticker_set_name?: string;
         /**
@@ -241,5 +242,78 @@ declare namespace Telegram {
          * Number of boosts added by the user
          */
         boost_count: number;
+    }
+
+    /**
+     * This object contains information about a chat that was shared with the bot using a
+     * [KeyboardButtonRequestChat](https://core.telegram.org/bots/api#keyboardbuttonrequestchat) button.
+     *
+     * [ChatShared - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#chatshared)
+     */
+    interface ChatShared {
+        /**
+         * Identifier of the request
+         */
+        request_id: number;
+        /**
+         * Identifier of the shared chat.
+         */
+        chat_id: number;
+        /**
+         * _Optional_. Title of the chat, if the title was requested by the bot.
+         */
+        title?: string;
+        /**
+         * _Optional_. Username of the chat, if the username was requested by the bot and available.
+         */
+        username?: string;
+        /**
+         * _Optional_. Available sizes of the chat photo, if the photo was requested by the bot
+         */
+        photo?: Telegram.PhotoSize[];
+    }
+
+    /**
+     * This object represents a service message about a video chat scheduled in the chat.
+     *
+     * [VideoChatScheduled - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#videochatscheduled)
+     */
+    interface VideoChatScheduled {
+        /**
+         * Point in time (Unix timestamp) when the video chat is supposed to be started by a chat administrator
+         */
+        start_date: number;
+    }
+
+    /**
+     * This object represents a service message about a video chat started in the chat. Currently holds no information.
+     *
+     * [VideoChatStarted - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#videochatstarted)
+     */
+    interface VideoChatStarted {
+    }
+
+    /**
+     * This object represents a service message about a video chat ended in the chat.
+     *
+     * [VideoChatEnded - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#videochatended)
+     */
+    interface VideoChatEnded {
+        /**
+         * Video chat duration in seconds
+         */
+        duration: number;
+    }
+
+    /**
+     * This object represents a service message about new members invited to a video chat.
+     *
+     * [VideoChatParticipantsInvited - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#videochatparticipantsinvited)
+     */
+    interface VideoChatParticipantsInvited {
+        /**
+         * New members that were invited to the video chat
+         */
+        users: Telegram.User[];
     }
 }
