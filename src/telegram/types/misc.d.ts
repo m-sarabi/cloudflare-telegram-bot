@@ -43,4 +43,92 @@ declare namespace Telegram {
          */
         value: number;
     }
+
+    /**
+     * This object represents a point on the map.
+     *
+     * [Location - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#location)
+     */
+    interface Location {
+        /**
+         * Latitude as defined by the sender
+         */
+        latitude: number;
+        /**
+         * Longitude as defined by the sender
+         */
+        longitude: number;
+        /**
+         * _Optional_. The radius of uncertainty for the location, measured in meters; 0-1500
+         */
+        horizontal_accuracy?: number;
+        /**
+         * _Optional_. Time relative to the message sending date, during which the location can be updated; in seconds. For active live locations only.
+         */
+        live_period?: number;
+        /**
+         * _Optional_. The direction in which user is moving, in degrees; 1-360. For active live locations only.
+         */
+        heading?: number;
+        /**
+         * _Optional_. The maximum distance for proximity alerts about approaching another chat member, in meters. For sent live locations only.
+         */
+        proximity_alert_radius?: number;
+    }
+
+    /**
+     * This object represents a venue.
+     *
+     * [Venue - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#venue)
+     */
+    interface Venue {
+        /**
+         * Venue location. Can't be a live location
+         */
+        location: Telegram.Location;
+        /**
+         * Name of the venue
+         */
+        title: string;
+        /**
+         * Address of the venue
+         */
+        address: string;
+        /**
+         * _Optional_. Foursquare identifier of the venue
+         */
+        foursquare_id?: string;
+        /**
+         * _Optional_. Foursquare type of the venue. (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)
+         */
+        foursquare_type?: string;
+        /**
+         * _Optional_. Google Places identifier of the venue
+         */
+        google_place_id?: string;
+        /**
+         * _Optional_. Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)
+         */
+        google_place_type?: string;
+    }
+
+    /**
+     * This object represents the content of a service message, sent whenever a user in the chat triggers a proximity alert set by another user.
+     *
+     * [ProximityAlertTriggered - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#proximityalerttriggered)
+     */
+    interface ProximityAlertTriggered {
+        /**
+         * User that triggered the alert
+         */
+        traveler: Telegram.User;
+        /**
+         * User that set the alert
+         */
+        watcher: Telegram.User;
+        /**
+         * The distance between the users
+         */
+        distance: number;
+    }
 }
