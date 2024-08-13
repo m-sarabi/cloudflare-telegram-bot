@@ -28,7 +28,7 @@ export default {
     }
 } satisfies ExportedHandler<Env>;
 
-export function apiUrl(methodName: string, params?: Record<string, string>) {
+export function apiUrl(methodName: string, params?: Record<string, any>) {
     const token = getEnv().TOKEN;
     const query = params ? `?${new URLSearchParams(params).toString()}` : '';
 
