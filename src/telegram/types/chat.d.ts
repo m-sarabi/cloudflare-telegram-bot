@@ -856,4 +856,20 @@ declare namespace Telegram {
          */
         can_manage_topics?: boolean;
     }
+
+    /**
+     * Represents a location to which a chat is connected.
+     *
+     * [ChatLocation - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#chatlocation)
+     */
+    interface ChatLocation {
+        /**
+         * The location to which the supergroup is connected. Can't be a live location.
+         */
+        location: Telegram.Location;
+        /**
+         * Location address; 1-64 characters, as defined by the chat owner
+         */
+        address: string;
+    }
 }
