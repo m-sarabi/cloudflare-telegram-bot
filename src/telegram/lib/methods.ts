@@ -1,4 +1,6 @@
-export namespace Telegram {
+import { callApi } from './utils';
+
+export namespace tg {
 }
 
 // note response from `(await fetch(apiUrl())).json()` is a response like:
