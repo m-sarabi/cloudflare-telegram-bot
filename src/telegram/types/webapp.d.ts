@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * Describes data sent from a [Web App](/bots/webapps) to the bot.
      *

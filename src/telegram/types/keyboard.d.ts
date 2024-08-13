@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object represents a [custom keyboard](https://core.telegram.org/bots/features#keyboards)
      * with reply options (see [Introduction to bots](https://core.telegram.org/bots/features#keyboards) for details and examples).
@@ -10,7 +10,7 @@ declare namespace Telegram {
         /**
          * Array of button rows, each represented by an Array of [KeyboardButton](https://core.telegram.org/bots/api#keyboardbutton) objects
          */
-        keyboard: Telegram.KeyboardButton[][];
+        keyboard: tgTypes.KeyboardButton[][];
         /**
          * _Optional_. Requests clients to always show the keyboard when the regular keyboard is hidden.
          * Defaults to false, in which case the custom keyboard can be hidden and opened with a keyboard icon.
@@ -59,12 +59,12 @@ declare namespace Telegram {
          * _Optional_. If specified, pressing the button will open a list of suitable users.
          * Identifiers of selected users will be sent to the bot in a “users_shared” service message. Available in private chats only.
          */
-        request_users?: Telegram.KeyboardButtonRequestUsers;
+        request_users?: tgTypes.KeyboardButtonRequestUsers;
         /**
          * _Optional_. If specified, pressing the button will open a list of suitable chats.
          * Tapping on a chat will send its identifier to the bot in a “chat_shared” service message. Available in private chats only.
          */
-        request_chat?: Telegram.KeyboardButtonRequestChat;
+        request_chat?: tgTypes.KeyboardButtonRequestChat;
         /**
          * _Optional_. If True, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only.
          */
@@ -77,12 +77,12 @@ declare namespace Telegram {
          * _Optional_. If specified, the user will be asked to create a poll and send it to the bot when the button is pressed.
          * Available in private chats only.
          */
-        request_poll?: Telegram.KeyboardButtonPollType;
+        request_poll?: tgTypes.KeyboardButtonPollType;
         /**
          * _Optional_. If specified, the described [Web App](https://core.telegram.org/bots/webapps) will be launched when the button is pressed.
          * The Web App will be able to send a “web_app_data” service message. Available in private chats only.
          */
-        web_app?: Telegram.WebAppInfo;
+        web_app?: tgTypes.WebAppInfo;
     }
 
     /**
@@ -161,12 +161,12 @@ declare namespace Telegram {
          * _Optional_. A JSON-serialized object listing the required administrator rights of the user in the chat.
          * The rights must be a superset of bot_administrator_rights. If not specified, no additional restrictions are applied.
          */
-        user_administrator_rights?: Telegram.ChatAdministratorRights;
+        user_administrator_rights?: tgTypes.ChatAdministratorRights;
         /**
          * _Optional_. A JSON-serialized object listing the required administrator rights of the bot in the chat.
          * The rights must be a subset of user_administrator_rights. If not specified, no additional restrictions are applied.
          */
-        bot_administrator_rights?: Telegram.ChatAdministratorRights;
+        bot_administrator_rights?: tgTypes.ChatAdministratorRights;
         /**
          * _Optional_. Pass True to request a chat with the bot as a member. Otherwise, no additional restrictions are applied.
          */
@@ -236,7 +236,7 @@ declare namespace Telegram {
          * Array of button rows, each represented by an Array of
          * [InlineKeyboardButton](https://core.telegram.org/bots/api#inlinekeyboardbutton) objects
          */
-        inline_keyboard: Telegram.InlineKeyboardButton[][];
+        inline_keyboard: tgTypes.InlineKeyboardButton[][];
     }
 
     /**
@@ -267,12 +267,12 @@ declare namespace Telegram {
          * [answerWebAppQuery](https://core.telegram.org/bots/api#answerwebappquery).
          * Available only in private chats between a user and the bot. Not supported for messages sent on behalf of a Telegram Business account.
          */
-        web_app?: Telegram.WebAppInfo;
+        web_app?: tgTypes.WebAppInfo;
         /**
          * _Optional_. An HTTPS URL used to automatically authorize the user.
          * Can be used as a replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login).
          */
-        login_url?: Telegram.LoginUrl;
+        login_url?: tgTypes.LoginUrl;
         /**
          * _Optional_. If set, pressing the button will prompt the user to select one of their chats,
          * open that chat and insert the bot's username and the specified inline query in the input field.
@@ -292,13 +292,13 @@ declare namespace Telegram {
          * open that chat and insert the bot's username and the specified inline query in the input field.
          * Not supported for messages sent on behalf of a Telegram Business account.
          */
-        switch_inline_query_chosen_chat?: Telegram.SwitchInlineQueryChosenChat;
+        switch_inline_query_chosen_chat?: tgTypes.SwitchInlineQueryChosenChat;
         /**
          * _Optional_. Description of the game that will be launched when the user presses the button.
          *
          * **NOTE:** This type of button **must** always be the first button in the first row.
          */
-        callback_game?: Telegram.CallbackGame;
+        callback_game?: tgTypes.CallbackGame;
         /**
          * _Optional_. Specify True, to send a [Pay button](https://core.telegram.org/bots/api#payments).
          * Substrings “⭐” and “XTR” in the buttons's text will be replaced with a Telegram Star icon.
@@ -391,11 +391,11 @@ declare namespace Telegram {
         /**
          * Sender
          */
-        from: Telegram.User;
+        from: tgTypes.User;
         /**
          * _Optional_. Message sent by the bot with the callback button that originated the query
          */
-        message?: Telegram.MaybeInaccessibleMessage;
+        message?: tgTypes.MaybeInaccessibleMessage;
         /**
          * _Optional_. Identifier of the message sent via the bot in inline mode, that originated the query.
          */

@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object represents a chat.
      *
@@ -83,7 +83,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Chat photo
          */
-        photo?: Telegram.ChatPhoto;
+        photo?: tgTypes.ChatPhoto;
         /**
          * _Optional_. If non-empty, the list of all
          * [active chat usernames](https://telegram.org/blog/topics-in-groups-collectible-usernames#collectible-usernames);
@@ -93,28 +93,28 @@ declare namespace Telegram {
         /**
          * _Optional_. For private chats, the date of birth of the user
          */
-        birthdate?: Telegram.Birthdate;
+        birthdate?: tgTypes.Birthdate;
         /**
          * _Optional_. For private chats with business accounts, the intro of the business
          */
-        business_intro?: Telegram.BusinessIntro;
+        business_intro?: tgTypes.BusinessIntro;
         /**
          * _Optional_. For private chats with business accounts, the location of the business
          */
-        business_location?: Telegram.BusinessLocation;
+        business_location?: tgTypes.BusinessLocation;
         /**
          * _Optional_. For private chats with business accounts, the opening hours of the business
          */
-        business_opening_hours?: Telegram.BusinessOpeningHours;
+        business_opening_hours?: tgTypes.BusinessOpeningHours;
         /**
          * _Optional_. For private chats, the personal channel of the user
          */
-        personal_chat?: Telegram.Chat;
+        personal_chat?: tgTypes.Chat;
         /**
          * _Optional_. List of available reactions allowed in the chat. If omitted,
          * then all [emoji reactions](https://core.telegram.org/bots/api#reactiontypeemoji) are allowed.
          */
-        available_reactions?: Telegram.ReactionType[];
+        available_reactions?: tgTypes.ReactionType[];
         /**
          * _Optional_. Custom emoji identifier of the emoji chosen by the chat for the reply header and link preview background
          */
@@ -169,11 +169,11 @@ declare namespace Telegram {
         /**
          * _Optional_. The most recent pinned message (by sending date)
          */
-        pinned_message?: Telegram.Message;
+        pinned_message?: tgTypes.Message;
         /**
          * _Optional_. Default chat member permissions, for groups and supergroups
          */
-        permissions?: Telegram.ChatPermissions;
+        permissions?: tgTypes.ChatPermissions;
         /**
          * _Optional_. True, if paid media messages can be sent or forwarded to the channel chat. The field is available only for channel chats.
          */
@@ -229,7 +229,7 @@ declare namespace Telegram {
         /**
          * _Optional_. For supergroups, the location to which the supergroup is connected
          */
-        location?: Telegram.ChatLocation;
+        location?: tgTypes.ChatLocation;
     }
 
     /**
@@ -270,7 +270,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Available sizes of the chat photo, if the photo was requested by the bot
          */
-        photo?: Telegram.PhotoSize[];
+        photo?: tgTypes.PhotoSize[];
     }
 
     /**
@@ -314,7 +314,7 @@ declare namespace Telegram {
         /**
          * New members that were invited to the video chat
          */
-        users: Telegram.User[];
+        users: tgTypes.User[];
     }
 
     /**
@@ -358,7 +358,7 @@ declare namespace Telegram {
         /**
          * Creator of the link
          */
-        creator: Telegram.User;
+        creator: tgTypes.User;
         /**
          * True, if users joining the chat via the link need to be approved by chat administrators
          */
@@ -469,11 +469,11 @@ declare namespace Telegram {
         /**
          * Chat the user belongs to
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * Performer of the action, which resulted in the change
          */
-        from: Telegram.User;
+        from: tgTypes.User;
         /**
          * Date the change was done in Unix time
          */
@@ -481,15 +481,15 @@ declare namespace Telegram {
         /**
          * Previous information about the chat member
          */
-        old_chat_member: Telegram.ChatMember;
+        old_chat_member: tgTypes.ChatMember;
         /**
          * New information about the chat member
          */
-        new_chat_member: Telegram.ChatMember;
+        new_chat_member: tgTypes.ChatMember;
         /**
          * _Optional_. Chat invite link, which was used by the user to join the chat; for joining by invite link events only.
          */
-        invite_link?: Telegram.ChatInviteLink;
+        invite_link?: tgTypes.ChatInviteLink;
         /**
          * _Optional_. True, if the user joined the chat after sending a direct join request
          * without using an invite link and being approved by an administrator
@@ -527,7 +527,7 @@ declare namespace Telegram {
         /**
          * Information about the user
          */
-        user: Telegram.User;
+        user: tgTypes.User;
         /**
          * True, if the user's presence in the chat is hidden
          */
@@ -551,7 +551,7 @@ declare namespace Telegram {
         /**
          * Information about the user
          */
-        user: Telegram.User;
+        user: tgTypes.User;
         /**
          * True, if the bot is allowed to edit administrator privileges of that user
          */
@@ -638,7 +638,7 @@ declare namespace Telegram {
         /**
          * Information about the user
          */
-        user: Telegram.User;
+        user: tgTypes.User;
     }
 
     /**
@@ -654,7 +654,7 @@ declare namespace Telegram {
         /**
          * Information about the user
          */
-        user: Telegram.User;
+        user: tgTypes.User;
         /**
          * True, if the user is a member of the chat at the moment of the request
          */
@@ -735,7 +735,7 @@ declare namespace Telegram {
         /**
          * Information about the user
          */
-        user: Telegram.User;
+        user: tgTypes.User;
     }
 
     /**
@@ -752,7 +752,7 @@ declare namespace Telegram {
         /**
          * Information about the user
          */
-        user: Telegram.User;
+        user: tgTypes.User;
         /**
          * Date when restrictions will be lifted for this user; Unix time. If 0, then the user is banned forever
          */
@@ -768,11 +768,11 @@ declare namespace Telegram {
         /**
          * Chat to which the request was sent
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * User that sent the join request
          */
-        from: Telegram.User;
+        from: tgTypes.User;
         /**
          * Identifier of a private chat with the user who sent the join request.
          * The bot can use this identifier for 5 minutes to send messages until the join request is processed,
@@ -790,7 +790,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Chat invite link that was used by the user to send the join request
          */
-        invite_link?: Telegram.ChatInviteLink;
+        invite_link?: tgTypes.ChatInviteLink;
     }
 
     /**
@@ -866,7 +866,7 @@ declare namespace Telegram {
         /**
          * The location to which the supergroup is connected. Can't be a live location.
          */
-        location: Telegram.Location;
+        location: tgTypes.Location;
         /**
          * Location address; 1-64 characters, as defined by the chat owner
          */
@@ -879,9 +879,9 @@ declare namespace Telegram {
      * [ChatBoostSource - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#chatboostsource)
      */
     type ChatBoostSource =
-        Telegram.ChatBoostSourcePremium
-        | Telegram.ChatBoostSourceGiftCode
-        | Telegram.ChatBoostSourceGiveaway
+        tgTypes.ChatBoostSourcePremium
+        | tgTypes.ChatBoostSourceGiftCode
+        | tgTypes.ChatBoostSourceGiveaway
 
     /**
      * The boost was obtained by subscribing to Telegram Premium or by gifting a Telegram Premium subscription to another user.
@@ -896,7 +896,7 @@ declare namespace Telegram {
         /**
          * User that boosted the chat
          */
-        user: Telegram.User;
+        user: tgTypes.User;
     }
 
     /**
@@ -913,7 +913,7 @@ declare namespace Telegram {
         /**
          * User for which the gift code was created
          */
-        user: Telegram.User;
+        user: tgTypes.User;
     }
 
     /**
@@ -934,7 +934,7 @@ declare namespace Telegram {
         /**
          * _Optional_. User that won the prize in the giveaway if any
          */
-        user?: Telegram.User;
+        user?: tgTypes.User;
         /**
          * _Optional_. True, if the giveaway was completed, but there was no user to win the prize
          */
@@ -962,7 +962,7 @@ declare namespace Telegram {
         /**
          * Source of the added boost
          */
-        source: Telegram.ChatBoostSource;
+        source: tgTypes.ChatBoostSource;
     }
 
     /**
@@ -974,11 +974,11 @@ declare namespace Telegram {
         /**
          * Chat which was boosted
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * Information about the chat boost
          */
-        boost: Telegram.ChatBoost;
+        boost: tgTypes.ChatBoost;
     }
 
     /**
@@ -990,7 +990,7 @@ declare namespace Telegram {
         /**
          * Chat which was boosted
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * Unique identifier of the boost
          */
@@ -1002,7 +1002,7 @@ declare namespace Telegram {
         /**
          * Source of the removed boost
          */
-        source: Telegram.ChatBoostSource;
+        source: tgTypes.ChatBoostSource;
     }
 
     /**
@@ -1014,6 +1014,6 @@ declare namespace Telegram {
         /**
          * The list of boosts added to the chat by the user
          */
-        boosts: Telegram.ChatBoost[];
+        boosts: tgTypes.ChatBoost[];
     }
 }

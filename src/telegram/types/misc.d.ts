@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object represents a phone contact.
      *
@@ -85,7 +85,7 @@ declare namespace Telegram {
         /**
          * Venue location. Can't be a live location
          */
-        location: Telegram.Location;
+        location: tgTypes.Location;
         /**
          * Name of the venue
          */
@@ -121,11 +121,11 @@ declare namespace Telegram {
         /**
          * User that triggered the alert
          */
-        traveler: Telegram.User;
+        traveler: tgTypes.User;
         /**
          * User that set the alert
          */
-        watcher: Telegram.User;
+        watcher: tgTypes.User;
         /**
          * The distance between the users
          */

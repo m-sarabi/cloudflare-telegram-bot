@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object describes the type of a reaction. Currently, it can be one of
      *
@@ -49,7 +49,7 @@ declare namespace Telegram {
         /**
          * Type of the reaction
          */
-        type: Telegram.ReactionType;
+        type: tgTypes.ReactionType;
         /**
          * Number of times the reaction was added
          */
@@ -65,7 +65,7 @@ declare namespace Telegram {
         /**
          * The chat containing the message the user reacted to
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * Unique identifier of the message inside the chat
          */
@@ -73,11 +73,11 @@ declare namespace Telegram {
         /**
          * _Optional_. The user that changed the reaction, if the user isn't anonymous
          */
-        user?: Telegram.User;
+        user?: tgTypes.User;
         /**
          * _Optional_. The chat on behalf of which the reaction was changed, if the user is anonymous
          */
-        actor_chat?: Telegram.Chat;
+        actor_chat?: tgTypes.Chat;
         /**
          * Date of the change in Unix time
          */
@@ -85,11 +85,11 @@ declare namespace Telegram {
         /**
          * Previous list of reaction types that were set by the user
          */
-        old_reaction: Telegram.ReactionType[];
+        old_reaction: tgTypes.ReactionType[];
         /**
          * New list of reaction types that have been set by the user
          */
-        new_reaction: Telegram.ReactionType[];
+        new_reaction: tgTypes.ReactionType[];
     }
 
     /**
@@ -101,7 +101,7 @@ declare namespace Telegram {
         /**
          * The chat containing the message
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * Unique message identifier inside the chat
          */
@@ -113,6 +113,6 @@ declare namespace Telegram {
         /**
          * List of reactions that are present on the message
          */
-        reactions: Telegram.ReactionCount[];
+        reactions: tgTypes.ReactionCount[];
     }
 }

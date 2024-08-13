@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * Contains information about the start page settings of a Telegram Business account.
      *
@@ -16,7 +16,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Sticker of the business intro
          */
-        sticker?: Telegram.Sticker;
+        sticker?: tgTypes.Sticker;
     }
 
     /**
@@ -32,7 +32,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Location of the business
          */
-        location?: Telegram.Location;
+        location?: tgTypes.Location;
     }
 
     /**
@@ -66,7 +66,7 @@ declare namespace Telegram {
         /**
          * List of time intervals describing business opening hours
          */
-        opening_hours: Telegram.BusinessOpeningHoursInterval[];
+        opening_hours: tgTypes.BusinessOpeningHoursInterval[];
     }
 
     /**
@@ -82,7 +82,7 @@ declare namespace Telegram {
         /**
          * Business account user that created the business connection
          */
-        user: Telegram.User;
+        user: tgTypes.User;
         /**
          * Identifier of a private chat with the user who created the business connection.
          */
@@ -114,7 +114,7 @@ declare namespace Telegram {
         /**
          * Information about a chat in the business account. The bot may not have access to the chat or the corresponding user.
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * The list of identifiers of deleted messages in the chat of the business account
          */

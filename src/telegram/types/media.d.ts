@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object represents one size of a photo or a [file](https://core.telegram.org/bots/api#document) /
      * [sticker](https://core.telegram.org/bots/api#sticker) thumbnail.
@@ -59,7 +59,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Animation thumbnail as defined by the sender
          */
-        thumbnail?: Telegram.PhotoSize;
+        thumbnail?: tgTypes.PhotoSize;
         /**
          * _Optional_. Original animation filename as defined by the sender
          */
@@ -116,7 +116,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Thumbnail of the album cover to which the music file belongs
          */
-        thumbnail?: Telegram.PhotoSize;
+        thumbnail?: tgTypes.PhotoSize;
     }
 
     /**
@@ -138,7 +138,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Document thumbnail as defined by the sender
          */
-        thumbnail?: Telegram.PhotoSize;
+        thumbnail?: tgTypes.PhotoSize;
         /**
          * _Optional_. Original filename as defined by the sender
          */
@@ -162,7 +162,7 @@ declare namespace Telegram {
         /**
          * Chat that posted the story
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * Unique identifier for the story in the chat
          */
@@ -199,7 +199,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Video thumbnail
          */
-        thumbnail?: Telegram.PhotoSize;
+        thumbnail?: tgTypes.PhotoSize;
         /**
          * _Optional_. Original filename as defined by the sender
          */
@@ -241,7 +241,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Video thumbnail
          */
-        thumbnail?: Telegram.PhotoSize;
+        thumbnail?: tgTypes.PhotoSize;
         /**
          * _Optional_. File size in bytes
          */

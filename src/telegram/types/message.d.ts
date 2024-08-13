@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object represents a message.
      *
@@ -16,14 +16,14 @@ declare namespace Telegram {
         /**
          * _Optional_. Sender of the message; empty for messages sent to channels.
          */
-        from?: Telegram.User;
+        from?: tgTypes.User;
         /**
          * _Optional_. Sender of the message, sent on behalf of a chat.
          * For example, the channel itself for channel posts,
          * the supergroup itself for messages from anonymous group administrators,
          * the linked channel for messages automatically forwarded to the discussion group.
          */
-        sender_chat?: Telegram.Chat;
+        sender_chat?: tgTypes.Chat;
         /**
          * _Optional_. If the sender of the message boosted the chat, the number of boosts added by the user
          */
@@ -32,7 +32,7 @@ declare namespace Telegram {
          * _Optional_. The bot that actually sent the message on behalf of the business account.
          * Available only for outgoing messages sent on behalf of the connected business account.
          */
-        sender_business_bot?: Telegram.User;
+        sender_business_bot?: tgTypes.User;
         /**
          * Date the message was sent in Unix time. It is always a positive number, representing a valid date.
          */
@@ -46,11 +46,11 @@ declare namespace Telegram {
         /**
          * Chat the message belongs to
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * _Optional_. Information about the original message for forwarded messages
          */
-        forward_origin?: Telegram.MessageOrigin;
+        forward_origin?: tgTypes.MessageOrigin;
         /**
          * _Optional_. True, if the message is sent to a forum topic
          */
@@ -63,23 +63,23 @@ declare namespace Telegram {
          * _Optional_. For replies in the same chat and message thread, the original message.
          * Note that the Message object in this field will not contain further reply_to_message fields even if it itself is a reply.
          */
-        reply_to_message?: Telegram.Message;
+        reply_to_message?: tgTypes.Message;
         /**
          * _Optional_. Information about the message that is being replied to, which may come from another chat or forum topic
          */
-        external_reply?: Telegram.ExternalReplyInfo;
+        external_reply?: tgTypes.ExternalReplyInfo;
         /**
          * _Optional_. For replies that quote part of the original message, the quoted part of the message
          */
-        quote?: Telegram.TextQuote;
+        quote?: tgTypes.TextQuote;
         /**
          * _Optional_. For replies to a story, the original story
          */
-        reply_to_story?: Telegram.Story;
+        reply_to_story?: tgTypes.Story;
         /**
          * _Optional_. Bot through which the message was sent
          */
-        via_bot?: Telegram.User;
+        via_bot?: tgTypes.User;
         /**
          * _Optional_. Date the message was last edited in Unix time
          */
@@ -108,11 +108,11 @@ declare namespace Telegram {
         /**
          * _Optional_. For text messages, special entities like usernames, URLs, bot commands, etc. that appear in the text
          */
-        entities?: Telegram.MessageEntity[];
+        entities?: tgTypes.MessageEntity[];
         /**
          * _Optional_. Options used for link preview generation for the message, if it is a text message and link preview options were changed
          */
-        link_preview_options?: Telegram.LinkPreviewOptions;
+        link_preview_options?: tgTypes.LinkPreviewOptions;
         /**
          * _Optional_. Unique identifier of the message effect added to the message
          */
@@ -121,43 +121,43 @@ declare namespace Telegram {
          * _Optional_. Message is an animation, information about the animation.
          * For backward compatibility, when this field is set, the document field will also be set
          */
-        animation?: Telegram.Animation;
+        animation?: tgTypes.Animation;
         /**
          * _Optional_. Message is an audio file, information about the file
          */
-        audio?: Telegram.Audio;
+        audio?: tgTypes.Audio;
         /**
          * _Optional_. Message is a general file, information about the file
          */
-        document?: Telegram.Document;
+        document?: tgTypes.Document;
         /**
          * _Optional_. Message contains paid media; information about the paid media
          */
-        paid_media?: Telegram.PaidMediaInfo;
+        paid_media?: tgTypes.PaidMediaInfo;
         /**
          * _Optional_. Message is a photo, available sizes of the photo
          */
-        photo?: Telegram.PhotoSize[];
+        photo?: tgTypes.PhotoSize[];
         /**
          * _Optional_. Message is a sticker, information about the sticker
          */
-        sticker?: Telegram.Sticker;
+        sticker?: tgTypes.Sticker;
         /**
          * _Optional_. Message is a forwarded story
          */
-        story?: Telegram.Story;
+        story?: tgTypes.Story;
         /**
          * _Optional_. Message is a video, information about the video
          */
-        video?: Telegram.Video;
+        video?: tgTypes.Video;
         /**
          * _Optional_. Message is a [video note](https://telegram.org/blog/video-messages-and-telescope), information about the video message
          */
-        video_note?: Telegram.VideoNote;
+        video_note?: tgTypes.VideoNote;
         /**
          * _Optional_. Message is a voice message, information about the file
          */
-        voice?: Telegram.Voice;
+        voice?: tgTypes.Voice;
         /**
          * _Optional_. Caption for the animation, audio, document, paid media, photo, video or voice
          */
@@ -165,7 +165,7 @@ declare namespace Telegram {
         /**
          * _Optional_. For messages with a caption, special entities like usernames, URLs, bot commands, etc. that appear in the caption
          */
-        caption_entities?: Telegram.MessageEntity;
+        caption_entities?: tgTypes.MessageEntity;
         /**
          * _Optional_. True, if the caption must be shown above the message media
          */
@@ -177,37 +177,37 @@ declare namespace Telegram {
         /**
          * _Optional_. Message is a shared contact, information about the contact
          */
-        contact?: Telegram.Contact;
+        contact?: tgTypes.Contact;
         /**
          * _Optional_. Message is a dice with random value
          */
-        dice?: Telegram.Dice;
+        dice?: tgTypes.Dice;
         /**
          * _Optional_. Message is a game, information about the game. [More about games »](https://core.telegram.org/bots/api#games)
          */
-        game?: Telegram.Game;
+        game?: tgTypes.Game;
         /**
          * _Optional_. Message is a native poll, information about the poll
          */
-        poll?: Telegram.Poll;
+        poll?: tgTypes.Poll;
         /**
          * _Optional_. Message is a venue, information about the venue.
          * For backward compatibility, when this field is set, the location field will also be set
          */
-        venue?: Telegram.Venue;
+        venue?: tgTypes.Venue;
         /**
          * _Optional_. Message is a shared location, information about the location
          */
-        location?: Telegram.Location;
+        location?: tgTypes.Location;
         /**
          * _Optional_. New members that were added to the group or supergroup and information about them
          * (the bot itself may be one of these members)
          */
-        new_chat_members?: Telegram.User[];
+        new_chat_members?: tgTypes.User[];
         /**
          * _Optional_. A member was removed from the group, information about them (this member may be the bot itself)
          */
-        left_chat_member?: Telegram.User;
+        left_chat_member?: tgTypes.User;
         /**
          * _Optional_. A chat title was changed to this value
          */
@@ -215,7 +215,7 @@ declare namespace Telegram {
         /**
          * _Optional_. A chat photo was change to this value
          */
-        new_chat_photo?: Telegram.PhotoSize[];
+        new_chat_photo?: tgTypes.PhotoSize[];
         /**
          * _Optional_. Service message: the chat photo was deleted
          */
@@ -241,7 +241,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Service message: auto-delete timer settings changed in the chat
          */
-        message_auto_delete_timer_changed?: Telegram.MessageAutoDeleteTimerChanged;
+        message_auto_delete_timer_changed?: tgTypes.MessageAutoDeleteTimerChanged;
         /**
          * _Optional_. The group has been migrated to a supergroup with the specified identifier.
          */
@@ -254,30 +254,30 @@ declare namespace Telegram {
          * _Optional_. Specified message was pinned.
          * Note that the Message object in this field will not contain further reply_to_message fields even if it itself is a reply.
          */
-        pinned_message?: Telegram.MaybeInaccessibleMessage;
+        pinned_message?: tgTypes.MaybeInaccessibleMessage;
         /**
          * _Optional_. Message is an invoice for a [payment](https://core.telegram.org/bots/api#payments),
          * information about the invoice. [More about payments »](https://core.telegram.org/bots/api#payments)
          */
-        invoice?: Telegram.Invoice;
+        invoice?: tgTypes.Invoice;
         /**
          * _Optional_. Message is a service message about a successful payment, information about the payment.
          * [More about payments »](https://core.telegram.org/bots/api#payments)
          */
-        successful_payment?: Telegram.SuccessfulPayment;
+        successful_payment?: tgTypes.SuccessfulPayment;
         /**
          * _Optional_. Message is a service message about a refunded payment, information about the payment.
          * [More about payments »](https://core.telegram.org/bots/api#payments)
          */
-        refunded_payment?: Telegram.RefundedPayment;
+        refunded_payment?: tgTypes.RefundedPayment;
         /**
          * _Optional_. Service message: users were shared with the bot
          */
-        users_shared?: Telegram.UsersShared;
+        users_shared?: tgTypes.UsersShared;
         /**
          * _Optional_. Service message: a chat was shared with the bot
          */
-        chat_shared?: Telegram.ChatShared;
+        chat_shared?: tgTypes.ChatShared;
         /**
          * _Optional_. The domain name of the website on which the user has logged in.
          * [More about Telegram Login »](https://core.telegram.org/widgets/login)
@@ -288,88 +288,88 @@ declare namespace Telegram {
          * launching a Web App from a link, or accepting an explicit request from a Web App sent by the method
          * [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps)
          */
-        write_access_allowed?: Telegram.WriteAccessAllowed;
+        write_access_allowed?: tgTypes.WriteAccessAllowed;
         /**
          * _Optional_. Telegram Passport data
          */
-        passport_data?: Telegram.PassportData;
+        passport_data?: tgTypes.PassportData;
         /**
          * _Optional_. Service message. A user in the chat triggered another user's proximity alert while sharing Live Location.
          */
-        proximity_alert_triggered?: Telegram.ProximityAlertTriggered;
+        proximity_alert_triggered?: tgTypes.ProximityAlertTriggered;
         /**
          * _Optional_. Service message: user boosted the chat
          */
-        boost_added?: Telegram.ChatBoostAdded;
+        boost_added?: tgTypes.ChatBoostAdded;
         /**
          * _Optional_. Service message: chat background set
          */
-        chat_background_set?: Telegram.ChatBackground;
+        chat_background_set?: tgTypes.ChatBackground;
         /**
          * _Optional_. Service message: forum topic created
          */
-        forum_topic_created?: Telegram.ForumTopicCreated;
+        forum_topic_created?: tgTypes.ForumTopicCreated;
         /**
          * _Optional_. Service message: forum topic edited
          */
-        forum_topic_edited?: Telegram.ForumTopicEdited;
+        forum_topic_edited?: tgTypes.ForumTopicEdited;
         /**
          * _Optional_. Service message: forum topic closed
          */
-        forum_topic_closed?: Telegram.ForumTopicClosed;
+        forum_topic_closed?: tgTypes.ForumTopicClosed;
         /**
          * _Optional_. Service message: forum topic reopened
          */
-        forum_topic_reopened?: Telegram.ForumTopicReopened;
+        forum_topic_reopened?: tgTypes.ForumTopicReopened;
         /**
          * _Optional_. Service message: the 'General' forum topic hidden
          */
-        general_forum_topic_hidden?: Telegram.GeneralForumTopicHidden;
+        general_forum_topic_hidden?: tgTypes.GeneralForumTopicHidden;
         /**
          * _Optional_. Service message: the 'General' forum topic unhidden
          */
-        general_forum_topic_unhidden?: Telegram.GeneralForumTopicUnhidden;
+        general_forum_topic_unhidden?: tgTypes.GeneralForumTopicUnhidden;
         /**
          * _Optional_. Service message: a scheduled giveaway was created
          */
-        giveaway_created?: Telegram.GiveawayCreated;
+        giveaway_created?: tgTypes.GiveawayCreated;
         /**
          * _Optional_. The message is a scheduled giveaway message
          */
-        giveaway?: Telegram.Giveaway;
+        giveaway?: tgTypes.Giveaway;
         /**
          * _Optional_. A giveaway with public winners was completed
          */
-        giveaway_winners?: Telegram.GiveawayWinners;
+        giveaway_winners?: tgTypes.GiveawayWinners;
         /**
          * _Optional_. Service message: a giveaway without public winners was completed
          */
-        giveaway_completed?: Telegram.GiveawayCompleted;
+        giveaway_completed?: tgTypes.GiveawayCompleted;
         /**
          * _Optional_. Service message: video chat scheduled
          */
-        video_chat_scheduled?: Telegram.VideoChatScheduled;
+        video_chat_scheduled?: tgTypes.VideoChatScheduled;
         /**
          * _Optional_. Service message: video chat started
          */
-        video_chat_started?: Telegram.VideoChatStarted;
+        video_chat_started?: tgTypes.VideoChatStarted;
         /**
          * _Optional_. Service message: video chat ended
          */
-        video_chat_ended?: Telegram.VideoChatEnded;
+        video_chat_ended?: tgTypes.VideoChatEnded;
         /**
          * _Optional_. Service message: new participants invited to a video chat
          */
-        video_chat_participants_invited?: Telegram.VideoChatParticipantsInvited;
+        video_chat_participants_invited?: tgTypes.VideoChatParticipantsInvited;
         /**
          * _Optional_. Service message: data sent by a Web App
          */
-        web_app_data?: Telegram.WebAppData;
+        web_app_data?: tgTypes.WebAppData;
         /**
          * _Optional_. Inline keyboard attached to the message.
          * login_url buttons are represented as ordinary url buttons.
          */
-        reply_markup?: Telegram.InlineKeyboardMarkup;
+        reply_markup?: tgTypes.InlineKeyboardMarkup;
     }
 
     /**
@@ -393,7 +393,7 @@ declare namespace Telegram {
         /**
          * Chat the message belonged to
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * Unique message identifier inside the chat
          */
@@ -409,7 +409,7 @@ declare namespace Telegram {
      *
      * [MaybeInaccessibleMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#maybeinaccessiblemessage)
      */
-    type MaybeInaccessibleMessage = Telegram.Message | Telegram.InaccessibleMessage;
+    type MaybeInaccessibleMessage = tgTypes.Message | tgTypes.InaccessibleMessage;
 
     /**
      * This object represents one special entity in a text message. For example, hashtags, usernames, URLs, etc.
@@ -445,7 +445,7 @@ declare namespace Telegram {
         /**
          * _Optional_. For "text_mention" only, the mentioned user
          */
-        user?: Telegram.User;
+        user?: tgTypes.User;
         /**
          * _Optional_. For "pre" only, the programming language of the entity text
          */
@@ -471,7 +471,7 @@ declare namespace Telegram {
          * _Optional_. Special entities that appear in the quote.
          * Currently, only `bold`, `italic`, `underline`, `strikethrough`, `spoiler`, and `custom_emoji` entities are kept in quotes.
          */
-        entities?: Telegram.MessageEntity[];
+        entities?: tgTypes.MessageEntity[];
         /**
          * Approximate quote position in the original message in UTF-16 code units as specified by the sender
          */
@@ -491,11 +491,11 @@ declare namespace Telegram {
         /**
          * Origin of the message replied to by the given message
          */
-        origin: Telegram.MessageOrigin;
+        origin: tgTypes.MessageOrigin;
         /**
          * _Optional_. Chat the original message belongs to. Available only if the chat is a supergroup or a channel.
          */
-        chat?: Telegram.Chat;
+        chat?: tgTypes.Chat;
         /**
          * _Optional_. Unique message identifier inside the original chat. Available only if the original chat is a supergroup or a channel.
          */
@@ -503,47 +503,47 @@ declare namespace Telegram {
         /**
          * _Optional_. Options used for link preview generation for the original message, if it is a text message
          */
-        link_preview_options?: Telegram.LinkPreviewOptions;
+        link_preview_options?: tgTypes.LinkPreviewOptions;
         /**
          * _Optional_. Message is an animation, information about the animation
          */
-        animation?: Telegram.Animation;
+        animation?: tgTypes.Animation;
         /**
          * _Optional_. Message is an audio file, information about the file
          */
-        audio?: Telegram.Audio;
+        audio?: tgTypes.Audio;
         /**
          * _Optional_. Message is a general file, information about the file
          */
-        document?: Telegram.Document;
+        document?: tgTypes.Document;
         /**
          * _Optional_. Message contains paid media; information about the paid media
          */
-        paid_media?: Telegram.PaidMediaInfo;
+        paid_media?: tgTypes.PaidMediaInfo;
         /**
          * _Optional_. Message is a photo, available sizes of the photo
          */
-        photo?: Telegram.PhotoSize[];
+        photo?: tgTypes.PhotoSize[];
         /**
          * _Optional_. Message is a sticker, information about the sticker
          */
-        sticker?: Telegram.Sticker;
+        sticker?: tgTypes.Sticker;
         /**
          * _Optional_. Message is a forwarded story
          */
-        story?: Telegram.Story;
+        story?: tgTypes.Story;
         /**
          * _Optional_. Message is a video, information about the video
          */
-        video?: Telegram.Video;
+        video?: tgTypes.Video;
         /**
          * _Optional_. Message is a video note, information about the video message
          */
-        video_note?: Telegram.VideoNote;
+        video_note?: tgTypes.VideoNote;
         /**
          * _Optional_. Message is a voice message, information about the file
          */
-        voice?: Telegram.Voice;
+        voice?: tgTypes.Voice;
         /**
          * _Optional_. True, if the message media is covered by a spoiler animation
          */
@@ -551,40 +551,40 @@ declare namespace Telegram {
         /**
          * _Optional_. Message is a shared contact, information about the contact
          */
-        contact?: Telegram.Contact;
+        contact?: tgTypes.Contact;
         /**
          * _Optional_. Message is a dice with random value
          */
-        dice?: Telegram.Dice;
+        dice?: tgTypes.Dice;
         /**
          * _Optional_. Message is a game, information about the game. [More about games »](https://core.telegram.org/bots/api#games)
          */
-        game?: Telegram.Game;
+        game?: tgTypes.Game;
         /**
          * _Optional_. Message is a scheduled giveaway, information about the giveaway
          */
-        giveaway?: Telegram.Giveaway;
+        giveaway?: tgTypes.Giveaway;
         /**
          * _Optional_. A giveaway with public winners was completed
          */
-        giveaway_winners?: Telegram.GiveawayWinners;
+        giveaway_winners?: tgTypes.GiveawayWinners;
         /**
          * _Optional_. Message is an invoice for a [payment](https://core.telegram.org/bots/api#payments),
          * information about the invoice. [More about payments »](https://core.telegram.org/bots/api#payments)
          */
-        invoice?: Telegram.Invoice;
+        invoice?: tgTypes.Invoice;
         /**
          * _Optional_. Message is a shared location, information about the location
          */
-        location?: Telegram.Location;
+        location?: tgTypes.Location;
         /**
          * _Optional_. Message is a native poll, information about the poll
          */
-        poll?: Telegram.Poll;
+        poll?: tgTypes.Poll;
         /**
          * _Optional_. Message is a venue, information about the venue
          */
-        venue?: Telegram.Venue;
+        venue?: tgTypes.Venue;
     }
 
     /**
@@ -624,7 +624,7 @@ declare namespace Telegram {
          * _Optional_. A JSON-serialized list of special entities that appear in the quote.
          * It can be specified instead of quote_parse_mode.
          */
-        quote_entities?: Telegram.MessageEntity[];
+        quote_entities?: tgTypes.MessageEntity[];
         /**
          * _Optional_. Position of the quote in the original message in UTF-16 code units
          */
@@ -637,10 +637,10 @@ declare namespace Telegram {
      * [MessageOrigin - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#messageorigin)
      */
     type MessageOrigin =
-        Telegram.MessageOriginUser
-        | Telegram.MessageOriginHiddenUser
-        | Telegram.MessageOriginChat
-        | Telegram.MessageOriginChannel;
+        tgTypes.MessageOriginUser
+        | tgTypes.MessageOriginHiddenUser
+        | tgTypes.MessageOriginChat
+        | tgTypes.MessageOriginChannel;
 
     /**
      * The message was originally sent by a known user.
@@ -659,7 +659,7 @@ declare namespace Telegram {
         /**
          * User that sent the message originally
          */
-        sender_user: Telegram.User;
+        sender_user: tgTypes.User;
     }
 
     /**
@@ -699,7 +699,7 @@ declare namespace Telegram {
         /**
          * Chat that sent the message originally
          */
-        sender_chat: Telegram.Chat;
+        sender_chat: tgTypes.Chat;
         /**
          * _Optional_. For messages originally sent by an anonymous chat administrator, original message author signature
          */
@@ -723,7 +723,7 @@ declare namespace Telegram {
         /**
          * Channel chat to which the message was originally sent
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * Unique message identifier inside the chat
          */

@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object represents a service message about the creation of a scheduled giveaway. Currently holds no information.
      *
@@ -16,7 +16,7 @@ declare namespace Telegram {
         /**
          * The list of chats which the user must join to participate in the giveaway
          */
-        chats: Telegram.Chat[];
+        chats: tgTypes.Chat[];
         /**
          * Point in time (Unix timestamp) when winners of the giveaway will be selected
          */
@@ -59,7 +59,7 @@ declare namespace Telegram {
         /**
          * The chat that created the giveaway
          */
-        chat: Telegram.Chat;
+        chat: tgTypes.Chat;
         /**
          * Identifier of the message with the giveaway in the chat
          */
@@ -75,7 +75,7 @@ declare namespace Telegram {
         /**
          * List of up to 100 winners of the giveaway
          */
-        winners: Telegram.User[];
+        winners: tgTypes.User[];
         /**
          * _Optional_. The number of other chats the user had to join in order to be eligible for the giveaway
          */
@@ -119,6 +119,6 @@ declare namespace Telegram {
         /**
          * _Optional_. Message with the giveaway that was completed, if it wasn't deleted
          */
-        giveaway_message?: Telegram.Message;
+        giveaway_message?: tgTypes.Message;
     }
 }

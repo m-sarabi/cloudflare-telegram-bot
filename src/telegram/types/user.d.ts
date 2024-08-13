@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object represents a Telegram user or bot.
      *
@@ -87,7 +87,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Available sizes of the chat photo, if the photo was requested by the bot
          */
-        photo?: Telegram.PhotoSize[];
+        photo?: tgTypes.PhotoSize[];
     }
 
     /**
@@ -104,7 +104,7 @@ declare namespace Telegram {
         /**
          * Information about users shared with the bot.
          */
-        users: Telegram.SharedUser[];
+        users: tgTypes.SharedUser[];
     }
 
     /**
@@ -143,7 +143,7 @@ declare namespace Telegram {
         /**
          * Requested profile pictures (in up to 4 sizes each)
          */
-        photos: Telegram.PhotoSize[][];
+        photos: tgTypes.PhotoSize[][];
     }
 
     /**

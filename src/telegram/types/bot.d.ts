@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object represents a bot command.
      *
@@ -21,13 +21,13 @@ declare namespace Telegram {
      * [BotCommandScope - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#botcommandscope)
      */
     type BotCommandScope =
-        Telegram.BotCommandScopeDefault
-        | Telegram.BotCommandScopeAllPrivateChats
-        | Telegram.BotCommandScopeAllGroupChats
-        | Telegram.BotCommandScopeAllChatAdministrators
-        | Telegram.BotCommandScopeChat
-        | Telegram.BotCommandScopeChatAdministrators
-        | Telegram.BotCommandScopeChatMember;
+        tgTypes.BotCommandScopeDefault
+        | tgTypes.BotCommandScopeAllPrivateChats
+        | tgTypes.BotCommandScopeAllGroupChats
+        | tgTypes.BotCommandScopeAllChatAdministrators
+        | tgTypes.BotCommandScopeChat
+        | tgTypes.BotCommandScopeChatAdministrators
+        | tgTypes.BotCommandScopeChatMember;
 
     /**
      * Represents the default [scope](https://core.telegram.org/bots/api#botcommandscope) of bot commands.
@@ -175,9 +175,9 @@ declare namespace Telegram {
      * [MenuButton - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#menubutton)
      */
     type MenuButton =
-        Telegram.MenuButtonCommands
-        | Telegram.MenuButtonWebApp
-        | Telegram.MenuButtonDefault
+        tgTypes.MenuButtonCommands
+        | tgTypes.MenuButtonWebApp
+        | tgTypes.MenuButtonDefault
 
     /**
      * Represents a menu button, which opens the bot's list of commands.
@@ -212,7 +212,7 @@ declare namespace Telegram {
          * Alternatively, a `t.me` link to a Web App of the bot can be specified in the object instead of the Web App's URL,
          * in which case the Web App will be opened as if the user pressed the link.
          */
-        web_app: Telegram.WebAppInfo;
+        web_app: tgTypes.WebAppInfo;
     }
 
     /**

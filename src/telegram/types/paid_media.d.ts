@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * Describes the paid media added to a message.
      *
@@ -12,7 +12,7 @@ declare namespace Telegram {
         /**
          * Information about the paid media
          */
-        paid_media: Telegram.PaidMedia[];
+        paid_media: tgTypes.PaidMedia[];
     }
 
     /**
@@ -21,9 +21,9 @@ declare namespace Telegram {
      * [PaidMediaInfo - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#paidmediainfo)
      */
     type PaidMedia =
-        Telegram.PaidMediaPreview
-        | Telegram.PaidMediaPhoto
-        | Telegram.PaidMediaVideo
+        tgTypes.PaidMediaPreview
+        | tgTypes.PaidMediaPhoto
+        | tgTypes.PaidMediaVideo
 
     /**
      * The paid media isn't available before the payment.
@@ -62,7 +62,7 @@ declare namespace Telegram {
         /**
          * The photo
          */
-        photo: Telegram.PhotoSize[];
+        photo: tgTypes.PhotoSize[];
     }
 
     /**
@@ -78,6 +78,6 @@ declare namespace Telegram {
         /**
          * The video
          */
-        video: Telegram.Video;
+        video: tgTypes.Video;
     }
 }

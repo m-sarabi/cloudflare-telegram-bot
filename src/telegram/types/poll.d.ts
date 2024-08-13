@@ -1,4 +1,4 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object contains information about one answer option in a poll.
      *
@@ -13,7 +13,7 @@ declare namespace Telegram {
          * _Optional_. Special entities that appear in the option text.
          * Currently, only custom emoji entities are allowed in poll option texts
          */
-        text_entities?: Telegram.MessageEntity[];
+        text_entities?: tgTypes.MessageEntity[];
         /**
          * Number of users that voted for this option
          */
@@ -40,7 +40,7 @@ declare namespace Telegram {
          * _Optional_. A JSON-serialized list of special entities that appear in the poll option text.
          * It can be specified instead of text_parse_mode
          */
-        text_entities?: Telegram.MessageEntity[];
+        text_entities?: tgTypes.MessageEntity[];
     }
 
     /**
@@ -56,11 +56,11 @@ declare namespace Telegram {
         /**
          * _Optional_. The chat that changed the answer to the poll, if the voter is anonymous
          */
-        voter_chat?: Telegram.Chat;
+        voter_chat?: tgTypes.Chat;
         /**
          * _Optional_. The user that changed the answer to the poll, if the voter isn't anonymous
          */
-        user?: Telegram.User;
+        user?: tgTypes.User;
         /**
          * 0-based identifiers of chosen answer options. May be empty if the vote was retracted.
          */
@@ -85,11 +85,11 @@ declare namespace Telegram {
          * _Optional_. Special entities that appear in the question.
          * Currently, only custom emoji entities are allowed in poll questions
          */
-        question_entities?: Telegram.MessageEntity[];
+        question_entities?: tgTypes.MessageEntity[];
         /**
          * List of poll options
          */
-        options: Telegram.PollOption[];
+        options: tgTypes.PollOption[];
         /**
          * Total number of users that voted in the poll
          */
@@ -123,7 +123,7 @@ declare namespace Telegram {
         /**
          * _Optional_. Special entities like usernames, URLs, bot commands, etc. that appear in the explanation
          */
-        explanation_entities?: Telegram.MessageEntity[];
+        explanation_entities?: tgTypes.MessageEntity[];
         /**
          * _Optional_. Amount of time in seconds the poll will be active after creation
          */

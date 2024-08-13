@@ -1,13 +1,13 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object describes the way a background is filled based on the selected colors.
      *
      * [MaybeInaccessibleMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#backgroundfill)
      */
     type BackgroundFill =
-        Telegram.BackgroundFillSolid
-        | Telegram.BackgroundFillGradient
-        | Telegram.BackgroundFillFreeformGradient;
+        tgTypes.BackgroundFillSolid
+        | tgTypes.BackgroundFillGradient
+        | tgTypes.BackgroundFillFreeformGradient;
 
     /**
      * The background is filled using the selected color.
@@ -72,10 +72,10 @@ declare namespace Telegram {
      */
 
     type BackgroundType =
-        Telegram.BackgroundTypeFill
-        | Telegram.BackgroundTypeWallpaper
-        | Telegram.BackgroundTypePattern
-        | Telegram.BackgroundTypeChatTheme;
+        tgTypes.BackgroundTypeFill
+        | tgTypes.BackgroundTypeWallpaper
+        | tgTypes.BackgroundTypePattern
+        | tgTypes.BackgroundTypeChatTheme;
 
     /**
      * The background is automatically filled based on the selected colors.
@@ -90,7 +90,7 @@ declare namespace Telegram {
         /**
          * The background fill
          */
-        fill: Telegram.BackgroundFill;
+        fill: tgTypes.BackgroundFill;
         /**
          * Dimming of the background in dark themes, as a percentage; 0-100
          */
@@ -110,7 +110,7 @@ declare namespace Telegram {
         /**
          * Document with the wallpaper
          */
-        document: Telegram.Document;
+        document: tgTypes.Document;
         /**
          * Dimming of the background in dark themes, as a percentage; 0-100
          */
@@ -139,11 +139,11 @@ declare namespace Telegram {
         /**
          * Document with the pattern
          */
-        document: Telegram.Document;
+        document: tgTypes.Document;
         /**
          * The background fill that is combined with the pattern
          */
-        fill: Telegram.BackgroundFill;
+        fill: tgTypes.BackgroundFill;
         /**
          * Intensity of the pattern when it is shown above the filled background; 0-100
          */
@@ -184,6 +184,6 @@ declare namespace Telegram {
         /**
          * Type of the background
          */
-        type: Telegram.BackgroundType;
+        type: tgTypes.BackgroundType;
     }
 }

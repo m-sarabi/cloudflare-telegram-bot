@@ -1,15 +1,15 @@
-declare namespace Telegram {
+declare namespace tgTypes {
     /**
      * This object represents the content of a media message to be sent. It should be one of
      *
      * [InputMedia - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inputmedia)
      */
     type InputMedia =
-        Telegram.InputMediaAnimation
-        | Telegram.InputMediaDocument
-        | Telegram.InputMediaAudio
-        | Telegram.InputMediaPhoto
-        | Telegram.InputMediaVideo;
+        tgTypes.InputMediaAnimation
+        | tgTypes.InputMediaDocument
+        | tgTypes.InputMediaAudio
+        | tgTypes.InputMediaPhoto
+        | tgTypes.InputMediaVideo;
 
     /**
      * Represents a photo to be sent.
@@ -39,7 +39,7 @@ declare namespace Telegram {
         /**
          * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
          */
-        caption_entities?: Telegram.MessageEntity[];
+        caption_entities?: tgTypes.MessageEntity[];
         /**
          * _Optional_. Pass True, if the caption must be shown above the message media
          */
@@ -73,7 +73,7 @@ declare namespace Telegram {
          * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
          * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
          */
-        thumbnail?: Telegram.InputFile;
+        thumbnail?: tgTypes.InputFile;
         /**
          * _Optional_. Caption of the video to be sent, 0-1024 characters after entities parsing
          */
@@ -86,7 +86,7 @@ declare namespace Telegram {
         /**
          * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
          */
-        caption_entities?: Telegram.MessageEntity[];
+        caption_entities?: tgTypes.MessageEntity[];
         /**
          * _Optional_. Pass True, if the caption must be shown above the message media
          */
@@ -136,7 +136,7 @@ declare namespace Telegram {
          * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
          * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
          */
-        thumbnail?: Telegram.InputFile;
+        thumbnail?: tgTypes.InputFile;
         /**
          * _Optional_. Caption of the animation to be sent, 0-1024 characters after entities parsing
          */
@@ -149,7 +149,7 @@ declare namespace Telegram {
         /**
          * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
          */
-        caption_entities?: Telegram.MessageEntity[];
+        caption_entities?: tgTypes.MessageEntity[];
         /**
          * _Optional_. Pass True, if the caption must be shown above the message media
          */
@@ -195,7 +195,7 @@ declare namespace Telegram {
          * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
          * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
          */
-        thumbnail?: Telegram.InputFile;
+        thumbnail?: tgTypes.InputFile;
         /**
          * _Optional_. Caption of the audio to be sent, 0-1024 characters after entities parsing
          */
@@ -208,7 +208,7 @@ declare namespace Telegram {
         /**
          * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
          */
-        caption_entities?: Telegram.MessageEntity[];
+        caption_entities?: tgTypes.MessageEntity[];
         /**
          * _Optional_. Duration of the audio in seconds
          */
@@ -246,7 +246,7 @@ declare namespace Telegram {
          * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
          * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
          */
-        thumbnail?: Telegram.InputFile;
+        thumbnail?: tgTypes.InputFile;
         /**
          * _Optional_. Caption of the document to be sent, 0-1024 characters after entities parsing
          */
@@ -259,7 +259,7 @@ declare namespace Telegram {
         /**
          * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
          */
-        caption_entities?: Telegram.MessageEntity[];
+        caption_entities?: tgTypes.MessageEntity[];
         /**
          * _Optional_. Disables automatic server-side content type detection for files uploaded using multipart/form-data.
          * Always True, if the document is sent as part of an album.
@@ -282,8 +282,8 @@ declare namespace Telegram {
      * [InputPaidMedia - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inputpaidmedia)
      */
     type InputPaidMedia =
-        Telegram.InputPaidMediaPhoto
-        | Telegram.InputPaidMediaVideo;
+        tgTypes.InputPaidMediaPhoto
+        | tgTypes.InputPaidMediaVideo;
 
     /**
      * The paid media to send is a photo.
@@ -326,7 +326,7 @@ declare namespace Telegram {
          * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
          * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
          */
-        thumbnail?: Telegram.InputFile;
+        thumbnail?: tgTypes.InputFile;
         /**
          * _Optional_. Video width
          */
