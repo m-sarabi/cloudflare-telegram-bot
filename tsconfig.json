@@ -30,7 +30,7 @@
 		// "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
 		// "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
 		// "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
-		// "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@available_types`. */
+		// "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */
 		"types": [
 			"@cloudflare/workers-types/2023-07-01"
 		] /* Specify type package names to be included without being referenced in a source file. */,
@@ -53,7 +53,7 @@
 		// "removeComments": true,                           /* Disable emitting comments. */
 		"noEmit": true /* Disable emitting files from a compilation. */,
 		// "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
-		// "importsNotUsedAsValues": "remove",               /* Specify emit/checking behavior for imports that are only used for available_types */
+		// "importsNotUsedAsValues": "remove",               /* Specify emit/checking behavior for imports that are only used for types */
 		// "downlevelIteration": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. */
 		// "sourceRoot": "",                                 /* Specify the root path for debuggers to find the reference source code. */
 		// "mapRoot": "",                                    /* Specify the location where debugger should locate map files instead of generated locations. */
@@ -87,7 +87,7 @@
 		// "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. */
 		// "noUnusedLocals": true,                           /* Enable error reporting when a local variables aren't read. */
 		// "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read */
-		// "exactOptionalPropertyTypes": true,               /* Interpret optional property available_types as written, rather than adding 'undefined'. */
+		// "exactOptionalPropertyTypes": true,               /* Interpret optional property types as written, rather than adding 'undefined'. */
 		// "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
 		// "noFallthroughCasesInSwitch": true,               /* Enable error reporting for fallthrough cases in switch statements. */
 		// "noUncheckedIndexedAccess": true,                 /* Include 'undefined' in index signature results */

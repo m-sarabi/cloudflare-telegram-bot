@@ -107,7 +107,7 @@ declare namespace Telegram {
          */
         google_place_id?: string;
         /**
-         * _Optional_. Google Places type of the venue. (See [supported available_types](https://developers.google.com/places/web-service/supported_types).)
+         * _Optional_. Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)
          */
         google_place_type?: string;
     }
