@@ -83,11 +83,11 @@ declare namespace Telegram {
          */
         date: number;
         /**
-         * Previous list of reaction types that were set by the user
+         * Previous list of reaction available_types that were set by the user
          */
         old_reaction: Telegram.ReactionType[];
         /**
-         * New list of reaction types that have been set by the user
+         * New list of reaction available_types that have been set by the user
          */
         new_reaction: Telegram.ReactionType[];
     }
