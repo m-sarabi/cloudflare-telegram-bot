@@ -145,4 +145,24 @@ declare namespace Telegram {
          */
         photos: Telegram.PhotoSize[][];
     }
+
+    /**
+     * Describes the birthdate of a user.
+     *
+     * [Birthdate - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#birthdate)
+     */
+    interface Birthdate {
+        /**
+         * Day of the user's birth; 1-31
+         */
+        day: number;
+        /**
+         * Month of the user's birth; 1-12
+         */
+        month: number;
+        /**
+         * _Optional_. Year of the user's birth
+         */
+        year?: number;
+    }
 }
