@@ -872,4 +872,148 @@ declare namespace Telegram {
          */
         address: string;
     }
+
+    /**
+     * This object describes the source of a chat boost.
+     *
+     * [ChatBoostSource - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#chatboostsource)
+     */
+    type ChatBoostSource =
+        Telegram.ChatBoostSourcePremium
+        | Telegram.ChatBoostSourceGiftCode
+        | Telegram.ChatBoostSourceGiveaway
+
+    /**
+     * The boost was obtained by subscribing to Telegram Premium or by gifting a Telegram Premium subscription to another user.
+     *
+     * [ChatBoostSourcePremium - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#chatboostsourcepremium)
+     */
+    interface ChatBoostSourcePremium {
+        /**
+         * Source of the boost, always “premium”
+         */
+        source: 'premium';
+        /**
+         * User that boosted the chat
+         */
+        user: Telegram.User;
+    }
+
+    /**
+     * The boost was obtained by the creation of Telegram Premium gift codes to boost a chat.
+     * Each such code boosts the chat 4 times for the duration of the corresponding Telegram Premium subscription.
+     *
+     * [ChatBoostSourceGiftCode - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#chatboostsourcegiftcode)
+     */
+    interface ChatBoostSourceGiftCode {
+        /**
+         * Source of the boost, always “gift_code”
+         */
+        source: 'gift_code';
+        /**
+         * User for which the gift code was created
+         */
+        user: Telegram.User;
+    }
+
+    /**
+     * The boost was obtained by the creation of a Telegram Premium giveaway.
+     * This boosts the chat 4 times for the duration of the corresponding Telegram Premium subscription.
+     *
+     * [ChatBoostSourceGiveaway - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#chatboostsourcegiveaway)
+     */
+    interface ChatBoostSourceGiveaway {
+        /**
+         * Source of the boost, always “giveaway”
+         */
+        source: 'giveaway';
+        /**
+         * Identifier of a message in the chat with the giveaway; the message could have been deleted already. May be 0 if the message isn't sent yet.
+         */
+        giveaway_message_id: number;
+        /**
+         * _Optional_. User that won the prize in the giveaway if any
+         */
+        user?: Telegram.User;
+        /**
+         * _Optional_. True, if the giveaway was completed, but there was no user to win the prize
+         */
+        is_unclaimed?: true;
+    }
+
+    /**
+     * This object contains information about a chat boost.
+     *
+     * [ChatBoost - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#chatboost)
+     */
+    interface ChatBoost {
+        /**
+         * Unique identifier of the boost
+         */
+        boost_id: string;
+        /**
+         * Point in time (Unix timestamp) when the chat was boosted
+         */
+        add_date: number;
+        /**
+         * Point in time (Unix timestamp) when the boost will automatically expire, unless the booster's Telegram Premium subscription is prolonged
+         */
+        expiration_date: number;
+        /**
+         * Source of the added boost
+         */
+        source: Telegram.ChatBoostSource;
+    }
+
+    /**
+     * This object represents a boost added to a chat or changed.
+     *
+     * [ChatBoostUpdated - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#chatboostupdated)
+     */
+    interface ChatBoostUpdated {
+        /**
+         * Chat which was boosted
+         */
+        chat: Telegram.Chat;
+        /**
+         * Information about the chat boost
+         */
+        boost: Telegram.ChatBoost;
+    }
+
+    /**
+     * This object represents a boost removed from a chat.
+     *
+     * [ChatBoostRemoved - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#chatboostremoved)
+     */
+    interface ChatBoostRemoved {
+        /**
+         * Chat which was boosted
+         */
+        chat: Telegram.Chat;
+        /**
+         * Unique identifier of the boost
+         */
+        boost_id: string;
+        /**
+         * Point in time (Unix timestamp) when the boost was removed
+         */
+        remove_date: number;
+        /**
+         * Source of the removed boost
+         */
+        source: Telegram.ChatBoostSource;
+    }
+
+    /**
+     * This object represents a list of boosts added to a chat by a user.
+     *
+     * [UserChatBoosts - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#userchatboosts)
+     */
+    interface UserChatBoosts {
+        /**
+         * The list of boosts added to the chat by the user
+         */
+        boosts: Telegram.ChatBoost[];
+    }
 }
