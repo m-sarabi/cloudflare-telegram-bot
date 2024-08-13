@@ -1,5 +1,5 @@
 import { getEnv } from '../envManagar';
-import { apiUrl } from '../index';
+import { apiUrl } from './lib/utils';
 
 export async function setWebhook(url: URL, suffix: string) {
     const webhookUrl = `${url.protocol}//${url.hostname}${suffix}`;

@@ -1,3 +1,4 @@
+// message example
 {
   "update_id": 280542860,
   "message": {
@@ -21,3 +22,10 @@
     "text": "test"
   }
 }
+
+//webhook response example
+//{
+//    "ok": true,
+//    "result": true,
+//    "description": "Webhook is already set"
+//}

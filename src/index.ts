@@ -1,4 +1,4 @@
-import { setEnv, getEnv } from './envManagar';
+import { setEnv } from './envManagar';
 import { setWebhook, unsetWebhook, handleWebhook } from './telegram/webhook';
 
 // use `npm run cf-typegen` to regenerate `worker-configuration.d.ts`
@@ -27,10 +27,3 @@ export default {
         }
     }
 } satisfies ExportedHandler<Env>;
-
-export function apiUrl(methodName: string, params?: Record<string, any>) {
-    const token = getEnv().TOKEN;
-    const query = params ? `?${new URLSearchParams(params).toString()}` : '';
-
-    return `https://api.telegram.org/bot${token}/${methodName}${query}`;
-}
