@@ -1,9 +1,9 @@
 import { getEnv } from '../envManagar';
-import { apiUrl } from './lib/utils';
+import { apiUrl, response } from './lib/utils';
 
 export async function setWebhook(url: URL, suffix: string) {
     const webhookUrl = `${url.protocol}//${url.hostname}${suffix}`;
-    const response: any = await (await (fetch(apiUrl('setWebhook', {
+    const response: response = await (await (fetch(apiUrl('setWebhook', {
         url: webhookUrl,
         secret_token: getEnv().SECRET
     })))).json();
@@ -12,7 +12,7 @@ export async function setWebhook(url: URL, suffix: string) {
 }
 
 export async function unsetWebhook() {
-    const response: any = await (await (fetch(apiUrl('setWebhook', { url: '' })))).json();
+    const response: response = await (await (fetch(apiUrl('setWebhook', { url: '' })))).json();
     return new Response(JSON.stringify(response, null, 2));
 }
 
@@ -27,5 +27,7 @@ export async function handleWebhook(request: Request): Promise<Response> {
 }
 
 async function onUpdate(update: Telegram.Update) {
-    console.log(update);
+    if (update.message) {
+        console.log(update.message);
+    }
 }
