@@ -558,4 +558,150 @@ export namespace tg {
             reply_markup
         });
     }
+
+    /**
+     * Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound).
+     * Bots can currently send animation files of up to 50 MB in size, this limit may be changed in the future.
+     *
+     * [sendAnimation - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendanimation)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param animation >- Animation to send. Pass a file_id as String to send an animation that exists on the Telegram servers (recommended),
+     * pass an HTTP URL as a String for Telegram to get an animation from the Internet, or upload a new animation using multipart/form-data.
+     * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
+     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [duration] >- Duration of sent animation in seconds
+     * @param [width] >- Animation width
+     * @param [height] >- Animation height
+     * @param [thumbnail] >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
+     * The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320.
+     * Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file,
+     * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
+     * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
+     * @param [caption] >- Animation caption (may also be used when resending animation by file_id), 0-1024 characters after entities parsing
+     * @param [parse_mode] >- Mode for parsing entities in the animation caption.
+     * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
+     * @param [caption_entities] >- A JSON-serialized list of special entities that appear in the caption,
+     * which can be specified instead of parse_mode
+     * @param [show_caption_above_media] >- Pass True, if the caption must be shown above the message media
+     * @param [has_spoiler] >- Pass True if the animation needs to be covered with a spoiler animation
+     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * Users will receive a notification with no sound.
+     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] >- Description of the message to reply to
+     * @param [reply_markup]
+     * >- Additional interface options. A JSON-serialized object for an
+     * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
+     * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
+     * >  - instructions to remove a reply keyboard or to force a reply from the user
+     * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
+     */
+    export async function sendAnimation(
+        chat_id: number | string,
+        animation: tgTypes.InputFile | string,
+        business_connection_id?: string,
+        message_thread_id?: number,
+        duration?: number,
+        width?: number,
+        height?: number,
+        thumbnail?: tgTypes.InputFile | string,
+        caption?: string,
+        parse_mode?: string,
+        caption_entities?: tgTypes.MessageEntity[],
+        show_caption_above_media?: boolean,
+        has_spoiler?: boolean,
+        disable_notification?: boolean,
+        protect_content?: boolean,
+        message_effect_id?: string,
+        reply_parameters?: tgTypes.ReplyParameters,
+        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
+    ): Promise<tgTypes.Message> {
+        return await callApi('sendAnimation', {
+            chat_id,
+            animation,
+            business_connection_id,
+            message_thread_id,
+            duration,
+            width,
+            height,
+            thumbnail,
+            caption,
+            parse_mode,
+            caption_entities: JSON.stringify(caption_entities),
+            show_caption_above_media,
+            has_spoiler,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        });
+    }
+
+    /**
+     * Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message.
+     * For this to work, your audio must be in an .OGG file encoded with OPUS, or in .MP3 format, or in .M4A format
+     * (other formats may be sent as [Audio](https://core.telegram.org/bots/api#audio)
+     * or [Document](https://core.telegram.org/bots/api#document)).
+     * Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future.
+     *
+     * [sendVoice - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendvoice)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param voice >- Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended),
+     * pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data.
+     * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
+     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [caption] >- Voice message caption, 0-1024 characters after entities parsing
+     * @param [parse_mode] >- Mode for parsing entities in the voice message caption.
+     * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
+     * @param [caption_entities] >- A JSON-serialized list of special entities that appear in the caption,
+     * which can be specified instead of parse_mode
+     * @param [duration] >- Duration of the voice message in seconds
+     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * Users will receive a notification with no sound.
+     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] >- Description of the message to reply to
+     * @param [reply_markup]
+     * >- Additional interface options. A JSON-serialized object for an
+     * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
+     * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
+     * >  - instructions to remove a reply keyboard or to force a reply from the user
+     * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
+     */
+    export async function sendVoice(
+        chat_id: number | string,
+        voice: tgTypes.InputFile | string,
+        business_connection_id?: string,
+        message_thread_id?: number,
+        caption?: string,
+        parse_mode?: string,
+        caption_entities?: tgTypes.MessageEntity[],
+        duration?: number,
+        disable_notification?: boolean,
+        protect_content?: boolean,
+        message_effect_id?: string,
+        reply_parameters?: tgTypes.ReplyParameters,
+        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
+    ): Promise<tgTypes.Message> {
+        return await callApi('sendVoice', {
+            chat_id,
+            voice,
+            business_connection_id,
+            message_thread_id,
+            caption,
+            parse_mode,
+            caption_entities: JSON.stringify(caption_entities),
+            duration,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        });
+    }
 }
