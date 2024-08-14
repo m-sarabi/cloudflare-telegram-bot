@@ -1281,4 +1281,24 @@ export namespace tg {
             limit
         });
     }
+
+    /**
+     * Use this method to get basic information about a file and prepare it for downloading.
+     * For the moment, bots can download files of up to 20MB in size.
+     * The file can then be downloaded via the link `https://api.telegram.org/file/bot<token>/<file_path>`,
+     * where `<file_path>` is taken from the response. It is guaranteed that the link will be valid for at least 1 hour.
+     * When the link expires, a new one can be requested by calling [getFile](https://core.telegram.org/bots/api#getfile) again.
+     *
+     * [getFile - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getfile)
+     *
+     * @param file_id >- File identifier to get information about
+     * @returns >- On success, a [File](https://core.telegram.org/bots/api#file) object is returned.
+     */
+    export async function getFile(
+        file_id: string
+    ): Promise<tgTypes.File> {
+        return await callApi('getFile', {
+            file_id
+        });
+    }
 }
