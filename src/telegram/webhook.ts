@@ -33,11 +33,11 @@ async function onUpdate(update: tgTypes.Update) {
         if (message.text === 'text') {
             const botInto = await tg.getMe();
             const reaction: tgTypes.ReactionTypeEmoji = { type: 'emoji', emoji: '🫡' };
-            const result = await tg.setMessageReaction(
-                message.chat.id,
-                message.message_id,
-                [reaction]
-            );
+            const result = await tg.setMessageReaction({
+                chat_id: message.chat.id,
+                message_id: message.message_id,
+                reaction: [reaction]
+            });
             console.log(botInto.username, result);
 
         }
