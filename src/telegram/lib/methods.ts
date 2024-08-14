@@ -767,4 +767,62 @@ export namespace tg {
             reply_markup
         });
     }
+
+    /**
+     * Use this method to send paid media.
+     *
+     * [sendPaidMedia - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendpaidmedia)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).
+     * If the chat is a channel, all Telegram Star proceeds from this media will be credited to the chat's balance.
+     * Otherwise, they will be credited to the bot's balance.
+     * @param star_count >- The number of Telegram Stars that must be paid to buy access to the media
+     * @param media >- A JSON-serialized array describing the media to be sent; up to 10 items
+     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [caption] >- Media caption, 0-1024 characters after entities parsing
+     * @param [parse_mode] >- Mode for parsing entities in the media caption.
+     * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
+     * @param [caption_entities] >- A JSON-serialized list of special entities that appear in the caption,
+     * which can be specified instead of parse_mode
+     * @param [show_caption_above_media] >- Pass True, if the caption must be shown above the message media
+     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * Users will receive a notification with no sound.
+     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
+     * @param [reply_parameters] >- Description of the message to reply to
+     * @param [reply_markup]
+     * >- Additional interface options. A JSON-serialized object for an
+     * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
+     * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
+     * >  - instructions to remove a reply keyboard or to force a reply from the user
+     * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
+     */
+    export async function sendPaidMedia(
+        chat_id: number | string,
+        star_count: number,
+        media: tgTypes.InputPaidMedia[],
+        business_connection_id?: string,
+        caption?: string,
+        parse_mode?: string,
+        caption_entities?: tgTypes.MessageEntity[],
+        show_caption_above_media?: boolean,
+        disable_notification?: boolean,
+        protect_content?: boolean,
+        reply_parameters?: tgTypes.ReplyParameters,
+        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
+    ): Promise<tgTypes.Message> {
+        return await callApi('sendPaidMedia', {
+            chat_id,
+            star_count,
+            media,
+            business_connection_id,
+            caption,
+            parse_mode,
+            caption_entities: JSON.stringify(caption_entities),
+            show_caption_above_media,
+            disable_notification,
+            protect_content,
+            reply_parameters,
+            reply_markup
+        });
+    }
 }
