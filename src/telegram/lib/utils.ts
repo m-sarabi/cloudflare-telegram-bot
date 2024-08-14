@@ -14,9 +14,12 @@ export function apiUrl(methodName: string, params?: Record<string, any>) {
 }
 
 export async function callApi(methodName: string, params?: Record<string, any>) {
+    if (params) {
+        params = Object.fromEntries(Object.entries(params).filter(([_, v]) => v !== undefined && v !== null));
+    }
     const response: response = await (await fetch(apiUrl(methodName, params))).json();
     if (!response.ok) {
-
+        console.log(response);
     } else {
         return response.result;
     }
