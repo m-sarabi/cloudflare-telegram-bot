@@ -100,7 +100,8 @@ export namespace tg {
      * [forwardMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#forwardmessage)
      *
      * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param from_chat_id >- Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`)
+     * @param from_chat_id >- Unique identifier for the chat where the original message was sent
+     * (or channel username in the format `@channelusername`)
      * @param message_id >- Message identifier in the chat specified in from_chat_id
      * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
      * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
@@ -133,7 +134,8 @@ export namespace tg {
      * [forwardMessages - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#forwardmessages)
      *
      * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param from_chat_id >- Unique identifier for the chat where the original messages were sent (or channel username in the format `@channelusername`)
+     * @param from_chat_id >- Unique identifier for the chat where the original messages were sent
+     * (or channel username in the format `@channelusername`)
      * @param message_ids >- A JSON-serialized list of 1-100 identifiers of messages in the chat from_chat_id to forward.
      * The identifiers must be specified in a strictly increasing order.
      * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
@@ -170,7 +172,8 @@ export namespace tg {
      * [copyMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#copymessage)
      *
      * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param from_chat_id >- Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`)
+     * @param from_chat_id >- Unique identifier for the chat where the original message was sent
+     * (or channel username in the format `@channelusername`)
      * @param message_id >- Message identifier in the chat specified in from_chat_id
      * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
      * @param [caption] >- New caption for media, 0-1024 characters after entities parsing. If not specified, the original caption is kept
@@ -218,6 +221,47 @@ export namespace tg {
             protect_content,
             reply_parameters,
             reply_markup
+        });
+    }
+
+    /**
+     * Use this method to copy messages of any kind. If some of the specified messages can't be found or copied, they are skipped.
+     * Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied.
+     * A quiz [poll](https://core.telegram.org/bots/api#poll) can be copied only if the value of the field correct_option_id is known to the bot.
+     * The method is analogous to the method [forwardMessages](https://core.telegram.org/bots/api#forwardmessages),
+     * but the copied messages don't have a link to the original message. Album grouping is kept for copied messages.
+     *
+     * [copyMessages - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#copymessages)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param from_chat_id >- Unique identifier for the chat where the original messages were sent
+     * (or channel username in the format `@channelusername`)
+     * @param message_ids >- A JSON-serialized list of 1-100 identifiers of messages in the chat from_chat_id to copy.
+     * The identifiers must be specified in a strictly increasing order.
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [disable_notification] >- Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * Users will receive a notification with no sound.
+     * @param [protect_content] >- Protects the contents of the sent messages from forwarding and saving
+     * @param [remove_caption] >- Pass True to copy the messages without their captions
+     * @returns >- On success, an array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.
+     */
+    export async function copyMessages(
+        chat_id: number | string,
+        from_chat_id: number | string,
+        message_ids: number[],
+        message_thread_id?: number,
+        disable_notification?: boolean,
+        protect_content?: boolean,
+        remove_caption?: boolean
+    ): Promise<tgTypes.MessageId[]> {
+        return await callApi('copyMessages', {
+            chat_id,
+            from_chat_id,
+            message_ids: JSON.stringify(message_ids),
+            message_thread_id,
+            disable_notification,
+            protect_content,
+            remove_caption
         });
     }
 }
