@@ -927,4 +927,71 @@ export namespace tg {
             reply_markup
         });
     }
+
+    /**
+     * Use this method to send information about a venue.
+     *
+     * [sendVenue - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendvenue)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param latitude >- Latitude of the venue
+     * @param longitude >- Longitude of the venue
+     * @param title >- Name of the venue
+     * @param address >- Address of the venue
+     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [foursquare_id] >- Foursquare identifier of the venue
+     * @param [foursquare_type] >- Foursquare type of the venue, if known.
+     * (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)
+     * @param [google_place_id] >- Google Places identifier of the venue
+     * @param [google_place_type] >- Google Places type of the venue.
+     * (See [supported types](https://developers.google.com/places/web-service/supported_types).)
+     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * Users will receive a notification with no sound.
+     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] >- Description of the message to reply to
+     * @param [reply_markup] >- Additional interface options. A JSON-serialized object for an
+     * [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
+     * [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
+     * instructions to remove a reply keyboard or to force a reply from the user
+     * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
+     */
+    export async function sendVenue(
+        chat_id: number | string,
+        latitude: number,
+        longitude: number,
+        title: string,
+        address: string,
+        business_connection_id?: string,
+        message_thread_id?: number,
+        foursquare_id?: string,
+        foursquare_type?: string,
+        google_place_id?: string,
+        google_place_type?: string,
+        disable_notification?: boolean,
+        protect_content?: boolean,
+        message_effect_id?: string,
+        reply_parameters?: tgTypes.ReplyParameters,
+        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
+    ): Promise<tgTypes.Message> {
+        return await callApi('sendVenue', {
+            chat_id,
+            latitude,
+            longitude,
+            title,
+            address,
+            business_connection_id,
+            message_thread_id,
+            foursquare_id,
+            foursquare_type,
+            google_place_id,
+            google_place_type,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        });
+    }
 }
