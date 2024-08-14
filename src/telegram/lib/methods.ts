@@ -1140,4 +1140,39 @@ export namespace tg {
             reply_markup: JSON.stringify(reply_markup)
         });
     }
+
+    /**
+     * Use this method when you need to tell the user that something is happening on the bot's side.
+     * The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status).
+     *
+     * [sendChatAction - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendchataction)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param action
+     * >- Type of action to broadcast. Choose one, depending on what the user is about to receive:
+     * >  - typing for [text messages](https://core.telegram.org/bots/api#sendmessage),
+     * >  - upload_photo for [photos](https://core.telegram.org/bots/api#sendphoto),
+     * >  - record_video or upload_video for [videos](https://core.telegram.org/bots/api#sendvideo),
+     * >  - record_voice or upload_voice for [voice notes](https://core.telegram.org/bots/api#sendvoice),
+     * >  - upload_document for [general files](https://core.telegram.org/bots/api#senddocument),
+     * >  - choose_sticker for [stickers](https://core.telegram.org/bots/api#sendsticker),
+     * >  - find_location for [location data](https://core.telegram.org/bots/api#sendlocation),
+     * >  - record_video_note or upload_video_note for [video notes](https://core.telegram.org/bots/api#sendvideonote).
+     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the action will be sent
+     * @param [message_thread_id] >- Unique identifier for the target message thread; for supergroups only
+     * @returns >- Returns True on success.
+     */
+    export async function sendChatAction(
+        chat_id: number | string,
+        action: string,
+        business_connection_id?: string,
+        message_thread_id?: number,
+    ): Promise<boolean> {
+        return await callApi('sendChatAction', {
+            chat_id,
+            action,
+            business_connection_id,
+            message_thread_id,
+        });
+    }
 }
