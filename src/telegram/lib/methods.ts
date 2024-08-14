@@ -1142,6 +1142,53 @@ export namespace tg {
     }
 
     /**
+     * Use this method to send an animated emoji that will display a random value.
+     *
+     * [sendDice - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#senddice)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [emoji] >- Emoji on which the dice throw animation is based.
+     * Currently, must be one of “🎲”, “🎯”, “🏀”, “⚽”, “🎳”, or “🎰”.
+     * Dice can have values 1-6 for “🎲”, “🎯” and “🎳”, values 1-5 for “🏀” and “⚽”, and values 1-64 for “🎰”. Defaults to “🎲”
+     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * Users will receive a notification with no sound.
+     * @param [protect_content] >- Protects the contents of the sent message from forwarding
+     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] >- Description of the message to reply to
+     * @param [reply_markup]
+     * >- Additional interface options. A JSON-serialized object for an
+     * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
+     * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
+     * >  - instructions to remove a reply keyboard or to force a reply from the user
+     * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
+     */
+    export async function sendDice(
+        chat_id: number | string,
+        business_connection_id?: string,
+        message_thread_id?: number,
+        emoji?: string,
+        disable_notification?: boolean,
+        protect_content?: boolean,
+        message_effect_id?: string,
+        reply_parameters?: tgTypes.ReplyParameters,
+        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
+    ): Promise<tgTypes.Message> {
+        return await callApi('sendDice', {
+            chat_id,
+            business_connection_id,
+            message_thread_id,
+            emoji,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
+        });
+    }
+
+    /**
      * Use this method when you need to tell the user that something is happening on the bot's side.
      * The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status).
      *
@@ -1172,13 +1219,13 @@ export namespace tg {
         chat_id: number | string,
         action: string,
         business_connection_id?: string,
-        message_thread_id?: number,
+        message_thread_id?: number
     ): Promise<boolean> {
         return await callApi('sendChatAction', {
             chat_id,
             action,
             business_connection_id,
-            message_thread_id,
+            message_thread_id
         });
     }
 }
