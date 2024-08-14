@@ -85,11 +85,11 @@ export namespace tg {
             message_thread_id,
             parse_mode,
             entities: JSON.stringify(entities),
-            link_preview_options,
+            link_preview_options: JSON.stringify(link_preview_options),
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters,
+            reply_parameters: JSON.stringify(reply_parameters),
             reply_markup: JSON.stringify(reply_markup)
         });
     }
@@ -219,8 +219,8 @@ export namespace tg {
             show_caption_above_media,
             disable_notification,
             protect_content,
-            reply_parameters,
-            reply_markup
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
         });
     }
 
@@ -325,8 +325,8 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters,
-            reply_markup
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
         });
     }
 
@@ -400,8 +400,8 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters,
-            reply_markup
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
         });
     }
 
@@ -469,8 +469,8 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters,
-            reply_markup
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
         });
     }
 
@@ -554,8 +554,8 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters,
-            reply_markup
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
         });
     }
 
@@ -635,8 +635,8 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters,
-            reply_markup
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
         });
     }
 
@@ -700,8 +700,8 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters,
-            reply_markup
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
         });
     }
 
@@ -763,8 +763,8 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters,
-            reply_markup
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
         });
     }
 
@@ -813,7 +813,7 @@ export namespace tg {
         return await callApi('sendPaidMedia', {
             chat_id,
             star_count,
-            media,
+            media: JSON.stringify(media),
             business_connection_id,
             caption,
             parse_mode,
@@ -821,8 +821,8 @@ export namespace tg {
             show_caption_above_media,
             disable_notification,
             protect_content,
-            reply_parameters,
-            reply_markup
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
         });
     }
 
@@ -861,7 +861,7 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters
+            reply_parameters: JSON.stringify(reply_parameters)
         });
     }
 
@@ -923,8 +923,8 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters,
-            reply_markup
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
         });
     }
 
@@ -990,8 +990,8 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters,
-            reply_markup
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
         });
     }
 }
