@@ -825,4 +825,43 @@ export namespace tg {
             reply_markup
         });
     }
+
+    /**
+     * Use this method to send a group of photos, videos, documents or audios as an album.
+     * Documents and audio files can be only grouped in an album with messages of the same type.
+     *
+     * [sendMediaGroup - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendmediagroup)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param media >- A JSON-serialized array describing messages to be sent, must include 2-10 items
+     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [disable_notification] >- Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * Users will receive a notification with no sound.
+     * @param [protect_content] >- Protects the contents of the sent messages from forwarding and saving
+     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] >- Description of the message to reply to
+     * @returns >- On success, an array of [Messages](https://core.telegram.org/bots/api#message) that were sent is returned.
+     */
+    export async function sendMediaGroup(
+        chat_id: number | string,
+        media: (tgTypes.InputMediaAudio | tgTypes.InputMediaDocument | tgTypes.InputMediaPhoto | tgTypes.InputMediaVideo)[],
+        business_connection_id?: string,
+        message_thread_id?: number,
+        disable_notification?: boolean,
+        protect_content?: boolean,
+        message_effect_id?: string,
+        reply_parameters?: tgTypes.ReplyParameters
+    ): Promise<tgTypes.Message[]> {
+        return await callApi('sendMediaGroup', {
+            chat_id,
+            media: JSON.stringify(media),
+            business_connection_id,
+            message_thread_id,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters
+        });
+    }
 }
