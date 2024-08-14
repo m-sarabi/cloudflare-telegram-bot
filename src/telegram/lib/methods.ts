@@ -864,4 +864,67 @@ export namespace tg {
             reply_parameters
         });
     }
+
+    /**
+     * Use this method to send point on the map.
+     *
+     * [sendLocation - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendlocation)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param latitude >- Latitude of the location
+     * @param longitude >- Longitude of the location
+     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [horizontal_accuracy] >- The radius of uncertainty for the location, measured in meters; 0-1500
+     * @param [live_period] >- Period in seconds during which the location will be updated
+     * (see [Live Locations](https://telegram.org/blog/live-locations),
+     * should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.
+     * @param [heading] >- For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.
+     * @param [proximity_alert_radius] >- For live locations, a maximum distance for proximity alerts about approaching another chat member,
+     * in meters. Must be between 1 and 100000 if specified.
+     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * Users will receive a notification with no sound.
+     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] >- Description of the message to reply to
+     * @param [reply_markup]
+     * >- Additional interface options. A JSON-serialized object for an
+     * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
+     * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
+     * >  - instructions to remove a reply keyboard or to force a reply from the user
+     * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
+     */
+    export async function sendLocation(
+        chat_id: number | string,
+        latitude: number,
+        longitude: number,
+        business_connection_id?: string,
+        message_thread_id?: number,
+        horizontal_accuracy?: number,
+        live_period?: number,
+        heading?: number,
+        proximity_alert_radius?: number,
+        disable_notification?: boolean,
+        protect_content?: boolean,
+        message_effect_id?: string,
+        reply_parameters?: tgTypes.ReplyParameters,
+        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
+    ): Promise<tgTypes.Message> {
+        return await callApi('sendLocation', {
+            chat_id,
+            latitude,
+            longitude,
+            business_connection_id,
+            message_thread_id,
+            horizontal_accuracy,
+            live_period,
+            heading,
+            proximity_alert_radius,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        });
+    }
 }
