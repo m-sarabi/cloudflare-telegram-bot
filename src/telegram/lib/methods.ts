@@ -212,7 +212,7 @@ export namespace tg {
             message_thread_id,
             caption,
             parse_mode,
-            caption_entities,
+            caption_entities: JSON.stringify(caption_entities),
             show_caption_above_media,
             disable_notification,
             protect_content,
