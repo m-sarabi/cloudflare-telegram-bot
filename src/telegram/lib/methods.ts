@@ -704,4 +704,67 @@ export namespace tg {
             reply_markup
         });
     }
+
+    /**
+     * As of [v.4.0](https://telegram.org/blog/video-messages-and-telescope),
+     * Telegram clients support rounded square MPEG4 videos of up to 1 minute long.
+     * Use this method to send video messages.
+     *
+     * [sendVideoNote - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendvideonote)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param video_note >- Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers
+     * (recommended) or upload a new video using multipart/form-data.
+     * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files).
+     * Sending video notes by a URL is currently unsupported
+     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [duration] >- Duration of sent video in seconds
+     * @param [length] >- Video width and height, i.e. diameter of the video message
+     * @param [thumbnail] >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
+     * The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320.
+     * Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file,
+     * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
+     * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
+     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * Users will receive a notification with no sound.
+     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] >- Description of the message to reply to
+     * @param [reply_markup]
+     * >- Additional interface options. A JSON-serialized object for an
+     * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
+     * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
+     * >  - instructions to remove a reply keyboard or to force a reply from the user
+     * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
+     */
+    export async function sendVideoNote(
+        chat_id: number | string,
+        video_note: tgTypes.InputFile | string,
+        business_connection_id?: string,
+        message_thread_id?: number,
+        duration?: number,
+        length?: number,
+        thumbnail?: tgTypes.InputFile | string,
+        disable_notification?: boolean,
+        protect_content?: boolean,
+        message_effect_id?: string,
+        reply_parameters?: tgTypes.ReplyParameters,
+        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
+    ): Promise<tgTypes.Message> {
+        return await callApi('sendVideoNote', {
+            chat_id,
+            video_note,
+            business_connection_id,
+            message_thread_id,
+            duration,
+            length,
+            thumbnail,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        });
+    }
 }
