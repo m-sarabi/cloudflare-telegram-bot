@@ -1250,13 +1250,35 @@ export namespace tg {
         chat_id: number | string,
         message_id: number,
         reaction?: tgTypes.ReactionType[],
-        is_big?: boolean,
+        is_big?: boolean
     ): Promise<boolean> {
         return await callApi('setMessageReaction', {
             chat_id,
             message_id,
             reaction: JSON.stringify(reaction),
-            is_big,
+            is_big
+        });
+    }
+
+    /**
+     * Use this method to get a list of profile pictures for a user.
+     *
+     * [getUserProfilePhotos - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getuserprofilephotos)
+     *
+     * @param user_id >- Unique identifier of the target user
+     * @param [offset] >- Sequential number of the first photo to be returned. By default, all photos are returned.
+     * @param [limit] >- Limits the number of photos to be retrieved. Values between 1-100 are accepted. Defaults to 100.
+     * @returns >- Returns a [UserProfilePhotos](https://core.telegram.org/bots/api#userprofilephotos) object.
+     */
+    export async function getUserProfilePhotos(
+        user_id: number,
+        offset?: number,
+        limit?: number
+    ): Promise<tgTypes.UserProfilePhotos> {
+        return await callApi('getUserProfilePhotos', {
+            user_id,
+            offset,
+            limit
         });
     }
 }
