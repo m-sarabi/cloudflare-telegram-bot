@@ -6,7 +6,7 @@ export namespace tg {
      *
      * [getMe - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getme)
      *
-     * @returns basic information about the bot in form of a [User](https://core.telegram.org/bots/api#user) object.
+     * @returns >- basic information about the bot in form of a [User](https://core.telegram.org/bots/api#user) object.
      */
     export async function getMe(): Promise<tgTypes.User> {
         return await callApi('getMe');
@@ -20,7 +20,7 @@ export namespace tg {
      *
      * [logOut - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#logout)
      *
-     * @returns true on success
+     * @returns >- true on success
      */
     export async function logOut(): Promise<boolean> {
         return await callApi('logOut');
@@ -33,7 +33,7 @@ export namespace tg {
      *
      * [close - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#close)
      *
-     * @returns true on success
+     * @returns >- true on success
      */
     export async function close(): Promise<boolean> {
         return await callApi('close');
@@ -44,24 +44,25 @@ export namespace tg {
      *
      * [sendMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendmessage)
      *
-     * @param chat_id Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param text Text of the message to be sent, 1-4096 characters after entities parsing
-     * @param [business_connection_id] Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [parse_mode] Mode for parsing entities in the message text.
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param text >- Text of the message to be sent, 1-4096 characters after entities parsing
+     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [parse_mode] >- Mode for parsing entities in the message text.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
-     * @param [entities] A JSON-serialized list of special entities that appear in message text, which can be specified instead of parse_mode
-     * @param [link_preview_options] Link preview generation options for the message
-     * @param [disable_notification] Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [entities] >- A JSON-serialized list of special entities that appear in message text, which can be specified instead of parse_mode
+     * @param [link_preview_options] >- Link preview generation options for the message
+     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] Description of the message to reply to
-     * @param [reply_markup] Additional interface options. A JSON-serialized object for an
-     * [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
-     * [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
-     * instructions to remove a reply keyboard or to force a reply from the user
-     * @returns On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
+     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] >- Description of the message to reply to
+     * @param [reply_markup]
+     * >- Additional interface options. A JSON-serialized object for an
+     * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
+     * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
+     * >  - instructions to remove a reply keyboard or to force a reply from the user
+     * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendMessage(
         chat_id: number | string,
@@ -98,14 +99,14 @@ export namespace tg {
      *
      * [forwardMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#forwardmessage)
      *
-     * @param chat_id Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param from_chat_id Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`)
-     * @param message_id Message identifier in the chat specified in from_chat_id
-     * @param [message_thread_id] Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [disable_notification] Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param from_chat_id >- Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`)
+     * @param message_id >- Message identifier in the chat specified in from_chat_id
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] Protects the contents of the forwarded message from forwarding and saving
-     * @returns On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned
+     * @param [protect_content] >- Protects the contents of the forwarded message from forwarding and saving
+     * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned
      */
     export async function forwardMessage(
         chat_id: number | string,
@@ -131,15 +132,15 @@ export namespace tg {
      *
      * [forwardMessages - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#forwardmessages)
      *
-     * @param chat_id Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param from_chat_id Unique identifier for the chat where the original messages were sent (or channel username in the format `@channelusername`)
-     * @param message_ids A JSON-serialized list of 1-100 identifiers of messages in the chat from_chat_id to forward.
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param from_chat_id >- Unique identifier for the chat where the original messages were sent (or channel username in the format `@channelusername`)
+     * @param message_ids >- A JSON-serialized list of 1-100 identifiers of messages in the chat from_chat_id to forward.
      * The identifiers must be specified in a strictly increasing order.
-     * @param [message_thread_id] Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [disable_notification] Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [disable_notification] >- Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] Protects the contents of the forwarded messages from forwarding and saving
-     * @returns  On success, an array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.
+     * @param [protect_content] >- Protects the contents of the forwarded messages from forwarding and saving
+     * @returns >- On success, an array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.
      */
     export async function forwardMessages(
         chat_id: number | string,
