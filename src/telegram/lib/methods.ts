@@ -994,4 +994,58 @@ export namespace tg {
             reply_markup: JSON.stringify(reply_markup)
         });
     }
+
+    /**
+     * Use this method to send phone contacts.
+     *
+     * [sendContact - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendcontact)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param phone_number >- Contact's phone number
+     * @param first_name >- Contact's first name
+     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [last_name] >- Contact's last name
+     * @param [vcard] >- Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes
+     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * Users will receive a notification with no sound.
+     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] >- Description of the message to reply to
+     * @param [reply_markup]
+     * >- Additional interface options. A JSON-serialized object for an
+     * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
+     * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
+     * >  - instructions to remove a reply keyboard or to force a reply from the user
+     * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
+     */
+    export async function sendContact(
+        chat_id: number | string,
+        phone_number: string,
+        first_name: string,
+        business_connection_id?: string,
+        message_thread_id?: number,
+        last_name?: string,
+        vcard?: string,
+        disable_notification?: boolean,
+        protect_content?: boolean,
+        message_effect_id?: string,
+        reply_parameters?: tgTypes.ReplyParameters,
+        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
+    ): Promise<tgTypes.Message> {
+        return await callApi('sendContact', {
+            chat_id,
+            phone_number,
+            first_name,
+            business_connection_id,
+            message_thread_id,
+            last_name,
+            vcard,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters: JSON.stringify(reply_parameters),
+            reply_markup: JSON.stringify(reply_markup)
+        });
+    }
 }
