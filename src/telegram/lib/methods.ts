@@ -1145,6 +1145,12 @@ export namespace tg {
      * Use this method when you need to tell the user that something is happening on the bot's side.
      * The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status).
      *
+     * > Example: The ImageBot needs some time to process a request and upload the image.
+     * > Instead of sending a text message along the lines of “Retrieving image, please wait…”,
+     * > the bot may use sendChatAction with action = upload_photo. The user will see a “sending photo” status for the bot.
+     *
+     * We only recommend using this method when a response from the bot will take a **noticeable** amount of time to arrive.
+     *
      * [sendChatAction - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendchataction)
      *
      * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
@@ -1160,7 +1166,7 @@ export namespace tg {
      * >  - record_video_note or upload_video_note for [video notes](https://core.telegram.org/bots/api#sendvideonote).
      * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the action will be sent
      * @param [message_thread_id] >- Unique identifier for the target message thread; for supergroups only
-     * @returns >- Returns True on success.
+     * @returns >- True on success.
      */
     export async function sendChatAction(
         chat_id: number | string,
