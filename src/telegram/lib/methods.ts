@@ -65,19 +65,33 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendMessage(
-        chat_id: number | string,
-        text: string,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        parse_mode?: string,
-        entities?: tgTypes.MessageEntity[],
-        link_preview_options?: tgTypes.LinkPreviewOptions,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            text,
+            business_connection_id,
+            message_thread_id,
+            parse_mode,
+            entities,
+            link_preview_options,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            text: string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            parse_mode?: string;
+            entities?: tgTypes.MessageEntity[];
+            link_preview_options?: tgTypes.LinkPreviewOptions;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendMessage', {
             chat_id,
             text,
@@ -110,13 +124,21 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned
      */
     export async function forwardMessage(
-        chat_id: number | string,
-        from_chat_id: number | string,
-        message_id: number,
-        message_thread_id?: number,
-        disable_notification?: boolean,
-        protect_content?: boolean
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            from_chat_id,
+            message_id,
+            message_thread_id,
+            disable_notification,
+            protect_content
+        }: {
+            chat_id: number | string;
+            from_chat_id: number | string;
+            message_id: number;
+            message_thread_id?: number;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+        }): Promise<tgTypes.Message> {
         return await callApi('forwardMessage', {
             chat_id,
             from_chat_id,
@@ -145,13 +167,21 @@ export namespace tg {
      * @returns >- On success, an array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.
      */
     export async function forwardMessages(
-        chat_id: number | string,
-        from_chat_id: number | string,
-        message_ids: number[],
-        message_thread_id?: number,
-        disable_notification?: boolean,
-        protect_content?: boolean
-    ): Promise<tgTypes.MessageId[]> {
+        {
+            chat_id,
+            from_chat_id,
+            message_ids,
+            message_thread_id,
+            disable_notification,
+            protect_content
+        }: {
+            chat_id: number | string;
+            from_chat_id: number | string;
+            message_ids: number[];
+            message_thread_id?: number;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+        }): Promise<tgTypes.MessageId[]> {
         return await callApi('forwardMessages', {
             chat_id,
             from_chat_id,
@@ -195,18 +225,33 @@ export namespace tg {
      * @returns >- the [MessageId](https://core.telegram.org/bots/api#messageid) of the sent message on success.
      */
     export async function copyMessage(
-        chat_id: number | string,
-        from_chat_id: number | string,
-        message_id: number,
-        message_thread_id?: number,
-        caption?: string,
-        parse_mode?: string,
-        caption_entities?: tgTypes.MessageEntity[],
-        show_caption_above_media?: boolean,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
+        {
+            chat_id,
+            from_chat_id,
+            message_id,
+            message_thread_id,
+            caption,
+            parse_mode,
+            caption_entities,
+            show_caption_above_media,
+            disable_notification,
+            protect_content,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            from_chat_id: number | string;
+            message_id: number;
+            message_thread_id?: number;
+            caption?: string;
+            parse_mode?: string;
+            caption_entities?: tgTypes.MessageEntity[];
+            show_caption_above_media?: boolean;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }
     ): Promise<tgTypes.MessageId> {
         return await callApi('copyMessage', {
             chat_id,
@@ -246,14 +291,23 @@ export namespace tg {
      * @returns >- On success, an array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.
      */
     export async function copyMessages(
-        chat_id: number | string,
-        from_chat_id: number | string,
-        message_ids: number[],
-        message_thread_id?: number,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        remove_caption?: boolean
-    ): Promise<tgTypes.MessageId[]> {
+        {
+            chat_id,
+            from_chat_id,
+            message_ids,
+            message_thread_id,
+            disable_notification,
+            protect_content,
+            remove_caption
+        }: {
+            chat_id: number | string;
+            from_chat_id: number | string;
+            message_ids: number[];
+            message_thread_id?: number;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            remove_caption?: boolean;
+        }): Promise<tgTypes.MessageId[]> {
         return await callApi('copyMessages', {
             chat_id,
             from_chat_id,
@@ -297,21 +351,37 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendPhoto(
-        chat_id: number | string,
-        photo: tgTypes.InputFile | string,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        caption?: string,
-        parse_mode?: string,
-        caption_entities?: tgTypes.MessageEntity[],
-        show_caption_above_media?: boolean,
-        has_spoiler?: boolean,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            photo,
+            business_connection_id,
+            message_thread_id,
+            caption,
+            parse_mode,
+            caption_entities,
+            show_caption_above_media,
+            has_spoiler,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            photo: tgTypes.InputFile | string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            caption?: string;
+            parse_mode?: string;
+            caption_entities?: tgTypes.MessageEntity[];
+            show_caption_above_media?: boolean;
+            has_spoiler?: boolean;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendPhoto', {
             chat_id,
             photo,
@@ -369,23 +439,41 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendAudio(
-        chat_id: number | string,
-        audio: tgTypes.InputFile | string,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        caption?: string,
-        parse_mode?: string,
-        caption_entities?: tgTypes.MessageEntity[],
-        duration?: number,
-        performer?: string,
-        title?: string,
-        thumbnail?: tgTypes.InputFile | string,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            audio,
+            business_connection_id,
+            message_thread_id,
+            caption,
+            parse_mode,
+            caption_entities,
+            duration,
+            performer,
+            title,
+            thumbnail,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            audio: tgTypes.InputFile | string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            caption?: string;
+            parse_mode?: string;
+            caption_entities?: tgTypes.MessageEntity[];
+            duration?: number;
+            performer?: string;
+            title?: string;
+            thumbnail?: tgTypes.InputFile | string;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendAudio', {
             chat_id,
             audio,
@@ -442,21 +530,37 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendDocument(
-        chat_id: number | string,
-        document: tgTypes.InputFile | string,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        thumbnail?: tgTypes.InputFile | string,
-        caption?: string,
-        parse_mode?: string,
-        caption_entities?: tgTypes.MessageEntity[],
-        disable_content_type_detection?: boolean,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            document,
+            business_connection_id,
+            message_thread_id,
+            thumbnail,
+            caption,
+            parse_mode,
+            caption_entities,
+            disable_content_type_detection,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            document: tgTypes.InputFile | string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            thumbnail?: tgTypes.InputFile | string;
+            caption?: string;
+            parse_mode?: string;
+            caption_entities?: tgTypes.MessageEntity[];
+            disable_content_type_detection?: boolean;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendDocument', {
             chat_id,
             document,
@@ -517,26 +621,47 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendVideo(
-        chat_id: number | string,
-        video: tgTypes.InputFile | string,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        duration?: number,
-        width?: number,
-        height?: number,
-        thumbnail?: tgTypes.InputFile | string,
-        caption?: string,
-        parse_mode?: string,
-        caption_entities?: tgTypes.MessageEntity[],
-        show_caption_above_media?: boolean,
-        has_spoiler?: boolean,
-        supports_streaming?: boolean,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            video,
+            business_connection_id,
+            message_thread_id,
+            duration,
+            width,
+            height,
+            thumbnail,
+            caption,
+            parse_mode,
+            caption_entities,
+            show_caption_above_media,
+            has_spoiler,
+            supports_streaming,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            video: tgTypes.InputFile | string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            duration?: number;
+            width?: number;
+            height?: number;
+            thumbnail?: tgTypes.InputFile | string;
+            caption?: string;
+            parse_mode?: string;
+            caption_entities?: tgTypes.MessageEntity[];
+            show_caption_above_media?: boolean;
+            has_spoiler?: boolean;
+            supports_streaming?: boolean;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendVideo', {
             chat_id,
             video,
@@ -600,25 +725,45 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendAnimation(
-        chat_id: number | string,
-        animation: tgTypes.InputFile | string,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        duration?: number,
-        width?: number,
-        height?: number,
-        thumbnail?: tgTypes.InputFile | string,
-        caption?: string,
-        parse_mode?: string,
-        caption_entities?: tgTypes.MessageEntity[],
-        show_caption_above_media?: boolean,
-        has_spoiler?: boolean,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            animation,
+            business_connection_id,
+            message_thread_id,
+            duration,
+            width,
+            height,
+            thumbnail,
+            caption,
+            parse_mode,
+            caption_entities,
+            show_caption_above_media,
+            has_spoiler,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            animation: tgTypes.InputFile | string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            duration?: number;
+            width?: number;
+            height?: number;
+            thumbnail?: tgTypes.InputFile | string;
+            caption?: string;
+            parse_mode?: string;
+            caption_entities?: tgTypes.MessageEntity[];
+            show_caption_above_media?: boolean;
+            has_spoiler?: boolean;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendAnimation', {
             chat_id,
             animation,
@@ -675,20 +820,35 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendVoice(
-        chat_id: number | string,
-        voice: tgTypes.InputFile | string,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        caption?: string,
-        parse_mode?: string,
-        caption_entities?: tgTypes.MessageEntity[],
-        duration?: number,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            voice,
+            business_connection_id,
+            message_thread_id,
+            caption,
+            parse_mode,
+            caption_entities,
+            duration,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            voice: tgTypes.InputFile | string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            caption?: string;
+            parse_mode?: string;
+            caption_entities?: tgTypes.MessageEntity[];
+            duration?: number;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendVoice', {
             chat_id,
             voice,
@@ -740,19 +900,33 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendVideoNote(
-        chat_id: number | string,
-        video_note: tgTypes.InputFile | string,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        duration?: number,
-        length?: number,
-        thumbnail?: tgTypes.InputFile | string,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            video_note,
+            business_connection_id,
+            message_thread_id,
+            duration,
+            length,
+            thumbnail,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            video_note: tgTypes.InputFile | string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            duration?: number;
+            length?: number;
+            thumbnail?: tgTypes.InputFile | string;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendVideoNote', {
             chat_id,
             video_note,
@@ -798,19 +972,33 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendPaidMedia(
-        chat_id: number | string,
-        star_count: number,
-        media: tgTypes.InputPaidMedia[],
-        business_connection_id?: string,
-        caption?: string,
-        parse_mode?: string,
-        caption_entities?: tgTypes.MessageEntity[],
-        show_caption_above_media?: boolean,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            star_count,
+            media,
+            business_connection_id,
+            caption,
+            parse_mode,
+            caption_entities,
+            show_caption_above_media,
+            disable_notification,
+            protect_content,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            star_count: number;
+            media: tgTypes.InputPaidMedia[];
+            business_connection_id?: string;
+            caption?: string;
+            parse_mode?: string;
+            caption_entities?: tgTypes.MessageEntity[];
+            show_caption_above_media?: boolean;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendPaidMedia', {
             chat_id,
             star_count,
@@ -845,15 +1033,25 @@ export namespace tg {
      * @returns >- On success, an array of [Messages](https://core.telegram.org/bots/api#message) that were sent is returned.
      */
     export async function sendMediaGroup(
-        chat_id: number | string,
-        media: (tgTypes.InputMediaAudio | tgTypes.InputMediaDocument | tgTypes.InputMediaPhoto | tgTypes.InputMediaVideo)[],
-        business_connection_id?: string,
-        message_thread_id?: number,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters
-    ): Promise<tgTypes.Message[]> {
+        {
+            chat_id,
+            media,
+            business_connection_id,
+            message_thread_id,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters
+        }: {
+            chat_id: number | string;
+            media: (tgTypes.InputMediaAudio | tgTypes.InputMediaDocument | tgTypes.InputMediaPhoto | tgTypes.InputMediaVideo)[];
+            business_connection_id?: string;
+            message_thread_id?: number;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+        }): Promise<tgTypes.Message[]> {
         return await callApi('sendMediaGroup', {
             chat_id,
             media: JSON.stringify(media),
@@ -896,21 +1094,37 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendLocation(
-        chat_id: number | string,
-        latitude: number,
-        longitude: number,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        horizontal_accuracy?: number,
-        live_period?: number,
-        heading?: number,
-        proximity_alert_radius?: number,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            latitude,
+            longitude,
+            business_connection_id,
+            message_thread_id,
+            horizontal_accuracy,
+            live_period,
+            heading,
+            proximity_alert_radius,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            latitude: number;
+            longitude: number;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            horizontal_accuracy?: number;
+            live_period?: number;
+            heading?: number;
+            proximity_alert_radius?: number;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendLocation', {
             chat_id,
             latitude,
@@ -959,23 +1173,41 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendVenue(
-        chat_id: number | string,
-        latitude: number,
-        longitude: number,
-        title: string,
-        address: string,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        foursquare_id?: string,
-        foursquare_type?: string,
-        google_place_id?: string,
-        google_place_type?: string,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            latitude,
+            longitude,
+            title,
+            address,
+            business_connection_id,
+            message_thread_id,
+            foursquare_id,
+            foursquare_type,
+            google_place_id,
+            google_place_type,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            latitude: number;
+            longitude: number;
+            title: string;
+            address: string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            foursquare_id?: string;
+            foursquare_type?: string;
+            google_place_id?: string;
+            google_place_type?: string;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendVenue', {
             chat_id,
             latitude,
@@ -1021,19 +1253,33 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendContact(
-        chat_id: number | string,
-        phone_number: string,
-        first_name: string,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        last_name?: string,
-        vcard?: string,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            phone_number,
+            first_name,
+            business_connection_id,
+            message_thread_id,
+            last_name,
+            vcard,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            phone_number: string;
+            first_name: string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            last_name?: string;
+            vcard?: string;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendContact', {
             chat_id,
             phone_number,
@@ -1092,29 +1338,53 @@ export namespace tg {
      * @returns >-  On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendPoll(
-        chat_id: number | string,
-        question: string,
-        options: tgTypes.InputPollOption[],
-        business_connection_id?: string,
-        message_thread_id?: number,
-        question_parse_mode?: string,
-        question_entities?: tgTypes.MessageEntity[],
-        is_anonymous?: boolean,
-        type?: string,
-        allows_multiple_answers?: boolean,
-        correct_option_id?: number,
-        explanation?: string,
-        explanation_parse_mode?: string,
-        explanation_entities?: tgTypes.MessageEntity[],
-        open_period?: number,
-        close_date?: number,
-        is_closed?: boolean,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            question,
+            options,
+            business_connection_id,
+            message_thread_id,
+            question_parse_mode,
+            question_entities,
+            is_anonymous,
+            type,
+            allows_multiple_answers,
+            correct_option_id,
+            explanation,
+            explanation_parse_mode,
+            explanation_entities,
+            open_period,
+            close_date,
+            is_closed,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            question: string;
+            options: tgTypes.InputPollOption[];
+            business_connection_id?: string;
+            message_thread_id?: number;
+            question_parse_mode?: string;
+            question_entities?: tgTypes.MessageEntity[];
+            is_anonymous?: boolean;
+            type?: string;
+            allows_multiple_answers?: boolean;
+            correct_option_id?: number;
+            explanation?: string;
+            explanation_parse_mode?: string;
+            explanation_entities?: tgTypes.MessageEntity[];
+            open_period?: number;
+            close_date?: number;
+            is_closed?: boolean;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendPoll', {
             chat_id,
             question,
@@ -1165,16 +1435,27 @@ export namespace tg {
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.
      */
     export async function sendDice(
-        chat_id: number | string,
-        business_connection_id?: string,
-        message_thread_id?: number,
-        emoji?: string,
-        disable_notification?: boolean,
-        protect_content?: boolean,
-        message_effect_id?: string,
-        reply_parameters?: tgTypes.ReplyParameters,
-        reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply
-    ): Promise<tgTypes.Message> {
+        {
+            chat_id,
+            business_connection_id,
+            message_thread_id,
+            emoji,
+            disable_notification,
+            protect_content,
+            message_effect_id,
+            reply_parameters,
+            reply_markup
+        }: {
+            chat_id: number | string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+            emoji?: string;
+            disable_notification?: boolean;
+            protect_content?: boolean;
+            message_effect_id?: string;
+            reply_parameters?: tgTypes.ReplyParameters;
+            reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
+        }): Promise<tgTypes.Message> {
         return await callApi('sendDice', {
             chat_id,
             business_connection_id,
@@ -1216,11 +1497,17 @@ export namespace tg {
      * @returns >- True on success.
      */
     export async function sendChatAction(
-        chat_id: number | string,
-        action: string,
-        business_connection_id?: string,
-        message_thread_id?: number
-    ): Promise<boolean> {
+        {
+            chat_id,
+            action,
+            business_connection_id,
+            message_thread_id
+        }: {
+            chat_id: number | string;
+            action: string;
+            business_connection_id?: string;
+            message_thread_id?: number;
+        }): Promise<boolean> {
         return await callApi('sendChatAction', {
             chat_id,
             action,
@@ -1247,11 +1534,17 @@ export namespace tg {
      * @returns >- Returns True on success.
      */
     export async function setMessageReaction(
-        chat_id: number | string,
-        message_id: number,
-        reaction?: tgTypes.ReactionType[],
-        is_big?: boolean
-    ): Promise<boolean> {
+        {
+            chat_id,
+            message_id,
+            reaction,
+            is_big
+        }: {
+            chat_id: number | string;
+            message_id: number;
+            reaction?: tgTypes.ReactionType[];
+            is_big?: boolean;
+        }): Promise<boolean> {
         return await callApi('setMessageReaction', {
             chat_id,
             message_id,
@@ -1271,10 +1564,15 @@ export namespace tg {
      * @returns >- Returns a [UserProfilePhotos](https://core.telegram.org/bots/api#userprofilephotos) object.
      */
     export async function getUserProfilePhotos(
-        user_id: number,
-        offset?: number,
-        limit?: number
-    ): Promise<tgTypes.UserProfilePhotos> {
+        {
+            user_id,
+            offset,
+            limit
+        }: {
+            user_id: number;
+            offset?: number;
+            limit?: number;
+        }): Promise<tgTypes.UserProfilePhotos> {
         return await callApi('getUserProfilePhotos', {
             user_id,
             offset,
@@ -1295,8 +1593,11 @@ export namespace tg {
      * @returns >- On success, a [File](https://core.telegram.org/bots/api#file) object is returned.
      */
     export async function getFile(
-        file_id: string
-    ): Promise<tgTypes.File> {
+        {
+            file_id
+        }: {
+            file_id: string;
+        }): Promise<tgTypes.File> {
         return await callApi('getFile', {
             file_id
         });
@@ -1321,16 +1622,22 @@ export namespace tg {
      * @returns >- Returns True on success.
      */
     export async function banChatMember(
-        chat_id: number | string,
-        user_id: number,
-        until_date?: number,
-        revoke_messages?: boolean,
-    ): Promise<boolean> {
+        {
+            chat_id,
+            user_id,
+            until_date,
+            revoke_messages
+        }: {
+            chat_id: number | string;
+            user_id: number;
+            until_date?: number;
+            revoke_messages?: boolean;
+        }): Promise<boolean> {
         return await callApi('banChatMember', {
             chat_id,
             user_id,
             until_date,
-            revoke_messages,
+            revoke_messages
         });
     }
 
@@ -1350,14 +1657,19 @@ export namespace tg {
      * @returns >- Returns True on success.
      */
     export async function unbanChatMember(
-        chat_id: number | string,
-        user_id: number,
-        only_if_banned?: boolean,
-    ): Promise<boolean> {
+        {
+            chat_id,
+            user_id,
+            only_if_banned
+        }: {
+            chat_id: number | string;
+            user_id: number;
+            only_if_banned?: boolean;
+        }): Promise<boolean> {
         return await callApi('unbanChatMember', {
             chat_id,
             user_id,
-            only_if_banned,
+            only_if_banned
         });
     }
 }
