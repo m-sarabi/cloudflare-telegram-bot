@@ -6,7 +6,8 @@ declare namespace tgTypes {
      */
     type ReactionType =
         ReactionTypeEmoji
-        | ReactionTypeCustomEmoji;
+        | ReactionTypeCustomEmoji
+        | ReactionTypePaid;
 
     /**
      * The reaction is based on an emoji.
@@ -38,6 +39,18 @@ declare namespace tgTypes {
          * Custom emoji identifier
          */
         custom_emoji_id: string;
+    }
+
+    /**
+     * The reaction is paid.
+     *
+     * [ReactionTypePaid - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#reactiontypepaid)
+     */
+    interface ReactionTypePaid {
+        /**
+         * Type of the reaction, always “paid”
+         */
+        type: 'paid';
     }
 
     /**

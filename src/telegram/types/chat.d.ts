@@ -639,6 +639,10 @@ declare namespace tgTypes {
          * Information about the user
          */
         user: tgTypes.User;
+        /**
+         * Optional. Date when the user's subscription will expire; Unix time
+         */
+        until_date?: number;
     }
 
     /**
