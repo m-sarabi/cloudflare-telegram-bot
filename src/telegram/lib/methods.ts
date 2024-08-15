@@ -3084,4 +3084,25 @@ export namespace tg {
             chat_id,
         });
     }
+
+    /**
+     * Use this method to unhide the 'General' topic in a forum supergroup chat.
+     * The bot must be an administrator in the chat for this to work and must have the can_manage_topics administrator rights.
+     *
+     * [unhideGeneralForumTopic - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#unhidegeneralforumtopic)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+     * @returns >- true on success.
+     */
+    export async function unhideGeneralForumTopic(
+        {
+            chat_id,
+        }: {
+            chat_id: number | string;
+        }): Promise<boolean> {
+        return await callApi('unhideGeneralForumTopic', {
+            chat_id,
+        });
+    }
 }
