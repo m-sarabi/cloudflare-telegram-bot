@@ -3172,4 +3172,31 @@ export namespace tg {
             cache_time,
         });
     }
+
+    /**
+     * Use this method to get the list of boosts added to a chat by a user. Requires administrator rights in the chat.
+     *
+     * [getUserChatBoosts - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getuserchatboosts)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the chat or username of the channel (in the format `@channelusername`)
+     * @param user_id `Required`
+     * >- Unique identifier of the target user
+     * @returns >- a [UserChatBoosts](https://core.telegram.org/bots/api#userchatboosts) object.
+     */
+    export async function getUserChatBoosts(
+        {
+            chat_id,
+            user_id,
+        }: {
+            chat_id: number | string;
+            user_id: number;
+        }): Promise<tgTypes.UserChatBoosts> {
+        return await callApi('getUserChatBoosts', {
+            chat_id,
+            user_id,
+        });
+    }
+
+
 }
