@@ -2656,4 +2656,141 @@ export namespace tg {
             chat_id,
         });
     }
+
+    /**
+     * Use this method to get up-to-date information about the chat.
+     *
+     * [getChat - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getchat)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)
+     * @returns >- a [ChatFullInfo](https://core.telegram.org/bots/api#chatfullinfo) object on success.
+     */
+    export async function getChat(
+        {
+            chat_id,
+        }: {
+            chat_id: number | string;
+        }): Promise<tgTypes.ChatFullInfo> {
+        return await callApi('getChat', {
+            chat_id,
+        });
+    }
+
+    /**
+     * Use this method to get a list of administrators in a chat, which aren't bots.
+     *
+     * [getChatAdministrators - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getchatadministrators)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)
+     * @returns >- an Array of [ChatMember](https://core.telegram.org/bots/api#chatmember) objects.
+     */
+    export async function getChatAdministrators(
+        {
+            chat_id,
+        }: {
+            chat_id: number | string;
+        }): Promise<tgTypes.ChatMember> {
+        return await callApi('getChatAdministrators', {
+            chat_id,
+        });
+    }
+
+    /**
+     * Use this method to get the number of members in a chat.
+     *
+     * [getChatMemberCount - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getchatmembercount)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)
+     * @returns >- the number of members in the chat on success.
+     */
+    export async function getChatMemberCount(
+        {
+            chat_id,
+        }: {
+            chat_id: number | string;
+        }): Promise<number> {
+        return await callApi('getChatMemberCount', {
+            chat_id,
+        });
+    }
+
+    /**
+     * Use this method to get information about a member of a chat.
+     * The method is only guaranteed to work for other users if the bot is an administrator in the chat.
+     *
+     * [getChatMember - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getchatmember)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)
+     * @param user_id `Required`
+     * >- Unique identifier of the target user
+     * @returns >- a [ChatMember](https://core.telegram.org/bots/api#chatmember) object on success.
+     */
+    export async function getChatMember(
+        {
+            chat_id,
+            user_id,
+        }: {
+            chat_id: number | string;
+            user_id: number;
+        }): Promise<tgTypes.ChatMember> {
+        return await callApi('getChatMember', {
+            chat_id,
+            user_id,
+        });
+    }
+
+    /**
+     * Use this method to set a new group sticker set for a supergroup.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
+     * Use the field can_set_sticker_set optionally returned in [getChat](https://core.telegram.org/bots/api#getchat)
+     * requests to check if the bot can use this method.
+     *
+     * [setChatStickerSet - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setchatstickerset)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+     * @param sticker_set_name `Required`
+     * >- Name of the sticker set to be set as the group sticker set
+     * @returns >- true on success.
+     */
+    export async function setChatStickerSet(
+        {
+            chat_id,
+            sticker_set_name,
+        }: {
+            chat_id: number | string;
+            sticker_set_name: string;
+        }): Promise<boolean> {
+        return await callApi('setChatStickerSet', {
+            chat_id,
+            sticker_set_name,
+        });
+    }
+
+    /**
+     * Use this method to delete a group sticker set from a supergroup.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
+     * Use the field can_set_sticker_set optionally returned in [getChat](https://core.telegram.org/bots/api#getchat)
+     * requests to check if the bot can use this method.
+     *
+     * [deleteChatStickerSet - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#deletechatstickerset)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+     * @returns >- true on success.
+     */
+    export async function deleteChatStickerSet(
+        {
+            chat_id,
+        }: {
+            chat_id: number | string;
+        }): Promise<boolean> {
+        return await callApi('deleteChatStickerSet', {
+            chat_id,
+        });
+    }
 }
