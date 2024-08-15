@@ -88,7 +88,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             text: string;
@@ -115,7 +115,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -147,7 +147,7 @@ export namespace tg {
             message_id,
             message_thread_id,
             disable_notification,
-            protect_content
+            protect_content,
         }: {
             chat_id: number | string;
             from_chat_id: number | string;
@@ -162,7 +162,7 @@ export namespace tg {
             message_id,
             message_thread_id,
             disable_notification,
-            protect_content
+            protect_content,
         });
     }
 
@@ -196,7 +196,7 @@ export namespace tg {
             message_ids,
             message_thread_id,
             disable_notification,
-            protect_content
+            protect_content,
         }: {
             chat_id: number | string;
             from_chat_id: number | string;
@@ -211,7 +211,7 @@ export namespace tg {
             message_ids: JSON.stringify(message_ids),
             message_thread_id,
             disable_notification,
-            protect_content
+            protect_content,
         });
     }
 
@@ -271,7 +271,7 @@ export namespace tg {
             disable_notification,
             protect_content,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             from_chat_id: number | string;
@@ -285,7 +285,7 @@ export namespace tg {
             protect_content?: boolean;
             reply_parameters?: tgTypes.ReplyParameters;
             reply_markup?: tgTypes.InlineKeyboardMarkup | tgTypes.ReplyKeyboardMarkup | tgTypes.ReplyKeyboardRemove | tgTypes.ForceReply;
-        }
+        },
     ): Promise<tgTypes.MessageId> {
         return await callApi('copyMessage', {
             chat_id,
@@ -299,7 +299,7 @@ export namespace tg {
             disable_notification,
             protect_content,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -339,7 +339,7 @@ export namespace tg {
             message_thread_id,
             disable_notification,
             protect_content,
-            remove_caption
+            remove_caption,
         }: {
             chat_id: number | string;
             from_chat_id: number | string;
@@ -356,7 +356,7 @@ export namespace tg {
             message_thread_id,
             disable_notification,
             protect_content,
-            remove_caption
+            remove_caption,
         });
     }
 
@@ -419,7 +419,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             photo: tgTypes.InputFile | string;
@@ -450,7 +450,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -524,7 +524,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             audio: tgTypes.InputFile | string;
@@ -559,7 +559,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -626,7 +626,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             document: tgTypes.InputFile | string;
@@ -657,7 +657,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -740,7 +740,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             video: tgTypes.InputFile | string;
@@ -781,7 +781,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -860,7 +860,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             animation: tgTypes.InputFile | string;
@@ -899,7 +899,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -962,7 +962,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             voice: tgTypes.InputFile | string;
@@ -991,7 +991,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -1052,7 +1052,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             video_note: tgTypes.InputFile | string;
@@ -1079,7 +1079,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -1135,7 +1135,7 @@ export namespace tg {
             disable_notification,
             protect_content,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             star_count: number;
@@ -1162,7 +1162,7 @@ export namespace tg {
             disable_notification,
             protect_content,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -1200,7 +1200,7 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters
+            reply_parameters,
         }: {
             chat_id: number | string;
             media: (tgTypes.InputMediaAudio | tgTypes.InputMediaDocument | tgTypes.InputMediaPhoto | tgTypes.InputMediaVideo)[];
@@ -1219,7 +1219,7 @@ export namespace tg {
             disable_notification,
             protect_content,
             message_effect_id,
-            reply_parameters: JSON.stringify(reply_parameters)
+            reply_parameters: JSON.stringify(reply_parameters),
         });
     }
 
@@ -1280,7 +1280,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             latitude: number;
@@ -1311,7 +1311,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -1377,7 +1377,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             latitude: number;
@@ -1412,7 +1412,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -1464,7 +1464,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             phone_number: string;
@@ -1491,7 +1491,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -1580,7 +1580,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             question: string;
@@ -1627,7 +1627,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -1672,7 +1672,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters,
-            reply_markup
+            reply_markup,
         }: {
             chat_id: number | string;
             business_connection_id?: string;
@@ -1693,7 +1693,7 @@ export namespace tg {
             protect_content,
             message_effect_id,
             reply_parameters: JSON.stringify(reply_parameters),
-            reply_markup: JSON.stringify(reply_markup)
+            reply_markup: JSON.stringify(reply_markup),
         });
     }
 
@@ -1732,7 +1732,7 @@ export namespace tg {
             chat_id,
             action,
             business_connection_id,
-            message_thread_id
+            message_thread_id,
         }: {
             chat_id: number | string;
             action: string;
@@ -1743,7 +1743,7 @@ export namespace tg {
             chat_id,
             action,
             business_connection_id,
-            message_thread_id
+            message_thread_id,
         });
     }
 
@@ -1773,7 +1773,7 @@ export namespace tg {
             chat_id,
             message_id,
             reaction,
-            is_big
+            is_big,
         }: {
             chat_id: number | string;
             message_id: number;
@@ -1784,7 +1784,7 @@ export namespace tg {
             chat_id,
             message_id,
             reaction: JSON.stringify(reaction),
-            is_big
+            is_big,
         });
     }
 
@@ -1805,7 +1805,7 @@ export namespace tg {
         {
             user_id,
             offset,
-            limit
+            limit,
         }: {
             user_id: number;
             offset?: number;
@@ -1814,7 +1814,7 @@ export namespace tg {
         return await callApi('getUserProfilePhotos', {
             user_id,
             offset,
-            limit
+            limit,
         });
     }
 
@@ -1833,12 +1833,12 @@ export namespace tg {
      */
     export async function getFile(
         {
-            file_id
+            file_id,
         }: {
             file_id: string;
         }): Promise<tgTypes.File> {
         return await callApi('getFile', {
-            file_id
+            file_id,
         });
     }
 
@@ -1869,7 +1869,7 @@ export namespace tg {
             chat_id,
             user_id,
             until_date,
-            revoke_messages
+            revoke_messages,
         }: {
             chat_id: number | string;
             user_id: number;
@@ -1880,7 +1880,7 @@ export namespace tg {
             chat_id,
             user_id,
             until_date,
-            revoke_messages
+            revoke_messages,
         });
     }
 
@@ -1906,7 +1906,7 @@ export namespace tg {
         {
             chat_id,
             user_id,
-            only_if_banned
+            only_if_banned,
         }: {
             chat_id: number | string;
             user_id: number;
@@ -1915,7 +1915,7 @@ export namespace tg {
         return await callApi('unbanChatMember', {
             chat_id,
             user_id,
-            only_if_banned
+            only_if_banned,
         });
     }
 
@@ -1948,7 +1948,7 @@ export namespace tg {
             user_id,
             permissions,
             use_independent_chat_permissions,
-            until_date
+            until_date,
         }: {
             chat_id: number | string;
             user_id: number;
@@ -1961,7 +1961,7 @@ export namespace tg {
             user_id,
             permissions: JSON.stringify(permissions),
             use_independent_chat_permissions,
-            until_date
+            until_date,
         });
     }
 
@@ -2029,7 +2029,7 @@ export namespace tg {
             can_post_messages,
             can_edit_messages,
             can_pin_messages,
-            can_manage_topics
+            can_manage_topics,
         }: {
             chat_id: number | string;
             user_id: number;
@@ -2066,7 +2066,7 @@ export namespace tg {
             can_post_messages,
             can_edit_messages,
             can_pin_messages,
-            can_manage_topics
+            can_manage_topics,
         });
     }
 
@@ -2087,7 +2087,7 @@ export namespace tg {
         {
             chat_id,
             user_id,
-            custom_title
+            custom_title,
         }: {
             chat_id: number | string;
             user_id: number;
@@ -2096,7 +2096,7 @@ export namespace tg {
         return await callApi('setChatAdministratorCustomTitle', {
             chat_id,
             user_id,
-            custom_title
+            custom_title,
         });
     }
 
@@ -2117,14 +2117,14 @@ export namespace tg {
     export async function banChatSenderChat(
         {
             chat_id,
-            sender_chat_id
+            sender_chat_id,
         }: {
             chat_id: number | string;
             sender_chat_id: number;
         }): Promise<boolean> {
         return await callApi('banChatSenderChat', {
             chat_id,
-            sender_chat_id
+            sender_chat_id,
         });
     }
 
@@ -2143,14 +2143,14 @@ export namespace tg {
     export async function unbanChatSenderChat(
         {
             chat_id,
-            sender_chat_id
+            sender_chat_id,
         }: {
             chat_id: number | string;
             sender_chat_id: number;
         }): Promise<boolean> {
         return await callApi('unbanChatSenderChat', {
             chat_id,
-            sender_chat_id
+            sender_chat_id,
         });
     }
 
@@ -2175,7 +2175,7 @@ export namespace tg {
         {
             chat_id,
             permissions,
-            use_independent_chat_permissions
+            use_independent_chat_permissions,
         }: {
             chat_id: number | string;
             permissions: tgTypes.ChatPermissions;
@@ -2184,7 +2184,7 @@ export namespace tg {
         return await callApi('setChatPermissions', {
             chat_id,
             permissions: JSON.stringify(permissions),
-            use_independent_chat_permissions
+            use_independent_chat_permissions,
         });
     }
 
@@ -2200,12 +2200,12 @@ export namespace tg {
      */
     export async function exportChatInviteLink(
         {
-            chat_id
+            chat_id,
         }: {
             chat_id: number | string;
         }): Promise<string> {
         return await callApi('exportChatInviteLink', {
-            chat_id
+            chat_id,
         });
     }
 
@@ -2234,7 +2234,7 @@ export namespace tg {
             name,
             expire_date,
             member_limit,
-            creates_join_request
+            creates_join_request,
         }: {
             chat_id: number | string;
             name?: string;
@@ -2247,7 +2247,7 @@ export namespace tg {
             name,
             expire_date,
             member_limit,
-            creates_join_request
+            creates_join_request,
         });
     }
 
@@ -2278,7 +2278,7 @@ export namespace tg {
             name,
             expire_date,
             member_limit,
-            creates_join_request
+            creates_join_request,
         }: {
             chat_id: number | string;
             invite_link: string;
@@ -2293,7 +2293,7 @@ export namespace tg {
             name,
             expire_date,
             member_limit,
-            creates_join_request
+            creates_join_request,
         });
     }
 
@@ -2321,7 +2321,7 @@ export namespace tg {
             chat_id,
             subscription_period,
             subscription_price,
-            name
+            name,
         }: {
             chat_id: number | string;
             subscription_period: number;
@@ -2332,7 +2332,7 @@ export namespace tg {
             chat_id,
             subscription_period,
             subscription_price,
-            name
+            name,
         });
     }
 
@@ -2354,7 +2354,7 @@ export namespace tg {
         {
             chat_id,
             invite_link,
-            name
+            name,
         }: {
             chat_id: number | string;
             invite_link: string;
@@ -2363,7 +2363,7 @@ export namespace tg {
         return await callApi('editChatSubscriptionInviteLink', {
             chat_id,
             invite_link,
-            name
+            name,
         });
     }
 
@@ -2382,14 +2382,14 @@ export namespace tg {
     export async function revokeChatInviteLink(
         {
             chat_id,
-            invite_link
+            invite_link,
         }: {
             chat_id: number | string;
             invite_link: string;
         }): Promise<tgTypes.ChatInviteLink> {
         return await callApi('revokeChatInviteLink', {
             chat_id,
-            invite_link
+            invite_link,
         });
     }
 
@@ -2408,14 +2408,14 @@ export namespace tg {
     export async function approveChatJoinRequest(
         {
             chat_id,
-            user_id
+            user_id,
         }: {
             chat_id: number | string;
             user_id: number;
         }): Promise<boolean> {
         return await callApi('approveChatJoinRequest', {
             chat_id,
-            user_id
+            user_id,
         });
     }
 
@@ -2434,14 +2434,14 @@ export namespace tg {
     export async function declineChatJoinRequest(
         {
             chat_id,
-            user_id
+            user_id,
         }: {
             chat_id: number | string;
             user_id: number;
         }): Promise<boolean> {
         return await callApi('declineChatJoinRequest', {
             chat_id,
-            user_id
+            user_id,
         });
     }
 
@@ -2460,14 +2460,14 @@ export namespace tg {
     export async function setChatPhoto(
         {
             chat_id,
-            photo
+            photo,
         }: {
             chat_id: number | string;
             photo: tgTypes.InputFile;
         }): Promise<boolean> {
         return await callApi('setChatPhoto', {
             chat_id,
-            photo: JSON.stringify(photo)
+            photo: JSON.stringify(photo),
         });
     }
 
@@ -2483,12 +2483,12 @@ export namespace tg {
      */
     export async function deleteChatPhoto(
         {
-            chat_id
+            chat_id,
         }: {
             chat_id: number | string;
         }): Promise<boolean> {
         return await callApi('deleteChatPhoto', {
-            chat_id
+            chat_id,
         });
     }
 
@@ -2507,14 +2507,14 @@ export namespace tg {
     export async function setChatTitle(
         {
             chat_id,
-            title
+            title,
         }: {
             chat_id: number | string;
             title: string;
         }): Promise<boolean> {
         return await callApi('setChatTitle', {
             chat_id,
-            title
+            title,
         });
     }
 
@@ -2533,14 +2533,14 @@ export namespace tg {
     export async function setChatDescription(
         {
             chat_id,
-            description
+            description,
         }: {
             chat_id: number | string;
             description?: string;
         }): Promise<boolean> {
         return await callApi('setChatDescription', {
             chat_id,
-            description
+            description,
         });
     }
 
@@ -2567,7 +2567,7 @@ export namespace tg {
             chat_id,
             message_id,
             business_connection_id,
-            disable_notification
+            disable_notification,
         }: {
             chat_id: number | string;
             message_id: number;
@@ -2578,7 +2578,7 @@ export namespace tg {
             chat_id,
             message_id,
             business_connection_id,
-            disable_notification
+            disable_notification,
         });
     }
 
@@ -2602,7 +2602,7 @@ export namespace tg {
         {
             chat_id,
             business_connection_id,
-            message_id
+            message_id,
         }: {
             chat_id: number | string;
             business_connection_id?: string;
@@ -2611,7 +2611,7 @@ export namespace tg {
         return await callApi('unpinChatMessage', {
             chat_id,
             business_connection_id,
-            message_id
+            message_id,
         });
     }
 
@@ -2628,12 +2628,12 @@ export namespace tg {
      */
     export async function unpinAllChatMessages(
         {
-            chat_id
+            chat_id,
         }: {
             chat_id: number | string;
         }): Promise<boolean> {
         return await callApi('unpinAllChatMessages', {
-            chat_id
+            chat_id,
         });
     }
 }
