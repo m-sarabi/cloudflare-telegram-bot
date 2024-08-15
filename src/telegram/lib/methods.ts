@@ -1,7 +1,9 @@
 import * as availableMethods from './available_methods';
-import * as gettingUpdatesMethods from './getting_updates';
+import * as gettingUpdates from './getting_updates';
+import * as updatingMessages from './updating_messages';
 
 export const tg = {
     ...availableMethods.tg,
-    ...gettingUpdatesMethods.tg,
+    ...gettingUpdates.tg,
+    ...updatingMessages.tg,
 };
