@@ -3250,4 +3250,32 @@ export namespace tg {
             language_code,
         });
     }
+
+    /**
+     * Use this method to delete the list of the bot's commands for the given scope and user language. After deletion,
+     * [higher level commands](https://core.telegram.org/bots/api#determining-list-of-commands) will be shown to affected users.
+     *
+     * [deleteMyCommands - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#deletemycommands)
+     *
+     * @param [scope] `Optional`
+     * >- A JSON-serialized object, describing scope of users for which the commands are relevant.
+     * Defaults to [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault).
+     * @param [language_code] `Optional`
+     * >- A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope,
+     * for whose language there are no dedicated commands
+     * @returns >- true on success.
+     */
+    export async function deleteMyCommands(
+        {
+            scope,
+            language_code,
+        }: {
+            scope?: tgTypes.BotCommandScope;
+            language_code?: string;
+        }): Promise<boolean> {
+        return await callApi('deleteMyCommands', {
+            scope: JSON.stringify(scope),
+            language_code,
+        });
+    }
 }
