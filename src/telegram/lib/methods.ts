@@ -3105,4 +3105,25 @@ export namespace tg {
             chat_id,
         });
     }
+
+    /**
+     * Use this method to clear the list of pinned messages in a General forum topic.
+     * The bot must be an administrator in the chat for this to work and must have the can_pin_messages administrator right in the supergroup.
+     *
+     * [unpinAllGeneralForumTopicMessages - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#unpinallgeneralforumtopicmessages)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+     * @returns >- true on success.
+     */
+    export async function unpinAllGeneralForumTopicMessages(
+        {
+            chat_id,
+        }: {
+            chat_id: number | string;
+        }): Promise<boolean> {
+        return await callApi('unpinAllGeneralForumTopicMessages', {
+            chat_id,
+        });
+    }
 }
