@@ -2793,4 +2793,16 @@ export namespace tg {
             chat_id,
         });
     }
+
+    /**
+     * Use this method to get custom emoji stickers, which can be used as a forum topic icon by any user.
+     * Requires no parameters.
+     *
+     * [getForumTopicIconStickers - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getforumtopiciconstickers)
+     *
+     * @returns >- an Array of [Sticker](https://core.telegram.org/bots/api#sticker) objects.
+     */
+    export async function getForumTopicIconStickers(): Promise<tgTypes.Sticker[]> {
+        return await callApi('getForumTopicIconStickers');
+    }
 }
