@@ -19,7 +19,7 @@ export async function callApi(methodName: string, params?: Record<string, any>) 
     }
     const response: response = await (await fetch(apiUrl(methodName, params))).json();
     if (!response.ok) {
-        console.log(response);
+        throw new Error('API Call Failed:\n' + JSON.stringify(response, null, 2));
     } else {
         return response.result;
     }
