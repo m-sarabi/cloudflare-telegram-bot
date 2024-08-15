@@ -2434,14 +2434,40 @@ export namespace tg {
     export async function declineChatJoinRequest(
         {
             chat_id,
-            user_id,
+            user_id
         }: {
             chat_id: number | string;
             user_id: number;
         }): Promise<boolean> {
         return await callApi('declineChatJoinRequest', {
             chat_id,
-            user_id,
+            user_id
+        });
+    }
+
+    /**
+     * Use this method to set a new profile photo for the chat. Photos can't be changed for private chats.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
+     *
+     * [setChatPhoto - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setchatphoto)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param photo `Required`
+     * >- New chat photo, uploaded using multipart/form-data
+     * @returns >- true on success.
+     */
+    export async function setChatPhoto(
+        {
+            chat_id,
+            photo
+        }: {
+            chat_id: number | string;
+            photo: tgTypes.InputFile;
+        }): Promise<boolean> {
+        return await callApi('setChatPhoto', {
+            chat_id,
+            photo: JSON.stringify(photo)
         });
     }
 }
