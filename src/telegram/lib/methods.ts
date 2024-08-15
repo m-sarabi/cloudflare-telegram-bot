@@ -2187,4 +2187,67 @@ export namespace tg {
             use_independent_chat_permissions
         });
     }
+
+    /**
+     * Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
+     *
+     * [exportChatInviteLink - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#exportchatinvitelink)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @returns >- the new invite link as String on success.
+     */
+    export async function exportChatInviteLink(
+        {
+            chat_id
+        }: {
+            chat_id: number | string;
+        }): Promise<string> {
+        return await callApi('exportChatInviteLink', {
+            chat_id
+        });
+    }
+
+    /**
+     * Use this method to create an additional invite link for a chat.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
+     * The link can be revoked using the method [revokeChatInviteLink](https://core.telegram.org/bots/api#revokechatinvitelink).
+     *
+     * [createChatInviteLink - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#createchatinvitelink)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param [name] `Optional`
+     * >- Invite link name; 0-32 characters
+     * @param [expire_date] `Optional`
+     * >- Point in time (Unix timestamp) when the link will expire
+     * @param [member_limit] `Optional`
+     * >- The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999
+     * @param [creates_join_request] `Optional`
+     * >- True, if users joining the chat via the link need to be approved by chat administrators. If True, member_limit can't be specified
+     * @returns >- the new invite link as [ChatInviteLink](https://core.telegram.org/bots/api#chatinvitelink) object.
+     */
+    export async function createChatInviteLink(
+        {
+            chat_id,
+            name,
+            expire_date,
+            member_limit,
+            creates_join_request
+        }: {
+            chat_id: number | string;
+            name?: string;
+            expire_date?: number;
+            member_limit?: number;
+            creates_join_request?: boolean;
+        }): Promise<tgTypes.ChatInviteLink> {
+        return await callApi('createChatInviteLink', {
+            chat_id,
+            name,
+            expire_date,
+            member_limit,
+            creates_join_request
+        });
+    }
 }
