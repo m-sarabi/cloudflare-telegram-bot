@@ -1973,42 +1973,42 @@ export namespace tg {
      * [promoteChatMember - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#promotechatmember)
      *
      * @param chat_id `Required`
-     >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
      * @param user_id `Required`
-     >- Unique identifier of the target user
+     * >- Unique identifier of the target user
      * @param [is_anonymous] `Optional`
-     >- Pass True if the administrator's presence in the chat is hidden
+     * >- Pass True if the administrator's presence in the chat is hidden
      * @param [can_manage_chat] `Optional`
-     >- Pass True if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members,
-     report spam messages and ignore slow mode. Implied by any other administrator privilege.
+     * >- Pass True if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members,
+     * report spam messages and ignore slow mode. Implied by any other administrator privilege.
      * @param [can_delete_messages] `Optional`
-     >- Pass True if the administrator can delete messages of other users
+     * >- Pass True if the administrator can delete messages of other users
      * @param [can_manage_video_chats] `Optional`
-     >- Pass True if the administrator can manage video chats
+     * >- Pass True if the administrator can manage video chats
      * @param [can_restrict_members] `Optional`
-     >- Pass True if the administrator can restrict, ban or unban chat members, or access supergroup statistics
+     * >- Pass True if the administrator can restrict, ban or unban chat members, or access supergroup statistics
      * @param [can_promote_members] `Optional`
-     >- Pass True if the administrator can add new administrators with a subset of their own privileges
-     or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by him)
+     * >- Pass True if the administrator can add new administrators with a subset of their own privileges
+     * or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by him)
      * @param [can_change_info] `Optional`
-     >- Pass True if the administrator can change chat title, photo and other settings
+     * >- Pass True if the administrator can change chat title, photo and other settings
      * @param [can_invite_users] `Optional`
-     >- Pass True if the administrator can invite new users to the chat
+     * >- Pass True if the administrator can invite new users to the chat
      * @param [can_post_stories] `Optional`
-     >- Pass True if the administrator can post stories to the chat
+     * >- Pass True if the administrator can post stories to the chat
      * @param [can_edit_stories] `Optional`
-     >- Pass True if the administrator can edit stories posted by other users, post stories to the chat page,
-     pin chat stories, and access the chat's story archive
+     * >- Pass True if the administrator can edit stories posted by other users, post stories to the chat page,
+     * pin chat stories, and access the chat's story archive
      * @param [can_delete_stories] `Optional`
-     >- Pass True if the administrator can delete stories posted by other users
+     * >- Pass True if the administrator can delete stories posted by other users
      * @param [can_post_messages] `Optional`
-     >- Pass True if the administrator can post messages in the channel, or access channel statistics; for channels only
+     * >- Pass True if the administrator can post messages in the channel, or access channel statistics; for channels only
      * @param [can_edit_messages] `Optional`
-     >- Pass True if the administrator can edit messages of other users and can pin messages; for channels only
+     * >- Pass True if the administrator can edit messages of other users and can pin messages; for channels only
      * @param [can_pin_messages] `Optional`
-     >- Pass True if the administrator can pin messages; for supergroups only
+     * >- Pass True if the administrator can pin messages; for supergroups only
      * @param [can_manage_topics] `Optional`
-     >- Pass True if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only
+     * >- Pass True if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only
      * @returns >- True on success.
      */
     export async function promoteChatMember(
@@ -2076,11 +2076,11 @@ export namespace tg {
      * [setChatAdministratorCustomTitle - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setchatadministratorcustomtitle)
      *
      * @param chat_id `Required`
-     >- Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+     * >- Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
      * @param user_id `Required`
-     >- Unique identifier of the target user
+     * >- Unique identifier of the target user
      * @param custom_title `Required`
-     >- New custom title for the administrator; 0-16 characters, emoji are not allowed
+     * >- New custom title for the administrator; 0-16 characters, emoji are not allowed
      * @returns >- True on success.
      */
     export async function setChatAdministratorCustomTitle(
@@ -2109,9 +2109,9 @@ export namespace tg {
      * [banChatSenderChat - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#banchatsenderchat)
      *
      * @param chat_id `Required`
-     >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
      * @param sender_chat_id `Required`
-     >- Unique identifier of the target sender chat
+     * >- Unique identifier of the target sender chat
      * @returns >- True on success.
      */
     export async function banChatSenderChat(
@@ -2135,9 +2135,9 @@ export namespace tg {
      * [unbanChatSenderChat - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#unbanchatsenderchat)
      *
      * @param chat_id `Required`
-     >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @param sender_chat_id `Required`
-     >- Unique identifier of the target sender chat
+     * >- Unique identifier of the target sender chat
      * @returns >- True on success.
      */
     export async function unbanChatSenderChat(
@@ -2151,6 +2151,40 @@ export namespace tg {
         return await callApi('unbanChatSenderChat', {
             chat_id,
             sender_chat_id
+        });
+    }
+
+    /**
+     * Use this method to set default chat permissions for all members.
+     * The bot must be an administrator in the group or a supergroup for this to work and must have the can_restrict_members administrator rights.
+     *
+     * [setChatPermissions - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setchatpermissions)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)
+     * @param permissions `Required`
+     * >- A JSON-serialized object for new default chat permissions
+     * @param [use_independent_chat_permissions] `Optional`
+     * >- Pass True if chat permissions are set independently.
+     * Otherwise, the can_send_other_messages and can_add_web_page_previews permissions will imply the can_send_messages,
+     * can_send_audios, can_send_documents, can_send_photos, can_send_videos, can_send_video_notes, and can_send_voice_notes permissions;
+     * the can_send_polls permission will imply the can_send_messages permission.
+     * @returns >- True on success.
+     */
+    export async function setChatPermissions(
+        {
+            chat_id,
+            permissions,
+            use_independent_chat_permissions
+        }: {
+            chat_id: number | string;
+            permissions: tgTypes.ChatPermissions;
+            use_independent_chat_permissions?: boolean;
+        }): Promise<boolean> {
+        return await callApi('setChatPermissions', {
+            chat_id,
+            permissions: JSON.stringify(permissions),
+            use_independent_chat_permissions
         });
     }
 }
