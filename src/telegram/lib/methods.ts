@@ -2121,8 +2121,34 @@ export namespace tg {
         }: {
             chat_id: number | string;
             sender_chat_id: number;
-        }): Promise<aaa> {
+        }): Promise<boolean> {
         return await callApi('banChatSenderChat', {
+            chat_id,
+            sender_chat_id
+        });
+    }
+
+    /**
+     * Use this method to unban a previously banned channel chat in a supergroup or channel.
+     * The bot must be an administrator for this to work and must have the appropriate administrator rights.
+     *
+     * [unbanChatSenderChat - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#unbanchatsenderchat)
+     *
+     * @param chat_id `Required`
+     >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param sender_chat_id `Required`
+     >- Unique identifier of the target sender chat
+     * @returns >- True on success.
+     */
+    export async function unbanChatSenderChat(
+        {
+            chat_id,
+            sender_chat_id
+        }: {
+            chat_id: number | string;
+            sender_chat_id: number;
+        }): Promise<boolean> {
+        return await callApi('unbanChatSenderChat', {
             chat_id,
             sender_chat_id
         });
