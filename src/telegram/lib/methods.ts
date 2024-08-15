@@ -2418,4 +2418,30 @@ export namespace tg {
             user_id
         });
     }
+
+    /**
+     * Use this method to decline a chat join request.
+     * The bot must be an administrator in the chat for this to work and must have the can_invite_users administrator right.
+     *
+     * [declineChatJoinRequest - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#declinechatjoinrequest)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param user_id `Required`
+     * >- Unique identifier of the target user
+     * @returns >- true on success.
+     */
+    export async function declineChatJoinRequest(
+        {
+            chat_id,
+            user_id,
+        }: {
+            chat_id: number | string;
+            user_id: number;
+        }): Promise<boolean> {
+        return await callApi('declineChatJoinRequest', {
+            chat_id,
+            user_id,
+        });
+    }
 }
