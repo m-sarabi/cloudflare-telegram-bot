@@ -2805,4 +2805,47 @@ export namespace tg {
     export async function getForumTopicIconStickers(): Promise<tgTypes.Sticker[]> {
         return await callApi('getForumTopicIconStickers');
     }
+
+    /**
+     * Use this method to create a topic in a forum supergroup chat.
+     * The bot must be an administrator in the chat for this to work and must have the can_manage_topics administrator rights.
+     *
+     * [createForumTopic - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#createforumtopic)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+     * @param name `Required`
+     * >- Topic name, 1-128 characters
+     * @param [icon_color] `Optional`
+     * >- Color of the topic icon in RGB format. Currently, must be one of
+     * >  - 7322096 (0x6FB9F0),
+     * >  - 16766590 (0xFFD67E),
+     * >  - 13338331 (0xCB86DB),
+     * >  - 9367192 (0x8EEE98),
+     * >  - 16749490 (0xFF93B2),
+     * >  - 16478047 (0xFB6F5F)
+     * @param [icon_custom_emoji_id] `Optional`
+     * >- Unique identifier of the custom emoji shown as the topic icon.
+     * Use [getForumTopicIconStickers](https://core.telegram.org/bots/api#getforumtopiciconstickers) to get all allowed custom emoji identifiers.
+     * @returns >- information about the created topic as a [ForumTopic](https://core.telegram.org/bots/api#forumtopic) object.
+     */
+    export async function createForumTopic(
+        {
+            chat_id,
+            name,
+            icon_color,
+            icon_custom_emoji_id,
+        }: {
+            chat_id: number | string;
+            name: string;
+            icon_color?: number;
+            icon_custom_emoji_id?: string;
+        }): Promise<tgTypes.ForumTopic> {
+        return await callApi('createForumTopic', {
+            chat_id,
+            name,
+            icon_color,
+            icon_custom_emoji_id,
+        });
+    }
 }
