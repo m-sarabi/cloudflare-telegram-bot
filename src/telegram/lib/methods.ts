@@ -3278,4 +3278,30 @@ export namespace tg {
             language_code,
         });
     }
+
+    /**
+     * Use this method to get the current list of the bot's commands for the given scope and user language.
+     *
+     * [getMyCommands - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getmycommands)
+     *
+     * @param [scope] `Optional`
+     * >- A JSON-serialized object, describing scope of users.
+     * Defaults to [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault).
+     * @param [language_code] `Optional`
+     * >- A two-letter ISO 639-1 language code or an empty string
+     * @returns >- an Array of [BotCommand](https://core.telegram.org/bots/api#botcommand) objects. If commands aren't set, an empty list is returned.
+     */
+    export async function getMyCommands(
+        {
+            scope,
+            language_code,
+        }: {
+            scope?: tgTypes.BotCommandScope;
+            language_code?: string;
+        }): Promise<tgTypes.BotCommand[]> {
+        return await callApi('getMyCommands', {
+            scope: JSON.stringify(scope),
+            language_code,
+        });
+    }
 }
