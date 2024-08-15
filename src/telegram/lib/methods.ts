@@ -2069,4 +2069,34 @@ export namespace tg {
             can_manage_topics
         });
     }
+
+    /**
+     * Use this method to set a custom title for an administrator in a supergroup promoted by the bot.
+     *
+     * [setChatAdministratorCustomTitle - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setchatadministratorcustomtitle)
+     *
+     * @param chat_id `Required`
+     >- Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+     * @param user_id `Required`
+     >- Unique identifier of the target user
+     * @param custom_title `Required`
+     >- New custom title for the administrator; 0-16 characters, emoji are not allowed
+     * @returns >- True on success.
+     */
+    export async function setChatAdministratorCustomTitle(
+        {
+            chat_id,
+            user_id,
+            custom_title
+        }: {
+            chat_id: number | string;
+            user_id: number;
+            custom_title: string;
+        }): Promise<boolean> {
+        return await callApi('setChatAdministratorCustomTitle', {
+            chat_id,
+            user_id,
+            custom_title
+        });
+    }
 }
