@@ -2614,4 +2614,26 @@ export namespace tg {
             message_id
         });
     }
+
+    /**
+     * Use this method to clear the list of pinned messages in a chat.
+     * If the chat is not a private chat, the bot must be an administrator in the chat for this to work
+     * and must have the 'can_pin_messages' administrator right in a supergroup or 'can_edit_messages' administrator right in a channel.
+     *
+     * [unpinAllChatMessages - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#unpinallchatmessages)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @returns >- true on success.
+     */
+    export async function unpinAllChatMessages(
+        {
+            chat_id
+        }: {
+            chat_id: number | string;
+        }): Promise<boolean> {
+        return await callApi('unpinAllChatMessages', {
+            chat_id
+        });
+    }
 }
