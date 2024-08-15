@@ -2636,4 +2636,24 @@ export namespace tg {
             chat_id,
         });
     }
+
+    /**
+     * Use this method for your bot to leave a group, supergroup or channel.
+     *
+     * [leaveChat - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#leavechat)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)
+     * @returns >- true on success.
+     */
+    export async function leaveChat(
+        {
+            chat_id,
+        }: {
+            chat_id: number | string;
+        }): Promise<boolean> {
+        return await callApi('leaveChat', {
+            chat_id,
+        });
+    }
 }
