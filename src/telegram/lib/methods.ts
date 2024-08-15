@@ -2543,4 +2543,42 @@ export namespace tg {
             description
         });
     }
+
+    /**
+     * Use this method to add a message to the list of pinned messages in a chat.
+     * If the chat is not a private chat, the bot must be an administrator in the chat for this to work
+     * and must have the 'can_pin_messages' administrator right in a supergroup or 'can_edit_messages' administrator right in a channel.
+     *
+     * [pinChatMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#pinchatmessage)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param message_id `Required`
+     * >- Identifier of a message to pin
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be pinned
+     * @param [disable_notification] `Optional`
+     * >- Pass true if it is not necessary to send a notification to all chat members about the new pinned message.
+     * Notifications are always disabled in channels and private chats.
+     * @returns >- true on success.
+     */
+    export async function pinChatMessage(
+        {
+            chat_id,
+            message_id,
+            business_connection_id,
+            disable_notification
+        }: {
+            chat_id: number | string;
+            message_id: number;
+            business_connection_id?: string;
+            disable_notification?: boolean;
+        }): Promise<boolean> {
+        return await callApi('pinChatMessage', {
+            chat_id,
+            message_id,
+            business_connection_id,
+            disable_notification
+        });
+    }
 }
