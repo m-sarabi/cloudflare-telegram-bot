@@ -3198,5 +3198,23 @@ export namespace tg {
         });
     }
 
-
+    /**
+     * Use this method to get information about the connection of the bot with a business account.
+     *
+     * [getBusinessConnection - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getbusinessconnection)
+     *
+     * @param business_connection_id `Required`
+     * >- Unique identifier of the business connection
+     * @returns >- a [BusinessConnection](https://core.telegram.org/bots/api#businessconnection) object on success.
+     */
+    export async function getBusinessConnection(
+        {
+            business_connection_id,
+        }: {
+            business_connection_id: string;
+        }): Promise<tgTypes.BusinessConnection> {
+        return await callApi('getBusinessConnection', {
+            business_connection_id,
+        });
+    }
 }
