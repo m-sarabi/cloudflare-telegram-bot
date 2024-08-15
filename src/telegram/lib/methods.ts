@@ -368,8 +368,8 @@ export namespace tg {
      * @param chat_id `Required`
      * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @param photo `Required`
-     * >- Photo to send. Pass a file_id as String to send a photo that exists on the Telegram servers (recommended),
-     * pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data.
+     * >- Photo to send. Pass a file_id as string to send a photo that exists on the Telegram servers (recommended),
+     * pass an HTTP URL as a string for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data.
      * The photo must be at most 10 MB in size. The photo's width and height must not exceed 10000 in total.
      * Width and height ratio must be at most 20. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
      * @param [business_connection_id] `Optional`
@@ -464,8 +464,8 @@ export namespace tg {
      * @param chat_id `Required`
      * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @param audio `Required`
-     * >- Audio file to send. Pass a file_id as String to send an audio file that exists on the Telegram servers (recommended),
-     * pass an HTTP URL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart/form-data.
+     * >- Audio file to send. Pass a file_id as string to send an audio file that exists on the Telegram servers (recommended),
+     * pass an HTTP URL as a string for Telegram to get an audio file from the Internet, or upload a new one using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
      * @param [business_connection_id] `Optional`
      * >- Unique identifier of the business connection on behalf of which the message will be sent
@@ -572,8 +572,8 @@ export namespace tg {
      * @param chat_id `Required`
      * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @param document `Required`
-     * >- File to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended),
-     * pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data.
+     * >- File to send. Pass a file_id as string to send a file that exists on the Telegram servers (recommended),
+     * pass an HTTP URL as a string for Telegram to get a file from the Internet, or upload a new one using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
      * @param [business_connection_id] `Optional`
      * >- Unique identifier of the business connection on behalf of which the message will be sent
@@ -671,8 +671,8 @@ export namespace tg {
      * @param chat_id `Required`
      * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @param video `Required`
-     * >- Video to send. Pass a file_id as String to send a video that exists on the Telegram servers (recommended),
-     * pass an HTTP URL as a String for Telegram to get a video from the Internet, or upload a new video using multipart/form-data.
+     * >- Video to send. Pass a file_id as string to send a video that exists on the Telegram servers (recommended),
+     * pass an HTTP URL as a string for Telegram to get a video from the Internet, or upload a new video using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
      * @param [business_connection_id] `Optional`
      * >- Unique identifier of the business connection on behalf of which the message will be sent
@@ -794,8 +794,8 @@ export namespace tg {
      * @param chat_id `Required`
      * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @param animation `Required`
-     * >- Animation to send. Pass a file_id as String to send an animation that exists on the Telegram servers (recommended),
-     * pass an HTTP URL as a String for Telegram to get an animation from the Internet, or upload a new animation using multipart/form-data.
+     * >- Animation to send. Pass a file_id as string to send an animation that exists on the Telegram servers (recommended),
+     * pass an HTTP URL as a string for Telegram to get an animation from the Internet, or upload a new animation using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
      * @param [business_connection_id] `Optional`
      * >- Unique identifier of the business connection on behalf of which the message will be sent
@@ -915,8 +915,8 @@ export namespace tg {
      * @param chat_id `Required`
      * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @param voice `Required`
-     * >- Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended),
-     * pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data.
+     * >- Audio file to send. Pass a file_id as string to send a file that exists on the Telegram servers (recommended),
+     * pass an HTTP URL as a string for Telegram to get a file from the Internet, or upload a new one using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
      * @param [business_connection_id] `Optional`
      * >- Unique identifier of the business connection on behalf of which the message will be sent
@@ -1005,7 +1005,7 @@ export namespace tg {
      * @param chat_id `Required`
      * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @param video_note `Required`
-     * >- Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers
+     * >- Video note to send. Pass a file_id as string to send a video note that exists on the Telegram servers
      * (recommended) or upload a new video using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files).
      * Sending video notes by a URL is currently unsupported
@@ -2196,7 +2196,7 @@ export namespace tg {
      *
      * @param chat_id `Required`
      * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @returns >- the new invite link as String on success.
+     * @returns >- the new invite link as string on success.
      */
     export async function exportChatInviteLink(
         {
