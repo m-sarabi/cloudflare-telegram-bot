@@ -3395,4 +3395,51 @@ export namespace tg {
             language_code,
         });
     }
+
+    /**
+     * Use this method to change the bot's short description, which is shown on the bot's profile page and is sent together
+     * with the link when users share the bot.
+     *
+     * [setMyShortDescription - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setmyshortdescription)
+     *
+     * @param [short_description] `Optional`
+     * >- New short description for the bot; 0-120 characters. Pass an empty string to remove the dedicated short description for the given language.
+     * @param [language_code] `Optional`
+     * >- A two-letter ISO 639-1 language code.
+     * If empty, the short description will be applied to all users for whose language there is no dedicated short description.
+     * @returns >- true on success.
+     */
+    export async function setMyShortDescription(
+        {
+            short_description,
+            language_code,
+        }: {
+            short_description?: string;
+            language_code?: string;
+        }): Promise<boolean> {
+        return await callApi('setMyShortDescription', {
+            short_description,
+            language_code,
+        });
+    }
+
+    /**
+     * Use this method to get the current bot short description for the given user language.
+     *
+     * [getMyShortDescription - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getmyshortdescription)
+     *
+     * @param [language_code] `Optional`
+     * >- A two-letter ISO 639-1 language code or an empty string
+     * @returns >- [BotShortDescription](https://core.telegram.org/bots/api#botshortdescription) on success.
+     */
+    export async function getMyShortDescription(
+        {
+            language_code,
+        }: {
+            language_code?: string;
+        }): Promise<tgTypes.BotShortDescription> {
+        return await callApi('getMyShortDescription', {
+            language_code,
+        });
+    }
 }
