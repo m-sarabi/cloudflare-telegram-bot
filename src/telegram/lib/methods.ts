@@ -3217,4 +3217,37 @@ export namespace tg {
             business_connection_id,
         });
     }
+
+    /**
+     * Use this method to change the list of the bot's commands. See [this manual](https://core.telegram.org/bots/features#commands)
+     * for more details about bot commands.
+     *
+     * [setMyCommands - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setmycommands)
+     *
+     * @param commands `Required`
+     * >- A JSON-serialized list of bot commands to be set as the list of the bot's commands. At most 100 commands can be specified.
+     * @param [scope] `Optional`
+     * >- A JSON-serialized object, describing scope of users for which the commands are relevant.
+     * Defaults to [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault).
+     * @param [language_code] `Optional`
+     * >- A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope,
+     * for whose language there are no dedicated commands
+     * @returns >- true on success.
+     */
+    export async function setMyCommands(
+        {
+            commands,
+            scope,
+            language_code,
+        }: {
+            commands: tgTypes.BotCommand[];
+            scope?: tgTypes.BotCommandScope;
+            language_code?: string;
+        }): Promise<boolean> {
+        return await callApi('setMyCommands', {
+            commands: JSON.stringify(commands),
+            scope: JSON.stringify(scope),
+            language_code,
+        });
+    }
 }
