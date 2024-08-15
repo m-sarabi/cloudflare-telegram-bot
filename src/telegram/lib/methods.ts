@@ -2366,4 +2366,30 @@ export namespace tg {
             name
         });
     }
+
+    /**
+     * Use this method to revoke an invite link created by the bot. If the primary link is revoked, a new link is automatically generated.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
+     *
+     * [revokeChatInviteLink - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#revokechatinvitelink)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier of the target chat or username of the target channel (in the format `@channelusername`)
+     * @param invite_link `Required`
+     * >- The invite link to revoke
+     * @returns >- the revoked invite link as [ChatInviteLink](https://core.telegram.org/bots/api#chatinvitelink) object.
+     */
+    export async function revokeChatInviteLink(
+        {
+            chat_id,
+            invite_link
+        }: {
+            chat_id: number | string;
+            invite_link: string;
+        }): Promise<tgTypes.ChatInviteLink> {
+        return await callApi('revokeChatInviteLink', {
+            chat_id,
+            invite_link
+        });
+    }
 }
