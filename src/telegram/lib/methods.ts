@@ -1672,4 +1672,45 @@ export namespace tg {
             only_if_banned
         });
     }
+
+    /**
+     * Use this method to restrict a user in a supergroup.
+     * The bot must be an administrator in the supergroup for this to work and must have the appropriate administrator rights.
+     * Pass True for all permissions to lift restrictions from a user.
+     *
+     * [restrictChatMember - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#restrictchatmember)
+     *
+     * @param chat_id >- Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)
+     * @param user_id >- Unique identifier of the target user
+     * @param permissions >- A JSON-serialized object for new user permissions
+     * @param [use_independent_chat_permissions] >- Pass True if chat permissions are set independently. Otherwise,
+     * the can_send_other_messages and can_add_web_page_previews permissions will imply the can_send_messages, can_send_audios,
+     * can_send_documents, can_send_photos, can_send_videos, can_send_video_notes, and can_send_voice_notes permissions;
+     * the can_send_polls permission will imply the can_send_messages permission.
+     * @param [until_date] >- Date when restrictions will be lifted for the user; Unix time.
+     * If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever
+     * @returns >- True on success.
+     */
+    export async function restrictChatMember(
+        {
+            chat_id,
+            user_id,
+            permissions,
+            use_independent_chat_permissions,
+            until_date
+        }: {
+            chat_id: number | string;
+            user_id: number;
+            permissions: tgTypes.ChatPermissions;
+            use_independent_chat_permissions?: boolean;
+            until_date?: number;
+        }): Promise<boolean> {
+        return await callApi('restrictChatMember', {
+            chat_id,
+            user_id,
+            permissions: JSON.stringify(permissions),
+            use_independent_chat_permissions,
+            until_date
+        });
+    }
 }
