@@ -3040,4 +3040,26 @@ export namespace tg {
             chat_id,
         });
     }
+
+    /**
+     * Use this method to reopen a closed 'General' topic in a forum supergroup chat.
+     * The bot must be an administrator in the chat for this to work and must have the can_manage_topics administrator rights.
+     * The topic will be automatically unhidden if it was hidden.
+     *
+     * [reopenGeneralForumTopic - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#reopengeneralforumtopic)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+     * @returns >- true on success.
+     */
+    export async function reopenGeneralForumTopic(
+        {
+            chat_id,
+        }: {
+            chat_id: number | string;
+        }): Promise<boolean> {
+        return await callApi('reopenGeneralForumTopic', {
+            chat_id,
+        });
+    }
 }
