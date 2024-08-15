@@ -1187,4 +1187,297 @@ declare namespace tgTypes {
          */
         input_message_content?: tgTypes.InputMessageContent;
     }
+
+    /**
+     * This object represents the content of a message to be sent as a result of an inline query.
+     *
+     * [InputMessageContent - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inputmessagecontent)
+     */
+    type InputMessageContent =
+        tgTypes.InputTextMessageContent
+        | tgTypes.InputLocationMessageContent
+        | tgTypes.InputVenueMessageContent
+        | tgTypes.InputContactMessageContent
+        | tgTypes.InputInvoiceMessageContent;
+
+
+    /**
+     * Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a text message
+     * to be sent as the result of an inline query.
+     *
+     * [InputTextMessageContent - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inputtextmessagecontent)
+     */
+    interface InputTextMessageContent {
+        /**
+         * Text of the message to be sent, 1-4096 characters
+         */
+        message_text: string;
+        /**
+         * _Optional_. Mode for parsing entities in the message text.
+         * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
+         */
+        parse_mode?: string;
+        /**
+         * _Optional_. List of special entities that appear in message text, which can be specified instead of parse_mode
+         */
+        entities?: tgTypes.MessageEntity[];
+        /**
+         * _Optional_. Link preview generation options for the message
+         */
+        link_preview_options?: tgTypes.LinkPreviewOptions;
+    }
+
+    /**
+     * Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a location message
+     * to be sent as the result of an inline query.
+     *
+     * [InputLocationMessageContent - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inputlocationmessagecontent)
+     */
+    interface InputLocationMessageContent {
+        /**
+         * Latitude of the location in degrees
+         */
+        latitude: number;
+        /**
+         * Longitude of the location in degrees
+         */
+        longitude: number;
+        /**
+         * _Optional_. The radius of uncertainty for the location, measured in meters; 0-1500
+         */
+        horizontal_accuracy?: number;
+        /**
+         * _Optional_. Period in seconds during which the location can be updated,
+         * should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.
+         */
+        live_period?: number;
+        /**
+         * _Optional_. For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.
+         */
+        heading?: number;
+        /**
+         * _Optional_. For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters.
+         * Must be between 1 and 100000 if specified.
+         */
+        proximity_alert_radius?: number;
+    }
+
+    /**
+     * Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a venue message
+     * to be sent as the result of an inline query.
+     *
+     * [InputVenueMessageContent - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inputvenuemessagecontent)
+     */
+    interface InputVenueMessageContent {
+        /**
+         * Latitude of the venue in degrees
+         */
+        latitude: number;
+        /**
+         * Longitude of the venue in degrees
+         */
+        longitude: number;
+        /**
+         * Name of the venue
+         */
+        title: string;
+        /**
+         * Address of the venue
+         */
+        address: string;
+        /**
+         * _Optional_. Foursquare identifier of the venue, if known
+         */
+        foursquare_id?: string;
+        /**
+         * _Optional_. Foursquare type of the venue, if known.
+         * (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)
+         */
+        foursquare_type?: string;
+        /**
+         * _Optional_. Google Places identifier of the venue
+         */
+        google_place_id?: string;
+        /**
+         * _Optional_. Google Places type of the venue.
+         * (See [supported types](https://developers.google.com/places/web-service/supported_types).)
+         */
+        google_place_type?: string;
+    }
+
+    /**
+     * Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a contact message
+     * to be sent as the result of an inline query.
+     *
+     * [InputContactMessageContent - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inputcontactmessagecontent)
+     */
+    interface InputContactMessageContent {
+        /**
+         * Contact's phone number
+         */
+        phone_number: string;
+        /**
+         * Contact's first name
+         */
+        first_name: string;
+        /**
+         * _Optional_. Contact's last name
+         */
+        last_name?: string;
+        /**
+         * _Optional_. Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes
+         */
+        vcard?: string;
+    }
+
+    /**
+     * Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of an invoice message
+     * to be sent as the result of an inline query.
+     *
+     * [InputInvoiceMessageContent - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inputinvoicemessagecontent)
+     */
+    interface InputInvoiceMessageContent {
+        /**
+         * Product name, 1-32 characters
+         */
+        title: string;
+        /**
+         * Product description, 1-255 characters
+         */
+        description: string;
+        /**
+         * Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use for your internal processes.
+         */
+        payload: string;
+        /**
+         * _Optional_. Payment provider token, obtained via [@BotFather](https://t.me/botfather).
+         * Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).
+         */
+        provider_token?: string;
+        /**
+         * Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies).
+         * Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).
+         */
+        currency: string;
+        /**
+         * Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.).
+         * Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90).
+         */
+        prices: tgTypes.LabeledPrice[];
+        /**
+         * _Optional_. The maximum accepted amount for tips in the smallest units of the currency (integer, not float/double).
+         * For example, for a maximum tip of US$ 1.45 pass max_tip_amount = 145. See the exp parameter in
+         * [currencies.json](https://core.telegram.org/bots/payments/currencies.json),
+         * it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).
+         * Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).
+         */
+        max_tip_amount?: number;
+        /**
+         * _Optional_. A JSON-serialized array of suggested amounts of tip in the smallest units of the currency (integer, not float/double).
+         * At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive,
+         * passed in a strictly increased order and must not exceed max_tip_amount.
+         */
+        suggested_tip_amounts?: number[];
+        /**
+         * _Optional_. A JSON-serialized object for data about the invoice, which will be shared with the payment provider.
+         * A detailed description of the required fields should be provided by the payment provider.
+         */
+        provider_data?: string;
+        /**
+         * _Optional_. URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service.
+         */
+        photo_url?: string;
+        /**
+         * _Optional_. Photo size in bytes
+         */
+        photo_size?: number;
+        /**
+         * _Optional_. Photo width
+         */
+        photo_width?: number;
+        /**
+         * _Optional_. Photo height
+         */
+        photo_height?: number;
+        /**
+         * _Optional_. Pass True if you require the user's full name to complete the order.
+         * Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
+         */
+        need_name?: boolean;
+        /**
+         * _Optional_. Pass True if you require the user's phone number to complete the order.
+         * Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
+         */
+        need_phone_number?: boolean;
+        /**
+         * _Optional_. Pass True if you require the user's email address to complete the order.
+         * Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
+         */
+        need_email?: boolean;
+        /**
+         * _Optional_. Pass True if you require the user's shipping address to complete the order.
+         * Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
+         */
+        need_shipping_address?: boolean;
+        /**
+         * _Optional_. Pass True if the user's phone number should be sent to the provider.
+         * Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
+         */
+        send_phone_number_to_provider?: boolean;
+        /**
+         * _Optional_. Pass True if the user's email address should be sent to the provider.
+         * Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
+         */
+        send_email_to_provider?: boolean;
+        /**
+         * _Optional_. Pass True if the final price depends on the shipping method.
+         * Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).
+         */
+        is_flexible?: boolean;
+    }
+
+    /**
+     * Represents a [result](https://core.telegram.org/bots/api#inlinequeryresult) of an inline query
+     * that was chosen by the user and sent to their chat partner.
+     *
+     * [ChosenInlineResult - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#choseninlineresult)
+     */
+    interface ChosenInlineResult {
+        /**
+         * The unique identifier for the result that was chosen
+         */
+        result_id: string;
+        /**
+         * The user that chose the result
+         */
+        from: tgTypes.User;
+        /**
+         * _Optional_. Sender location, only for bots that require user location
+         */
+        location?: tgTypes.Location;
+        /**
+         * _Optional_. Identifier of the sent inline message.
+         * Available only if there is an [inline keyboard](https://core.telegram.org/bots/api#inlinekeyboardmarkup)
+         * attached to the message. Will be also received in [callback queries](https://core.telegram.org/bots/api#callbackquery)
+         * and can be used to [edit](https://core.telegram.org/bots/api#updating-messages) the message.
+         */
+        inline_message_id?: string;
+        /**
+         * The query that was used to obtain the result
+         */
+        query: string;
+    }
+
+    /**
+     * Describes an inline message sent by a [Web App](https://core.telegram.org/bots/webapps) on behalf of a user.
+     *
+     * [SentWebAppMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sentwebappmessage)
+     */
+    interface SentWebAppMessage {
+        /**
+         * _Optional_. Identifier of the sent inline message.
+         * Available only if there is an [inline keyboard](https://core.telegram.org/bots/api#inlinekeyboardmarkup) attached to the message.
+         */
+        inline_message_id?: string;
+    }
 }
