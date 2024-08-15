@@ -44,19 +44,30 @@ export namespace tg {
      *
      * [sendMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendmessage)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param text >- Text of the message to be sent, 1-4096 characters after entities parsing
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [parse_mode] >- Mode for parsing entities in the message text.
+     * @param chat_id - `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param text - `Required`
+     * >- Text of the message to be sent, 1-4096 characters after entities parsing
+     * @param [business_connection_id] - `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [parse_mode] `Optional`
+     * >- Mode for parsing entities in the message text.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
-     * @param [entities] >- A JSON-serialized list of special entities that appear in message text, which can be specified instead of parse_mode
-     * @param [link_preview_options] >- Link preview generation options for the message
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [entities] `Optional`
+     * >- A JSON-serialized list of special entities that appear in message text, which can be specified instead of parse_mode
+     * @param [link_preview_options] `Optional`
+     * >- Link preview generation options for the message
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
      * @param [reply_markup]
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
@@ -113,14 +124,20 @@ export namespace tg {
      *
      * [forwardMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#forwardmessage)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param from_chat_id >- Unique identifier for the chat where the original message was sent
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param from_chat_id `Required`
+     * >- Unique identifier for the chat where the original message was sent
      * (or channel username in the format `@channelusername`)
-     * @param message_id >- Message identifier in the chat specified in from_chat_id
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param message_id `Required`
+     * >- Message identifier in the chat specified in from_chat_id
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the forwarded message from forwarding and saving
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the forwarded message from forwarding and saving
      * @returns >- On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned
      */
     export async function forwardMessage(
@@ -155,15 +172,21 @@ export namespace tg {
      *
      * [forwardMessages - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#forwardmessages)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param from_chat_id >- Unique identifier for the chat where the original messages were sent
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param from_chat_id `Required`
+     * >- Unique identifier for the chat where the original messages were sent
      * (or channel username in the format `@channelusername`)
-     * @param message_ids >- A JSON-serialized list of 1-100 identifiers of messages in the chat from_chat_id to forward.
+     * @param message_ids `Required`
+     * >- A JSON-serialized list of 1-100 identifiers of messages in the chat from_chat_id to forward.
      * The identifiers must be specified in a strictly increasing order.
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [disable_notification] >- Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [disable_notification] `Optional`
+     * >- Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the forwarded messages from forwarding and saving
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the forwarded messages from forwarding and saving
      * @returns >- On success, an array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.
      */
     export async function forwardMessages(
@@ -201,23 +224,34 @@ export namespace tg {
      *
      * [copyMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#copymessage)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param from_chat_id >- Unique identifier for the chat where the original message was sent
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param from_chat_id `Required`
+     * >- Unique identifier for the chat where the original message was sent
      * (or channel username in the format `@channelusername`)
-     * @param message_id >- Message identifier in the chat specified in from_chat_id
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [caption] >- New caption for media, 0-1024 characters after entities parsing. If not specified, the original caption is kept
-     * @param [parse_mode] >- Mode for parsing entities in the new caption.
+     * @param message_id `Required`
+     * >- Message identifier in the chat specified in from_chat_id
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [caption] `Optional`
+     * >- New caption for media, 0-1024 characters after entities parsing. If not specified, the original caption is kept
+     * @param [parse_mode] `Optional`
+     * >- Mode for parsing entities in the new caption.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
-     * @param [caption_entities] >- A JSON-serialized list of special entities that appear in the new caption,
+     * @param [caption_entities] `Optional`
+     * >- A JSON-serialized list of special entities that appear in the new caption,
      * which can be specified instead of parse_mode
-     * @param [show_caption_above_media] >- Pass True, if the caption must be shown above the message media.
+     * @param [show_caption_above_media] `Optional`
+     * >- Pass True, if the caption must be shown above the message media.
      * Ignored if a new caption isn't specified.
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -278,16 +312,23 @@ export namespace tg {
      *
      * [copyMessages - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#copymessages)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param from_chat_id >- Unique identifier for the chat where the original messages were sent
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param from_chat_id `Required`
+     * >- Unique identifier for the chat where the original messages were sent
      * (or channel username in the format `@channelusername`)
-     * @param message_ids >- A JSON-serialized list of 1-100 identifiers of messages in the chat from_chat_id to copy.
+     * @param message_ids `Required`
+     * >- A JSON-serialized list of 1-100 identifiers of messages in the chat from_chat_id to copy.
      * The identifiers must be specified in a strictly increasing order.
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [disable_notification] >- Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [disable_notification] `Optional`
+     * >- Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent messages from forwarding and saving
-     * @param [remove_caption] >- Pass True to copy the messages without their captions
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent messages from forwarding and saving
+     * @param [remove_caption] `Optional`
+     * >- Pass True to copy the messages without their captions
      * @returns >- On success, an array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.
      */
     export async function copyMessages(
@@ -324,26 +365,39 @@ export namespace tg {
      *
      * [sendPhoto - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendphoto)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param photo >- Photo to send. Pass a file_id as String to send a photo that exists on the Telegram servers (recommended),
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param photo `Required`
+     * >- Photo to send. Pass a file_id as String to send a photo that exists on the Telegram servers (recommended),
      * pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data.
      * The photo must be at most 10 MB in size. The photo's width and height must not exceed 10000 in total.
      * Width and height ratio must be at most 20. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [caption] >- Photo caption (may also be used when resending photos by file_id), 0-1024 characters after entities parsing
-     * @param [parse_mode] >- Mode for parsing entities in the photo caption.
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [caption] `Optional`
+     * >- Photo caption (may also be used when resending photos by file_id), 0-1024 characters after entities parsing
+     * @param [parse_mode] `Optional`
+     * >- Mode for parsing entities in the photo caption.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
-     * @param [caption_entities] >- A JSON-serialized list of special entities that appear in the caption,
+     * @param [caption_entities] `Optional`
+     * >- A JSON-serialized list of special entities that appear in the caption,
      * which can be specified instead of parse_mode
-     * @param [show_caption_above_media] >- Pass True, if the caption must be shown above the message media
-     * @param [has_spoiler] >- Pass True if the photo needs to be covered with a spoiler animation
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [show_caption_above_media] `Optional`
+     * >- Pass True, if the caption must be shown above the message media
+     * @param [has_spoiler] `Optional`
+     * >- Pass True if the photo needs to be covered with a spoiler animation
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -407,31 +461,46 @@ export namespace tg {
      *
      * [sendAudio - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendaudio)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param audio >- Audio file to send. Pass a file_id as String to send an audio file that exists on the Telegram servers (recommended),
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param audio `Required`
+     * >- Audio file to send. Pass a file_id as String to send an audio file that exists on the Telegram servers (recommended),
      * pass an HTTP URL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [caption] >- Audio caption, 0-1024 characters after entities parsing
-     * @param [parse_mode] >- Mode for parsing entities in the audio caption.
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [caption] `Optional`
+     * >- Audio caption, 0-1024 characters after entities parsing
+     * @param [parse_mode] `Optional`
+     * >- Mode for parsing entities in the audio caption.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
-     * @param [caption_entities] >- A JSON-serialized list of special entities that appear in the caption,
+     * @param [caption_entities] `Optional`
+     * >- A JSON-serialized list of special entities that appear in the caption,
      * which can be specified instead of parse_mode
-     * @param [duration] >- Duration of the audio in seconds
-     * @param [performer] >- Performer
-     * @param [title] >- Track name
-     * @param [thumbnail] >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
+     * @param [duration] `Optional`
+     * >- Duration of the audio in seconds
+     * @param [performer] `Optional`
+     * >- Performer
+     * @param [title] `Optional`
+     * >- Track name
+     * @param [thumbnail] `Optional`
+     * >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
      * The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320.
      * Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file,
      * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -500,29 +569,42 @@ export namespace tg {
      *
      * [sendDocument - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#senddocument)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param document >- File to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended),
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param document `Required`
+     * >- File to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended),
      * pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [thumbnail] >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [thumbnail] `Optional`
+     * >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
      * The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320.
      * Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file,
      * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
-     * @param [caption] >- Document caption (may also be used when resending documents by file_id), 0-1024 characters after entities parsing
-     * @param [parse_mode] >- Mode for parsing entities in the document caption.
+     * @param [caption] `Optional`
+     * >- Document caption (may also be used when resending documents by file_id), 0-1024 characters after entities parsing
+     * @param [parse_mode] `Optional`
+     * >- Mode for parsing entities in the document caption.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
-     * @param [caption_entities] >- A JSON-serialized list of special entities that appear in the caption,
+     * @param [caption_entities] `Optional`
+     * >- A JSON-serialized list of special entities that appear in the caption,
      * which can be specified instead of parse_mode
-     * @param [disable_content_type_detection] >- Disables automatic server-side content type detection for files uploaded using multipart/form-data
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [disable_content_type_detection] `Optional`
+     * >- Disables automatic server-side content type detection for files uploaded using multipart/form-data
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters]
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -586,34 +668,52 @@ export namespace tg {
      *
      * [sendVideo - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendvideo)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param video >- Video to send. Pass a file_id as String to send a video that exists on the Telegram servers (recommended),
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param video `Required`
+     * >- Video to send. Pass a file_id as String to send a video that exists on the Telegram servers (recommended),
      * pass an HTTP URL as a String for Telegram to get a video from the Internet, or upload a new video using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [duration] >- Duration of sent video in seconds
-     * @param [width] >- Video width
-     * @param [height] >- Video height
-     * @param [thumbnail] >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [duration] `Optional`
+     * >- Duration of sent video in seconds
+     * @param [width] `Optional`
+     * >- Video width
+     * @param [height] `Optional`
+     * >- Video height
+     * @param [thumbnail] `Optional`
+     * >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
      * The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320.
      * Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file,
      * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
-     * @param [caption] >- Video caption (may also be used when resending videos by file_id), 0-1024 characters after entities parsing
-     * @param [parse_mode] >- Mode for parsing entities in the video caption.
+     * @param [caption] `Optional`
+     * >- Video caption (may also be used when resending videos by file_id), 0-1024 characters after entities parsing
+     * @param [parse_mode] `Optional`
+     * >- Mode for parsing entities in the video caption.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
-     * @param [caption_entities] >- A JSON-serialized list of special entities that appear in the caption,
+     * @param [caption_entities] `Optional`
+     * >- A JSON-serialized list of special entities that appear in the caption,
      * which can be specified instead of parse_mode
-     * @param [show_caption_above_media] >- Pass True, if the caption must be shown above the message media
-     * @param [has_spoiler] >- Pass True if the video needs to be covered with a spoiler animation
-     * @param [supports_streaming] >- Pass True if the uploaded video is suitable for streaming
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [show_caption_above_media] `Optional`
+     * >- Pass True, if the caption must be shown above the message media
+     * @param [has_spoiler] `Optional`
+     * >- Pass True if the video needs to be covered with a spoiler animation
+     * @param [supports_streaming] `Optional`
+     * >- Pass True if the uploaded video is suitable for streaming
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -691,33 +791,50 @@ export namespace tg {
      *
      * [sendAnimation - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendanimation)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param animation >- Animation to send. Pass a file_id as String to send an animation that exists on the Telegram servers (recommended),
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param animation `Required`
+     * >- Animation to send. Pass a file_id as String to send an animation that exists on the Telegram servers (recommended),
      * pass an HTTP URL as a String for Telegram to get an animation from the Internet, or upload a new animation using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [duration] >- Duration of sent animation in seconds
-     * @param [width] >- Animation width
-     * @param [height] >- Animation height
-     * @param [thumbnail] >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [duration] `Optional`
+     * >- Duration of sent animation in seconds
+     * @param [width] `Optional`
+     * >- Animation width
+     * @param [height] `Optional`
+     * >- Animation height
+     * @param [thumbnail] `Optional`
+     * >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
      * The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320.
      * Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file,
      * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
-     * @param [caption] >- Animation caption (may also be used when resending animation by file_id), 0-1024 characters after entities parsing
-     * @param [parse_mode] >- Mode for parsing entities in the animation caption.
+     * @param [caption] `Optional`
+     * >- Animation caption (may also be used when resending animation by file_id), 0-1024 characters after entities parsing
+     * @param [parse_mode] `Optional`
+     * >- Mode for parsing entities in the animation caption.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
-     * @param [caption_entities] >- A JSON-serialized list of special entities that appear in the caption,
+     * @param [caption_entities] `Optional`
+     * >- A JSON-serialized list of special entities that appear in the caption,
      * which can be specified instead of parse_mode
-     * @param [show_caption_above_media] >- Pass True, if the caption must be shown above the message media
-     * @param [has_spoiler] >- Pass True if the animation needs to be covered with a spoiler animation
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [show_caption_above_media] `Optional`
+     * >- Pass True, if the caption must be shown above the message media
+     * @param [has_spoiler] `Optional`
+     * >- Pass True if the animation needs to be covered with a spoiler animation
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -795,24 +912,36 @@ export namespace tg {
      *
      * [sendVoice - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendvoice)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param voice >- Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended),
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param voice `Required`
+     * >- Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended),
      * pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [caption] >- Voice message caption, 0-1024 characters after entities parsing
-     * @param [parse_mode] >- Mode for parsing entities in the voice message caption.
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [caption] `Optional`
+     * >- Voice message caption, 0-1024 characters after entities parsing
+     * @param [parse_mode] `Optional`
+     * >- Mode for parsing entities in the voice message caption.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
-     * @param [caption_entities] >- A JSON-serialized list of special entities that appear in the caption,
+     * @param [caption_entities] `Optional`
+     * >- A JSON-serialized list of special entities that appear in the caption,
      * which can be specified instead of parse_mode
-     * @param [duration] >- Duration of the voice message in seconds
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [duration] `Optional`
+     * >- Duration of the voice message in seconds
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -873,26 +1002,37 @@ export namespace tg {
      *
      * [sendVideoNote - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendvideonote)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param video_note >- Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param video_note `Required`
+     * >- Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers
      * (recommended) or upload a new video using multipart/form-data.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files).
      * Sending video notes by a URL is currently unsupported
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [duration] >- Duration of sent video in seconds
-     * @param [length] >- Video width and height, i.e. diameter of the video message
-     * @param [thumbnail] >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [duration] `Optional`
+     * >- Duration of sent video in seconds
+     * @param [length] `Optional`
+     * >- Video width and height, i.e. diameter of the video message
+     * @param [thumbnail] `Optional`
+     * >- Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side.
      * The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320.
      * Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file,
      * so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.
      * [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -948,23 +1088,34 @@ export namespace tg {
      *
      * [sendPaidMedia - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendpaidmedia)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).
      * If the chat is a channel, all Telegram Star proceeds from this media will be credited to the chat's balance.
      * Otherwise, they will be credited to the bot's balance.
-     * @param star_count >- The number of Telegram Stars that must be paid to buy access to the media
-     * @param media >- A JSON-serialized array describing the media to be sent; up to 10 items
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [caption] >- Media caption, 0-1024 characters after entities parsing
-     * @param [parse_mode] >- Mode for parsing entities in the media caption.
+     * @param star_count `Required`
+     * >- The number of Telegram Stars that must be paid to buy access to the media
+     * @param media `Required`
+     * >- A JSON-serialized array describing the media to be sent; up to 10 items
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [caption] `Optional`
+     * >- Media caption, 0-1024 characters after entities parsing
+     * @param [parse_mode] `Optional`
+     * >- Mode for parsing entities in the media caption.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
-     * @param [caption_entities] >- A JSON-serialized list of special entities that appear in the caption,
+     * @param [caption_entities] `Optional`
+     * >- A JSON-serialized list of special entities that appear in the caption,
      * which can be specified instead of parse_mode
-     * @param [show_caption_above_media] >- Pass True, if the caption must be shown above the message media
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [show_caption_above_media] `Optional`
+     * >- Pass True, if the caption must be shown above the message media
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -1021,15 +1172,23 @@ export namespace tg {
      *
      * [sendMediaGroup - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendmediagroup)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
-     * @param media >- A JSON-serialized array describing messages to be sent, must include 2-10 items
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [disable_notification] >- Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param media `Required`
+     * >- A JSON-serialized array describing messages to be sent, must include 2-10 items
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [disable_notification] `Optional`
+     * >- Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent messages from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent messages from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
      * @returns >- On success, an array of [Messages](https://core.telegram.org/bots/api#message) that were sent is returned.
      */
     export async function sendMediaGroup(
@@ -1069,24 +1228,37 @@ export namespace tg {
      *
      * [sendLocation - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendlocation)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param latitude >- Latitude of the location
-     * @param longitude >- Longitude of the location
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [horizontal_accuracy] >- The radius of uncertainty for the location, measured in meters; 0-1500
-     * @param [live_period] >- Period in seconds during which the location will be updated
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param latitude `Required`
+     * >- Latitude of the location
+     * @param longitude `Required`
+     * >- Longitude of the location
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [horizontal_accuracy] `Optional`
+     * >- The radius of uncertainty for the location, measured in meters; 0-1500
+     * @param [live_period] `Optional`
+     * >- Period in seconds during which the location will be updated
      * (see [Live Locations](https://telegram.org/blog/live-locations),
      * should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.
-     * @param [heading] >- For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.
-     * @param [proximity_alert_radius] >- For live locations, a maximum distance for proximity alerts about approaching another chat member,
+     * @param [heading] `Optional`
+     * >- For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.
+     * @param [proximity_alert_radius] `Optional`
+     * >- For live locations, a maximum distance for proximity alerts about approaching another chat member,
      * in meters. Must be between 1 and 100000 if specified.
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -1148,25 +1320,41 @@ export namespace tg {
      *
      * [sendVenue - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendvenue)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param latitude >- Latitude of the venue
-     * @param longitude >- Longitude of the venue
-     * @param title >- Name of the venue
-     * @param address >- Address of the venue
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [foursquare_id] >- Foursquare identifier of the venue
-     * @param [foursquare_type] >- Foursquare type of the venue, if known.
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param latitude `Required`
+     * >- Latitude of the venue
+     * @param longitude `Required`
+     * >- Longitude of the venue
+     * @param title `Required`
+     * >- Name of the venue
+     * @param address `Required`
+     * >- Address of the venue
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [foursquare_id] `Optional`
+     * >- Foursquare identifier of the venue
+     * @param [foursquare_type] `Optional`
+     * >- Foursquare type of the venue, if known.
      * (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)
-     * @param [google_place_id] >- Google Places identifier of the venue
-     * @param [google_place_type] >- Google Places type of the venue.
+     * @param [google_place_id] `Optional`
+     * >- Google Places identifier of the venue
+     * @param [google_place_type] `Optional`
+     * >- Google Places type of the venue.
      * (See [supported types](https://developers.google.com/places/web-service/supported_types).)
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup] >- Additional interface options. A JSON-serialized object for an
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
+     * >- Additional interface options. A JSON-serialized object for an
      * [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
      * instructions to remove a reply keyboard or to force a reply from the user
@@ -1233,19 +1421,30 @@ export namespace tg {
      *
      * [sendContact - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendcontact)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param phone_number >- Contact's phone number
-     * @param first_name >- Contact's first name
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [last_name] >- Contact's last name
-     * @param [vcard] >- Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param phone_number `Required`
+     * >- Contact's phone number
+     * @param first_name `Required`
+     * >- Contact's first name
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [last_name] `Optional`
+     * >- Contact's last name
+     * @param [vcard] `Optional`
+     * >- Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -1301,36 +1500,57 @@ export namespace tg {
      *
      * [sendPoll - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendpoll)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param question >- Poll question, 1-300 characters
-     * @param options >- A JSON-serialized list of 2-10 answer options
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [question_parse_mode] >- Mode for parsing entities in the question.
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param question `Required`
+     * >- Poll question, 1-300 characters
+     * @param options `Required`
+     * >- A JSON-serialized list of 2-10 answer options
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [question_parse_mode] `Optional`
+     * >- Mode for parsing entities in the question.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
      * Currently, only custom emoji entities are allowed
-     * @param [question_entities] >- A JSON-serialized list of special entities that appear in the poll question.
+     * @param [question_entities] `Optional`
+     * >- A JSON-serialized list of special entities that appear in the poll question.
      * It can be specified instead of question_parse_mode
-     * @param [is_anonymous] >- True, if the poll needs to be anonymous, defaults to True
-     * @param [type] >- Poll type, “quiz” or “regular”, defaults to “regular”
-     * @param [allows_multiple_answers] >- True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to False
-     * @param [correct_option_id] >- 0-based identifier of the correct answer option, required for polls in quiz mode
-     * @param [explanation] >- Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll,
+     * @param [is_anonymous] `Optional`
+     * >- True, if the poll needs to be anonymous, defaults to True
+     * @param [type] `Optional`
+     * >- Poll type, “quiz” or “regular”, defaults to “regular”
+     * @param [allows_multiple_answers] `Optional`
+     * >- True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to False
+     * @param [correct_option_id] `Optional`
+     * >- 0-based identifier of the correct answer option, required for polls in quiz mode
+     * @param [explanation] `Optional`
+     * >- Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll,
      * 0-200 characters with at most 2 line feeds after entities parsing
-     * @param [explanation_parse_mode] >- Mode for parsing entities in the explanation.
+     * @param [explanation_parse_mode] `Optional`
+     * >- Mode for parsing entities in the explanation.
      * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
-     * @param [explanation_entities] >- A JSON-serialized list of special entities that appear in the poll explanation.
+     * @param [explanation_entities] `Optional`
+     * >- A JSON-serialized list of special entities that appear in the poll explanation.
      * It can be specified instead of explanation_parse_mode
-     * @param [open_period] >- Amount of time in seconds the poll will be active after creation, 5-600. Can't be used together with close_date.
-     * @param [close_date] >- Point in time (Unix timestamp) when the poll will be automatically closed.
+     * @param [open_period] `Optional`
+     * >- Amount of time in seconds the poll will be active after creation, 5-600. Can't be used together with close_date.
+     * @param [close_date] `Optional`
+     * >- Point in time (Unix timestamp) when the poll will be automatically closed.
      * Must be at least 5 and no more than 600 seconds in the future. Can't be used together with open_period.
-     * @param [is_closed] >- Pass True if the poll needs to be immediately closed. This can be useful for poll preview.
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [is_closed] `Optional`
+     * >- Pass True if the poll needs to be immediately closed. This can be useful for poll preview.
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding and saving
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding and saving
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -1416,18 +1636,26 @@ export namespace tg {
      *
      * [sendDice - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#senddice)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the message will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
-     * @param [emoji] >- Emoji on which the dice throw animation is based.
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread (topic) of the forum; for forum supergroups only
+     * @param [emoji] `Optional`
+     * >- Emoji on which the dice throw animation is based.
      * Currently, must be one of “🎲”, “🎯”, “🏀”, “⚽”, “🎳”, or “🎰”.
      * Dice can have values 1-6 for “🎲”, “🎯” and “🎳”, values 1-5 for “🏀” and “⚽”, and values 1-64 for “🎰”. Defaults to “🎲”
-     * @param [disable_notification] >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
+     * @param [disable_notification] `Optional`
+     * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
-     * @param [protect_content] >- Protects the contents of the sent message from forwarding
-     * @param [message_effect_id] >- Unique identifier of the message effect to be added to the message; for private chats only
-     * @param [reply_parameters] >- Description of the message to reply to
-     * @param [reply_markup]
+     * @param [protect_content] `Optional`
+     * >- Protects the contents of the sent message from forwarding
+     * @param [message_effect_id] `Optional`
+     * >- Unique identifier of the message effect to be added to the message; for private chats only
+     * @param [reply_parameters] `Optional`
+     * >- Description of the message to reply to
+     * @param [reply_markup] `Optional`
      * >- Additional interface options. A JSON-serialized object for an
      * >  - [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards),
      * >  - [custom reply keyboard](https://core.telegram.org/bots/features#keyboards),
@@ -1481,8 +1709,9 @@ export namespace tg {
      *
      * [sendChatAction - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#sendchataction)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param action
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param action `Required`
      * >- Type of action to broadcast. Choose one, depending on what the user is about to receive:
      * >  - typing for [text messages](https://core.telegram.org/bots/api#sendmessage),
      * >  - upload_photo for [photos](https://core.telegram.org/bots/api#sendphoto),
@@ -1492,8 +1721,10 @@ export namespace tg {
      * >  - choose_sticker for [stickers](https://core.telegram.org/bots/api#sendsticker),
      * >  - find_location for [location data](https://core.telegram.org/bots/api#sendlocation),
      * >  - record_video_note or upload_video_note for [video notes](https://core.telegram.org/bots/api#sendvideonote).
-     * @param [business_connection_id] >- Unique identifier of the business connection on behalf of which the action will be sent
-     * @param [message_thread_id] >- Unique identifier for the target message thread; for supergroups only
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the action will be sent
+     * @param [message_thread_id] `Optional`
+     * >- Unique identifier for the target message thread; for supergroups only
      * @returns >- True on success.
      */
     export async function sendChatAction(
@@ -1523,14 +1754,18 @@ export namespace tg {
      *
      * [setMessageReaction - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setmessagereaction)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
-     * @param message_id >- Identifier of the target message. If the message belongs to a media group,
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param message_id `Required`
+     * >- Identifier of the target message. If the message belongs to a media group,
      * the reaction is set to the first non-deleted message in the group instead.
-     * @param [reaction] >- A JSON-serialized list of reaction types to set on the message.
+     * @param [reaction] `Optional`
+     * >- A JSON-serialized list of reaction types to set on the message.
      * Currently, as non-premium users, bots can set up to one reaction per message.
      * A custom emoji reaction can be used if it is either already present on the message or explicitly allowed by chat administrators.
      * Paid reactions can't be used by bots.
-     * @param [is_big] >- Pass True to set the reaction with a big animation
+     * @param [is_big] `Optional`
+     * >- Pass True to set the reaction with a big animation
      * @returns >- Returns True on success.
      */
     export async function setMessageReaction(
@@ -1558,9 +1793,12 @@ export namespace tg {
      *
      * [getUserProfilePhotos - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getuserprofilephotos)
      *
-     * @param user_id >- Unique identifier of the target user
-     * @param [offset] >- Sequential number of the first photo to be returned. By default, all photos are returned.
-     * @param [limit] >- Limits the number of photos to be retrieved. Values between 1-100 are accepted. Defaults to 100.
+     * @param user_id `Required`
+     * >- Unique identifier of the target user
+     * @param [offset] `Optional`
+     * >- Sequential number of the first photo to be returned. By default, all photos are returned.
+     * @param [limit] `Optional`
+     * >- Limits the number of photos to be retrieved. Values between 1-100 are accepted. Defaults to 100.
      * @returns >- Returns a [UserProfilePhotos](https://core.telegram.org/bots/api#userprofilephotos) object.
      */
     export async function getUserProfilePhotos(
@@ -1589,7 +1827,8 @@ export namespace tg {
      *
      * [getFile - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getfile)
      *
-     * @param file_id >- File identifier to get information about
+     * @param file_id `Required`
+     * >- File identifier to get information about
      * @returns >- On success, a [File](https://core.telegram.org/bots/api#file) object is returned.
      */
     export async function getFile(
@@ -1611,12 +1850,16 @@ export namespace tg {
      *
      * [banChatMember - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#banchatmember)
      *
-     * @param chat_id >- Unique identifier for the target group or username of the target supergroup or channel (in the format `@channelusername`)
-     * @param user_id >- Unique identifier of the target user
-     * @param [until_date] >- Date when the user will be unbanned; Unix time.
+     * @param chat_id `Required`
+     * >- Unique identifier for the target group or username of the target supergroup or channel (in the format `@channelusername`)
+     * @param user_id `Required`
+     * >- Unique identifier of the target user
+     * @param [until_date] `Optional`
+     * >- Date when the user will be unbanned; Unix time.
      * If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever.
      * Applied for supergroups and channels only.
-     * @param [revoke_messages] >- Pass True to delete all messages from the chat for the user that is being removed.
+     * @param [revoke_messages] `Optional`
+     * >- Pass True to delete all messages from the chat for the user that is being removed.
      * If False, the user will be able to see messages in the group that were sent before the user was removed.
      * Always True for supergroups and channels.
      * @returns >- Returns True on success.
@@ -1651,9 +1894,12 @@ export namespace tg {
      *
      * [unbanChatMember - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#unbanchatmember)
      *
-     * @param chat_id >- Unique identifier for the target group or username of the target supergroup or channel (in the format `@channelusername`)
-     * @param user_id >- Unique identifier of the target user
-     * @param [only_if_banned] >- Do nothing if the user is not banned
+     * @param chat_id `Required`
+     * >- Unique identifier for the target group or username of the target supergroup or channel (in the format `@channelusername`)
+     * @param user_id `Required`
+     * >- Unique identifier of the target user
+     * @param [only_if_banned] `Optional`
+     * >- Do nothing if the user is not banned
      * @returns >- Returns True on success.
      */
     export async function unbanChatMember(
@@ -1680,14 +1926,19 @@ export namespace tg {
      *
      * [restrictChatMember - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#restrictchatmember)
      *
-     * @param chat_id >- Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)
-     * @param user_id >- Unique identifier of the target user
-     * @param permissions >- A JSON-serialized object for new user permissions
-     * @param [use_independent_chat_permissions] >- Pass True if chat permissions are set independently. Otherwise,
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)
+     * @param user_id `Required`
+     * >- Unique identifier of the target user
+     * @param permissions `Required`
+     * >- A JSON-serialized object for new user permissions
+     * @param [use_independent_chat_permissions] `Optional`
+     * >- Pass True if chat permissions are set independently. Otherwise,
      * the can_send_other_messages and can_add_web_page_previews permissions will imply the can_send_messages, can_send_audios,
      * can_send_documents, can_send_photos, can_send_videos, can_send_video_notes, and can_send_voice_notes permissions;
      * the can_send_polls permission will imply the can_send_messages permission.
-     * @param [until_date] >- Date when restrictions will be lifted for the user; Unix time.
+     * @param [until_date] `Optional`
+     * >- Date when restrictions will be lifted for the user; Unix time.
      * If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever
      * @returns >- True on success.
      */
