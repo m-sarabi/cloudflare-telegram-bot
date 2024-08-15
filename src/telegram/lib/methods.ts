@@ -3304,4 +3304,29 @@ export namespace tg {
             language_code,
         });
     }
+
+    /**
+     * Use this method to change the bot's name.
+     *
+     * [setMyName - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setmyname)
+     *
+     * @param [name] `Optional`
+     * >- New bot name; 0-64 characters. Pass an empty string to remove the dedicated name for the given language.
+     * @param [language_code] `Optional`
+     * >- A two-letter ISO 639-1 language code. If empty, the name will be shown to all users for whose language there is no dedicated name.
+     * @returns >- true on success.
+     */
+    export async function setMyName(
+        {
+            name,
+            language_code,
+        }: {
+            name?: string;
+            language_code?: string;
+        }): Promise<boolean> {
+        return await callApi('setMyName', {
+            name,
+            language_code,
+        });
+    }
 }
