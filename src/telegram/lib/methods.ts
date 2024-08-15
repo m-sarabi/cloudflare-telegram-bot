@@ -2581,4 +2581,37 @@ export namespace tg {
             disable_notification
         });
     }
+
+    /**
+     * Use this method to remove a message from the list of pinned messages in a chat.
+     * If the chat is not a private chat, the bot must be an administrator in the chat for this to work
+     * and must have the 'can_pin_messages' administrator right in a supergroup or 'can_edit_messages' administrator right in a channel.
+     *
+     * [unpinChatMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#unpinchatmessage)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message will be unpinned
+     * @param [message_id] `Optional`
+     * >- Identifier of the message to unpin. Required if business_connection_id is specified.
+     * If not specified, the most recent pinned message (by sending date) will be unpinned.
+     * @returns >- true on success.
+     */
+    export async function unpinChatMessage(
+        {
+            chat_id,
+            business_connection_id,
+            message_id
+        }: {
+            chat_id: number | string;
+            business_connection_id?: string;
+            message_id?: number;
+        }): Promise<boolean> {
+        return await callApi('unpinChatMessage', {
+            chat_id,
+            business_connection_id,
+            message_id
+        });
+    }
 }
