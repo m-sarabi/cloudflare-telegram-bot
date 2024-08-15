@@ -2250,4 +2250,50 @@ export namespace tg {
             creates_join_request
         });
     }
+
+    /**
+     * Use this method to edit a non-primary invite link created by the bot.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
+     *
+     * [editChatInviteLink - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#editchatinvitelink)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param invite_link `Required`
+     * >- The invite link to edit
+     * @param [name] `Optional`
+     * >- Invite link name; 0-32 characters
+     * @param [expire_date] `Optional`
+     * >- Point in time (Unix timestamp) when the link will expire
+     * @param [member_limit] `Optional`
+     * >- The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999
+     * @param [creates_join_request] `Optional`
+     * >- True, if users joining the chat via the link need to be approved by chat administrators. If True, member_limit can't be specified
+     * @returns >- the edited invite link as a [ChatInviteLink](https://core.telegram.org/bots/api#chatinvitelink) object.
+     */
+    export async function editChatInviteLink(
+        {
+            chat_id,
+            invite_link,
+            name,
+            expire_date,
+            member_limit,
+            creates_join_request
+        }: {
+            chat_id: number | string;
+            invite_link: string;
+            name?: string;
+            expire_date?: number;
+            member_limit?: number;
+            creates_join_request?: boolean;
+        }): Promise<tgTypes.ChatInviteLink> {
+        return await callApi('editChatInviteLink', {
+            chat_id,
+            invite_link,
+            name,
+            expire_date,
+            member_limit,
+            creates_join_request
+        });
+    }
 }
