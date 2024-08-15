@@ -3488,4 +3488,53 @@ export namespace tg {
             chat_id,
         });
     }
+
+    /**
+     * Use this method to change the default administrator rights requested by the bot when it's added as an administrator to groups or channels.
+     * These rights will be suggested to users, but they are free to modify the list before adding the bot.
+     *
+     * [setMyDefaultAdministratorRights - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setmydefaultadministratorrights)
+     *
+     * @param [rights] `Optional`
+     * >- A JSON-serialized object describing new default administrator rights.
+     * If not specified, the default administrator rights will be cleared.
+     * @param [for_channels] `Optional`
+     * >- Pass true to change the default administrator rights of the bot in channels.
+     * Otherwise, the default administrator rights of the bot for groups and supergroups will be changed.
+     * @returns >- true on success.
+     */
+    export async function setMyDefaultAdministratorRights(
+        {
+            rights,
+            for_channels,
+        }: {
+            rights?: tgTypes.ChatAdministratorRights;
+            for_channels?: boolean;
+        }): Promise<boolean> {
+        return await callApi('setMyDefaultAdministratorRights', {
+            rights: JSON.stringify(rights),
+            for_channels,
+        });
+    }
+
+    /**
+     * Use this method to get the current default administrator rights of the bot.
+     *
+     * [getMyDefaultAdministratorRights - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getmydefaultadministratorrights)
+     *
+     * @param [for_channels] `Optional`
+     * >- Pass True to get default administrator rights of the bot in channels.
+     * Otherwise, default administrator rights of the bot for groups and supergroups will be returned.
+     * @returns >- [ChatAdministratorRights](https://core.telegram.org/bots/api#chatadministratorrights) on success.
+     */
+    export async function getMyDefaultAdministratorRights(
+        {
+            for_channels,
+        }: {
+            for_channels?: boolean;
+        }): Promise<tgTypes.ChatAdministratorRights> {
+        return await callApi('getMyDefaultAdministratorRights', {
+            for_channels,
+        });
+    }
 }
