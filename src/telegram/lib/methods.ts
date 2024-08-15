@@ -2887,4 +2887,31 @@ export namespace tg {
             icon_custom_emoji_id,
         });
     }
+
+    /**
+     * Use this method to close an open topic in a forum supergroup chat.
+     * The bot must be an administrator in the chat for this to work and must have the can_manage_topics administrator rights,
+     * unless it is the creator of the topic.
+     *
+     * [closeForumTopic - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#closeforumtopic)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+     * @param message_thread_id `Required`
+     * >- Unique identifier for the target message thread of the forum topic
+     * @returns >- true on success.
+     */
+    export async function closeForumTopic(
+        {
+            chat_id,
+            message_thread_id,
+        }: {
+            chat_id: number | string;
+            message_thread_id: number;
+        }): Promise<boolean> {
+        return await callApi('closeForumTopic', {
+            chat_id,
+            message_thread_id,
+        });
+    }
 }
