@@ -3442,4 +3442,50 @@ export namespace tg {
             language_code,
         });
     }
+
+    /**
+     * Use this method to change the bot's menu button in a private chat, or the default menu button.
+     *
+     * [setChatMenuButton - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setchatmenubutton)
+     *
+     * @param [chat_id] `Optional`
+     * >- Unique identifier for the target private chat. If not specified, default bot's menu button will be changed
+     * @param [menu_button] `Optional`
+     * >- A JSON-serialized object for the bot's new menu button.
+     * Defaults to [MenuButtonDefault](https://core.telegram.org/bots/api#menubuttondefault)
+     * @returns >- true on success.
+     */
+    export async function setChatMenuButton(
+        {
+            chat_id,
+            menu_button,
+        }: {
+            chat_id?: number;
+            menu_button?: tgTypes.MenuButton;
+        }): Promise<boolean> {
+        return await callApi('setChatMenuButton', {
+            chat_id,
+            menu_button: JSON.stringify(menu_button),
+        });
+    }
+
+    /**
+     * Use this method to get the current value of the bot's menu button in a private chat, or the default menu button.
+     *
+     * [getChatMenuButton - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getchatmenubutton)
+     *
+     * @param [chat_id] `Optional`
+     * >- Unique identifier for the target private chat. If not specified, default bot's menu button will be returned
+     * @returns >- [MenuButton](https://core.telegram.org/bots/api#menubutton) on success.
+     */
+    export async function getChatMenuButton(
+        {
+            chat_id,
+        }: {
+            chat_id?: number;
+        }): Promise<tgTypes.MenuButton> {
+        return await callApi('getChatMenuButton', {
+            chat_id,
+        });
+    }
 }
