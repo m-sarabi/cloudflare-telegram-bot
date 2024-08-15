@@ -2470,4 +2470,25 @@ export namespace tg {
             photo: JSON.stringify(photo)
         });
     }
+
+    /**
+     * Use this method to delete a chat photo. Photos can't be changed for private chats.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
+     *
+     * [deleteChatPhoto - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#deletechatphoto)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @returns >- true on success.
+     */
+    export async function deleteChatPhoto(
+        {
+            chat_id
+        }: {
+            chat_id: number | string;
+        }): Promise<boolean> {
+        return await callApi('deleteChatPhoto', {
+            chat_id
+        });
+    }
 }
