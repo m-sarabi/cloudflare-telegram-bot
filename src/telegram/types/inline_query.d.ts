@@ -808,4 +808,383 @@ declare namespace tgTypes {
          */
         reply_markup?: tgTypes.InlineKeyboardMarkup;
     }
+
+    /**
+     * Represents a link to a photo stored on the Telegram servers.
+     * By default, this photo will be sent by the user with an optional caption.
+     * Alternatively, you can use input_message_content to send a message with the specified content instead of the photo.
+     *
+     * [InlineQueryResultCachedPhoto - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inlinequeryresultcachedphoto)
+     */
+    interface InlineQueryResultCachedPhoto {
+        /**
+         * Type of the result, must be photo
+         */
+        type: 'photo';
+        /**
+         * Unique identifier for this result, 1-64 bytes
+         */
+        id: string;
+        /**
+         * A valid file identifier of the photo
+         */
+        photo_file_id: string;
+        /**
+         * _Optional_. Title for the result
+         */
+        title?: string;
+        /**
+         * _Optional_. Short description of the result
+         */
+        description?: string;
+        /**
+         * _Optional_. Caption of the photo to be sent, 0-1024 characters after entities parsing
+         */
+        caption?: string;
+        /**
+         * _Optional_. Mode for parsing entities in the photo caption.
+         * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
+         */
+        parse_mode?: string;
+        /**
+         * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
+         */
+        caption_entities?: tgTypes.MessageEntity[];
+        /**
+         * _Optional_. Pass True, if the caption must be shown above the message media
+         */
+        show_caption_above_media?: boolean;
+        /**
+         * _Optional_. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message
+         */
+        reply_markup?: tgTypes.InlineKeyboardMarkup;
+        /**
+         * _Optional_. Content of the message to be sent instead of the photo
+         */
+        input_message_content?: tgTypes.InputMessageContent;
+    }
+
+    /**
+     * Represents a link to an animated GIF file stored on the Telegram servers.
+     * By default, this animated GIF file will be sent by the user with an optional caption.
+     * Alternatively, you can use input_message_content to send a message with specified content instead of the animation.
+     *
+     * [InlineQueryResultCachedGif - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inlinequeryresultcachedgif)
+     */
+    interface InlineQueryResultCachedGif {
+        /**
+         * Type of the result, must be gif
+         */
+        type: 'gif';
+        /**
+         * Unique identifier for this result, 1-64 bytes
+         */
+        id: string;
+        /**
+         * A valid file identifier for the GIF file
+         */
+        gif_file_id: string;
+        /**
+         * _Optional_. Title for the result
+         */
+        title?: string;
+        /**
+         * _Optional_. Caption of the GIF file to be sent, 0-1024 characters after entities parsing
+         */
+        caption?: string;
+        /**
+         * _Optional_. Mode for parsing entities in the caption.
+         * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
+         */
+        parse_mode?: string;
+        /**
+         * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
+         */
+        caption_entities?: tgTypes.MessageEntity[];
+        /**
+         * _Optional_. Pass True, if the caption must be shown above the message media
+         */
+        show_caption_above_media?: boolean;
+        /**
+         * _Optional_. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message
+         */
+        reply_markup?: tgTypes.InlineKeyboardMarkup;
+        /**
+         * _Optional_. Content of the message to be sent instead of the GIF animation
+         */
+        input_message_content?: tgTypes.InputMessageContent;
+    }
+
+    /**
+     * Represents a link to a video animation (H.264/MPEG-4 AVC video without sound) stored on the Telegram servers.
+     * By default, this animated MPEG-4 file will be sent by the user with an optional caption.
+     * Alternatively, you can use input_message_content to send a message with the specified content instead of the animation.
+     *
+     * [InlineQueryResultCachedMpeg4Gif - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inlinequeryresultcachedmpeg4gif)
+     */
+    interface InlineQueryResultCachedMpeg4Gif {
+        /**
+         * Type of the result, must be mpeg4_gif
+         */
+        type: 'mpeg4_gif';
+        /**
+         * Unique identifier for this result, 1-64 bytes
+         */
+        id: string;
+        /**
+         * A valid file identifier for the MPEG4 file
+         */
+        mpeg4_file_id: string;
+        /**
+         * _Optional_. Title for the result
+         */
+        title?: string;
+        /**
+         * _Optional_. Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing
+         */
+        caption?: string;
+        /**
+         * _Optional_. Mode for parsing entities in the caption.
+         * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
+         */
+        parse_mode?: string;
+        /**
+         * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
+         */
+        caption_entities?: tgTypes.MessageEntity[];
+        /**
+         * _Optional_. Pass True, if the caption must be shown above the message media
+         */
+        show_caption_above_media?: boolean;
+        /**
+         * _Optional_. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message
+         */
+        reply_markup?: tgTypes.InlineKeyboardMarkup;
+        /**
+         * _Optional_. Content of the message to be sent instead of the video animation
+         */
+        input_message_content?: tgTypes.InputMessageContent;
+    }
+
+    /**
+     * Represents a link to a sticker stored on the Telegram servers. By default, this sticker will be sent by the user.
+     * Alternatively, you can use input_message_content to send a message with the specified content instead of the sticker.
+     *
+     * [InlineQueryResultCachedSticker - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inlinequeryresultcachedsticker)
+     */
+    interface InlineQueryResultCachedSticker {
+        /**
+         * Type of the result, must be sticker
+         */
+        type: 'sticker';
+        /**
+         * Unique identifier for this result, 1-64 bytes
+         */
+        id: string;
+        /**
+         * A valid file identifier of the sticker
+         */
+        sticker_file_id: string;
+        /**
+         * _Optional_. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message
+         */
+        reply_markup?: tgTypes.InlineKeyboardMarkup;
+        /**
+         * _Optional_. Content of the message to be sent instead of the sticker
+         */
+        input_message_content?: tgTypes.InputMessageContent;
+    }
+
+    /**
+     * Represents a link to a file stored on the Telegram servers. By default, this file will be sent by the user with an optional caption.
+     * Alternatively, you can use input_message_content to send a message with the specified content instead of the file.
+     *
+     * [InlineQueryResultCachedDocument - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inlinequeryresultcacheddocument)
+     */
+    interface InlineQueryResultCachedDocument {
+        /**
+         * Type of the result, must be document
+         */
+        type: 'document';
+        /**
+         * Unique identifier for this result, 1-64 bytes
+         */
+        id: string;
+        /**
+         * Title for the result
+         */
+        title: string;
+        /**
+         * A valid file identifier for the file
+         */
+        document_file_id: string;
+        /**
+         * _Optional_. Short description of the result
+         */
+        description?: string;
+        /**
+         * _Optional_. Caption of the document to be sent, 0-1024 characters after entities parsing
+         */
+        caption?: string;
+        /**
+         * _Optional_. Mode for parsing entities in the document caption.
+         * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
+         */
+        parse_mode?: string;
+        /**
+         * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
+         */
+        caption_entities?: tgTypes.MessageEntity[];
+        /**
+         * _Optional_. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message
+         */
+        reply_markup?: tgTypes.InlineKeyboardMarkup;
+        /**
+         * _Optional_. Content of the message to be sent instead of the file
+         */
+        input_message_content?: tgTypes.InputMessageContent;
+    }
+
+    /**
+     * Represents a link to a video file stored on the Telegram servers.
+     * By default, this video file will be sent by the user with an optional caption.
+     * Alternatively, you can use input_message_content to send a message with the specified content instead of the video.
+     *
+     * [InlineQueryResultCachedVideo - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inlinequeryresultcachedvideo)
+     */
+    interface InlineQueryResultCachedVideo {
+        /**
+         * Type of the result, must be video
+         */
+        type: 'video';
+        /**
+         * Unique identifier for this result, 1-64 bytes
+         */
+        id: string;
+        /**
+         * A valid file identifier for the video file
+         */
+        video_file_id: string;
+        /**
+         * Title for the result
+         */
+        title: string;
+        /**
+         * _Optional_. Short description of the result
+         */
+        description?: string;
+        /**
+         * _Optional_. Caption of the video to be sent, 0-1024 characters after entities parsing
+         */
+        caption?: string;
+        /**
+         * _Optional_. Mode for parsing entities in the video caption.
+         * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
+         */
+        parse_mode?: string;
+        /**
+         * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
+         */
+        caption_entities?: tgTypes.MessageEntity[];
+        /**
+         * _Optional_. Pass True, if the caption must be shown above the message media
+         */
+        show_caption_above_media?: boolean;
+        /**
+         * _Optional_. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message
+         */
+        reply_markup?: tgTypes.InlineKeyboardMarkup;
+        /**
+         * _Optional_. Content of the message to be sent instead of the video
+         */
+        input_message_content?: tgTypes.InputMessageContent;
+    }
+
+    /**
+     * Represents a link to a voice message stored on the Telegram servers. By default, this voice message will be sent by the user.
+     * Alternatively, you can use input_message_content to send a message with the specified content instead of the voice message.
+     *
+     * [InlineQueryResultCachedVoice - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inlinequeryresultcachedvoice)
+     */
+    interface InlineQueryResultCachedVoice {
+        /**
+         * Type of the result, must be voice
+         */
+        type: string;
+        /**
+         * Unique identifier for this result, 1-64 bytes
+         */
+        id: string;
+        /**
+         * A valid file identifier for the voice message
+         */
+        voice_file_id: string;
+        /**
+         * Voice message title
+         */
+        title: string;
+        /**
+         * _Optional_. Caption, 0-1024 characters after entities parsing
+         */
+        caption?: string;
+        /**
+         * _Optional_. Mode for parsing entities in the voice message caption.
+         * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
+         */
+        parse_mode?: string;
+        /**
+         * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
+         */
+        caption_entities?: tgTypes.MessageEntity[];
+        /**
+         * _Optional_. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message
+         */
+        reply_markup?: tgTypes.InlineKeyboardMarkup;
+        /**
+         * _Optional_. Content of the message to be sent instead of the voice message
+         */
+        input_message_content?: tgTypes.InputMessageContent;
+    }
+
+    /**
+     * Represents a link to an MP3 audio file stored on the Telegram servers. By default, this audio file will be sent by the user.
+     * Alternatively, you can use input_message_content to send a message with the specified content instead of the audio.
+     *
+     * [InlineQueryResultCachedAudio - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#inlinequeryresultcachedaudio)
+     */
+    interface InlineQueryResultCachedAudio {
+        /**
+         * Type of the result, must be audio
+         */
+        type: 'audio';
+        /**
+         * Unique identifier for this result, 1-64 bytes
+         */
+        id: string;
+        /**
+         * A valid file identifier for the audio file
+         */
+        audio_file_id: string;
+        /**
+         * _Optional_. Caption, 0-1024 characters after entities parsing
+         */
+        caption?: string;
+        /**
+         * _Optional_. Mode for parsing entities in the audio caption.
+         * See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.
+         */
+        parse_mode?: string;
+        /**
+         * _Optional_. List of special entities that appear in the caption, which can be specified instead of parse_mode
+         */
+        caption_entities?: tgTypes.MessageEntity[];
+        /**
+         * _Optional_. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message
+         */
+        reply_markup?: tgTypes.InlineKeyboardMarkup;
+        /**
+         * _Optional_. Content of the message to be sent instead of the audio
+         */
+        input_message_content?: tgTypes.InputMessageContent;
+    }
 }
