@@ -2307,7 +2307,7 @@ export namespace tg {
      * [createChatSubscriptionInviteLink - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#createchatsubscriptioninvitelink)
      *
      * @param chat_id `Required`
-     * >- Unique identifier for the target channel chat or username of the target channel (in the format @channelusername)
+     * >- Unique identifier for the target channel chat or username of the target channel (in the format `@channelusername`)
      * @param subscription_period `Required`
      * >- The number of seconds the subscription will be active for before the next payment. Currently, it must always be 2592000 (30 days).
      * @param subscription_price `Required`
@@ -2332,6 +2332,37 @@ export namespace tg {
             chat_id,
             subscription_period,
             subscription_price,
+            name
+        });
+    }
+
+    /**
+     * Use this method to edit a subscription invite link created by the bot.
+     * The bot must have the can_invite_users administrator rights.
+     *
+     * [editChatSubscriptionInviteLink - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#editchatsubscriptioninvitelink)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param invite_link `Required`
+     * >- The invite link to edit
+     * @param [name] `Optional`
+     * >- Invite link name; 0-32 characters
+     * @returns >- the edited invite link as a [ChatInviteLink](https://core.telegram.org/bots/api#chatinvitelink) object.
+     */
+    export async function editChatSubscriptionInviteLink(
+        {
+            chat_id,
+            invite_link,
+            name
+        }: {
+            chat_id: number | string;
+            invite_link: string;
+            name?: string;
+        }): Promise<tgTypes.ChatInviteLink> {
+        return await callApi('editChatSubscriptionInviteLink', {
+            chat_id,
+            invite_link,
             name
         });
     }
