@@ -2296,4 +2296,43 @@ export namespace tg {
             creates_join_request
         });
     }
+
+    /**
+     * Use this method to create a
+     * [subscription invite link](https://telegram.org/blog/superchannels-star-reactions-subscriptions#star-subscriptions) for a channel chat.
+     * The bot must have the can_invite_users administrator rights. The link can be edited using the method
+     * [editChatSubscriptionInviteLink](https://core.telegram.org/bots/api#editchatsubscriptioninvitelink) or revoked using the method
+     * [revokeChatInviteLink](https://core.telegram.org/bots/api#revokechatinvitelink).
+     *
+     * [createChatSubscriptionInviteLink - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#createchatsubscriptioninvitelink)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target channel chat or username of the target channel (in the format @channelusername)
+     * @param subscription_period `Required`
+     * >- The number of seconds the subscription will be active for before the next payment. Currently, it must always be 2592000 (30 days).
+     * @param subscription_price `Required`
+     * >- The amount of Telegram Stars a user must pay initially and after each subsequent subscription period to be a member of the chat; 1-2500
+     * @param [name] `Optional`
+     * >- Invite link name; 0-32 characters
+     * @returns >- the new invite link as a [ChatInviteLink](https://core.telegram.org/bots/api#chatinvitelink) object.
+     */
+    export async function createChatSubscriptionInviteLink(
+        {
+            chat_id,
+            subscription_period,
+            subscription_price,
+            name
+        }: {
+            chat_id: number | string;
+            subscription_period: number;
+            subscription_price: number;
+            name?: string;
+        }): Promise<tgTypes.ChatInviteLink> {
+        return await callApi('createChatSubscriptionInviteLink', {
+            chat_id,
+            subscription_period,
+            subscription_price,
+            name
+        });
+    }
 }
