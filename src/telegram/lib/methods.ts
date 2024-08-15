@@ -242,7 +242,7 @@ export namespace tg {
      * >- A JSON-serialized list of special entities that appear in the new caption,
      * which can be specified instead of parse_mode
      * @param [show_caption_above_media] `Optional`
-     * >- Pass True, if the caption must be shown above the message media.
+     * >- Pass true, if the caption must be shown above the message media.
      * Ignored if a new caption isn't specified.
      * @param [disable_notification] `Optional`
      * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
@@ -328,7 +328,7 @@ export namespace tg {
      * @param [protect_content] `Optional`
      * >- Protects the contents of the sent messages from forwarding and saving
      * @param [remove_caption] `Optional`
-     * >- Pass True to copy the messages without their captions
+     * >- Pass true to copy the messages without their captions
      * @returns >- On success, an array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.
      */
     export async function copyMessages(
@@ -385,9 +385,9 @@ export namespace tg {
      * >- A JSON-serialized list of special entities that appear in the caption,
      * which can be specified instead of parse_mode
      * @param [show_caption_above_media] `Optional`
-     * >- Pass True, if the caption must be shown above the message media
+     * >- Pass true, if the caption must be shown above the message media
      * @param [has_spoiler] `Optional`
-     * >- Pass True if the photo needs to be covered with a spoiler animation
+     * >- Pass true if the photo needs to be covered with a spoiler animation
      * @param [disable_notification] `Optional`
      * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
@@ -699,11 +699,11 @@ export namespace tg {
      * >- A JSON-serialized list of special entities that appear in the caption,
      * which can be specified instead of parse_mode
      * @param [show_caption_above_media] `Optional`
-     * >- Pass True, if the caption must be shown above the message media
+     * >- Pass true, if the caption must be shown above the message media
      * @param [has_spoiler] `Optional`
-     * >- Pass True if the video needs to be covered with a spoiler animation
+     * >- Pass true if the video needs to be covered with a spoiler animation
      * @param [supports_streaming] `Optional`
-     * >- Pass True if the uploaded video is suitable for streaming
+     * >- Pass true if the uploaded video is suitable for streaming
      * @param [disable_notification] `Optional`
      * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
@@ -822,9 +822,9 @@ export namespace tg {
      * >- A JSON-serialized list of special entities that appear in the caption,
      * which can be specified instead of parse_mode
      * @param [show_caption_above_media] `Optional`
-     * >- Pass True, if the caption must be shown above the message media
+     * >- Pass true, if the caption must be shown above the message media
      * @param [has_spoiler] `Optional`
-     * >- Pass True if the animation needs to be covered with a spoiler animation
+     * >- Pass true if the animation needs to be covered with a spoiler animation
      * @param [disable_notification] `Optional`
      * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
@@ -1107,7 +1107,7 @@ export namespace tg {
      * >- A JSON-serialized list of special entities that appear in the caption,
      * which can be specified instead of parse_mode
      * @param [show_caption_above_media] `Optional`
-     * >- Pass True, if the caption must be shown above the message media
+     * >- Pass true, if the caption must be shown above the message media
      * @param [disable_notification] `Optional`
      * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
@@ -1518,11 +1518,11 @@ export namespace tg {
      * >- A JSON-serialized list of special entities that appear in the poll question.
      * It can be specified instead of question_parse_mode
      * @param [is_anonymous] `Optional`
-     * >- True, if the poll needs to be anonymous, defaults to True
+     * >- true, if the poll needs to be anonymous, defaults to true
      * @param [type] `Optional`
      * >- Poll type, “quiz” or “regular”, defaults to “regular”
      * @param [allows_multiple_answers] `Optional`
-     * >- True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to False
+     * >- true, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to false
      * @param [correct_option_id] `Optional`
      * >- 0-based identifier of the correct answer option, required for polls in quiz mode
      * @param [explanation] `Optional`
@@ -1540,7 +1540,7 @@ export namespace tg {
      * >- Point in time (Unix timestamp) when the poll will be automatically closed.
      * Must be at least 5 and no more than 600 seconds in the future. Can't be used together with open_period.
      * @param [is_closed] `Optional`
-     * >- Pass True if the poll needs to be immediately closed. This can be useful for poll preview.
+     * >- Pass true if the poll needs to be immediately closed. This can be useful for poll preview.
      * @param [disable_notification] `Optional`
      * >- Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages).
      * Users will receive a notification with no sound.
@@ -1725,7 +1725,7 @@ export namespace tg {
      * >- Unique identifier of the business connection on behalf of which the action will be sent
      * @param [message_thread_id] `Optional`
      * >- Unique identifier for the target message thread; for supergroups only
-     * @returns >- True on success.
+     * @returns >- true on success.
      */
     export async function sendChatAction(
         {
@@ -1765,8 +1765,8 @@ export namespace tg {
      * A custom emoji reaction can be used if it is either already present on the message or explicitly allowed by chat administrators.
      * Paid reactions can't be used by bots.
      * @param [is_big] `Optional`
-     * >- Pass True to set the reaction with a big animation
-     * @returns >- Returns True on success.
+     * >- Pass true to set the reaction with a big animation
+     * @returns >- true on success.
      */
     export async function setMessageReaction(
         {
@@ -1799,7 +1799,7 @@ export namespace tg {
      * >- Sequential number of the first photo to be returned. By default, all photos are returned.
      * @param [limit] `Optional`
      * >- Limits the number of photos to be retrieved. Values between 1-100 are accepted. Defaults to 100.
-     * @returns >- Returns a [UserProfilePhotos](https://core.telegram.org/bots/api#userprofilephotos) object.
+     * @returns >- a [UserProfilePhotos](https://core.telegram.org/bots/api#userprofilephotos) object.
      */
     export async function getUserProfilePhotos(
         {
@@ -1859,10 +1859,10 @@ export namespace tg {
      * If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever.
      * Applied for supergroups and channels only.
      * @param [revoke_messages] `Optional`
-     * >- Pass True to delete all messages from the chat for the user that is being removed.
-     * If False, the user will be able to see messages in the group that were sent before the user was removed.
-     * Always True for supergroups and channels.
-     * @returns >- Returns True on success.
+     * >- Pass true to delete all messages from the chat for the user that is being removed.
+     * If false, the user will be able to see messages in the group that were sent before the user was removed.
+     * Always true for supergroups and channels.
+     * @returns >- true on success.
      */
     export async function banChatMember(
         {
@@ -1900,7 +1900,7 @@ export namespace tg {
      * >- Unique identifier of the target user
      * @param [only_if_banned] `Optional`
      * >- Do nothing if the user is not banned
-     * @returns >- Returns True on success.
+     * @returns >- true on success.
      */
     export async function unbanChatMember(
         {
@@ -1922,7 +1922,7 @@ export namespace tg {
     /**
      * Use this method to restrict a user in a supergroup.
      * The bot must be an administrator in the supergroup for this to work and must have the appropriate administrator rights.
-     * Pass True for all permissions to lift restrictions from a user.
+     * Pass true for all permissions to lift restrictions from a user.
      *
      * [restrictChatMember - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#restrictchatmember)
      *
@@ -1933,14 +1933,14 @@ export namespace tg {
      * @param permissions `Required`
      * >- A JSON-serialized object for new user permissions
      * @param [use_independent_chat_permissions] `Optional`
-     * >- Pass True if chat permissions are set independently. Otherwise,
+     * >- Pass true if chat permissions are set independently. Otherwise,
      * the can_send_other_messages and can_add_web_page_previews permissions will imply the can_send_messages, can_send_audios,
      * can_send_documents, can_send_photos, can_send_videos, can_send_video_notes, and can_send_voice_notes permissions;
      * the can_send_polls permission will imply the can_send_messages permission.
      * @param [until_date] `Optional`
      * >- Date when restrictions will be lifted for the user; Unix time.
      * If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever
-     * @returns >- True on success.
+     * @returns >- true on success.
      */
     export async function restrictChatMember(
         {
@@ -1968,7 +1968,7 @@ export namespace tg {
     /**
      * Use this method to promote or demote a user in a supergroup or a channel.
      * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
-     * Pass False for all boolean parameters to demote a user.
+     * Pass false for all boolean parameters to demote a user.
      *
      * [promoteChatMember - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#promotechatmember)
      *
@@ -1977,39 +1977,39 @@ export namespace tg {
      * @param user_id `Required`
      * >- Unique identifier of the target user
      * @param [is_anonymous] `Optional`
-     * >- Pass True if the administrator's presence in the chat is hidden
+     * >- Pass true if the administrator's presence in the chat is hidden
      * @param [can_manage_chat] `Optional`
-     * >- Pass True if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members,
+     * >- Pass true if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members,
      * report spam messages and ignore slow mode. Implied by any other administrator privilege.
      * @param [can_delete_messages] `Optional`
-     * >- Pass True if the administrator can delete messages of other users
+     * >- Pass true if the administrator can delete messages of other users
      * @param [can_manage_video_chats] `Optional`
-     * >- Pass True if the administrator can manage video chats
+     * >- Pass true if the administrator can manage video chats
      * @param [can_restrict_members] `Optional`
-     * >- Pass True if the administrator can restrict, ban or unban chat members, or access supergroup statistics
+     * >- Pass true if the administrator can restrict, ban or unban chat members, or access supergroup statistics
      * @param [can_promote_members] `Optional`
-     * >- Pass True if the administrator can add new administrators with a subset of their own privileges
+     * >- Pass true if the administrator can add new administrators with a subset of their own privileges
      * or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by him)
      * @param [can_change_info] `Optional`
-     * >- Pass True if the administrator can change chat title, photo and other settings
+     * >- Pass true if the administrator can change chat title, photo and other settings
      * @param [can_invite_users] `Optional`
-     * >- Pass True if the administrator can invite new users to the chat
+     * >- Pass true if the administrator can invite new users to the chat
      * @param [can_post_stories] `Optional`
-     * >- Pass True if the administrator can post stories to the chat
+     * >- Pass true if the administrator can post stories to the chat
      * @param [can_edit_stories] `Optional`
-     * >- Pass True if the administrator can edit stories posted by other users, post stories to the chat page,
+     * >- Pass true if the administrator can edit stories posted by other users, post stories to the chat page,
      * pin chat stories, and access the chat's story archive
      * @param [can_delete_stories] `Optional`
-     * >- Pass True if the administrator can delete stories posted by other users
+     * >- Pass true if the administrator can delete stories posted by other users
      * @param [can_post_messages] `Optional`
-     * >- Pass True if the administrator can post messages in the channel, or access channel statistics; for channels only
+     * >- Pass true if the administrator can post messages in the channel, or access channel statistics; for channels only
      * @param [can_edit_messages] `Optional`
-     * >- Pass True if the administrator can edit messages of other users and can pin messages; for channels only
+     * >- Pass true if the administrator can edit messages of other users and can pin messages; for channels only
      * @param [can_pin_messages] `Optional`
-     * >- Pass True if the administrator can pin messages; for supergroups only
+     * >- Pass true if the administrator can pin messages; for supergroups only
      * @param [can_manage_topics] `Optional`
-     * >- Pass True if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only
-     * @returns >- True on success.
+     * >- Pass true if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only
+     * @returns >- true on success.
      */
     export async function promoteChatMember(
         {
@@ -2081,7 +2081,7 @@ export namespace tg {
      * >- Unique identifier of the target user
      * @param custom_title `Required`
      * >- New custom title for the administrator; 0-16 characters, emoji are not allowed
-     * @returns >- True on success.
+     * @returns >- true on success.
      */
     export async function setChatAdministratorCustomTitle(
         {
@@ -2112,7 +2112,7 @@ export namespace tg {
      * >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
      * @param sender_chat_id `Required`
      * >- Unique identifier of the target sender chat
-     * @returns >- True on success.
+     * @returns >- true on success.
      */
     export async function banChatSenderChat(
         {
@@ -2138,7 +2138,7 @@ export namespace tg {
      * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @param sender_chat_id `Required`
      * >- Unique identifier of the target sender chat
-     * @returns >- True on success.
+     * @returns >- true on success.
      */
     export async function unbanChatSenderChat(
         {
@@ -2165,11 +2165,11 @@ export namespace tg {
      * @param permissions `Required`
      * >- A JSON-serialized object for new default chat permissions
      * @param [use_independent_chat_permissions] `Optional`
-     * >- Pass True if chat permissions are set independently.
+     * >- Pass true if chat permissions are set independently.
      * Otherwise, the can_send_other_messages and can_add_web_page_previews permissions will imply the can_send_messages,
      * can_send_audios, can_send_documents, can_send_photos, can_send_videos, can_send_video_notes, and can_send_voice_notes permissions;
      * the can_send_polls permission will imply the can_send_messages permission.
-     * @returns >- True on success.
+     * @returns >- true on success.
      */
     export async function setChatPermissions(
         {
@@ -2225,7 +2225,7 @@ export namespace tg {
      * @param [member_limit] `Optional`
      * >- The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999
      * @param [creates_join_request] `Optional`
-     * >- True, if users joining the chat via the link need to be approved by chat administrators. If True, member_limit can't be specified
+     * >- true, if users joining the chat via the link need to be approved by chat administrators. If true, member_limit can't be specified
      * @returns >- the new invite link as [ChatInviteLink](https://core.telegram.org/bots/api#chatinvitelink) object.
      */
     export async function createChatInviteLink(
@@ -2268,7 +2268,7 @@ export namespace tg {
      * @param [member_limit] `Optional`
      * >- The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999
      * @param [creates_join_request] `Optional`
-     * >- True, if users joining the chat via the link need to be approved by chat administrators. If True, member_limit can't be specified
+     * >- true, if users joining the chat via the link need to be approved by chat administrators. If true, member_limit can't be specified
      * @returns >- the edited invite link as a [ChatInviteLink](https://core.telegram.org/bots/api#chatinvitelink) object.
      */
     export async function editChatInviteLink(
@@ -2403,7 +2403,7 @@ export namespace tg {
      * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @param user_id `Required`
      * >- Unique identifier of the target user
-     * @returns >- True on success.
+     * @returns >- true on success.
      */
     export async function approveChatJoinRequest(
         {
