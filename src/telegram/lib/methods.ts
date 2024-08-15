@@ -1964,4 +1964,109 @@ export namespace tg {
             until_date
         });
     }
+
+    /**
+     * Use this method to promote or demote a user in a supergroup or a channel.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
+     * Pass False for all boolean parameters to demote a user.
+     *
+     * [promoteChatMember - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#promotechatmember)
+     *
+     * @param chat_id `Required`
+     >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param user_id `Required`
+     >- Unique identifier of the target user
+     * @param [is_anonymous] `Optional`
+     >- Pass True if the administrator's presence in the chat is hidden
+     * @param [can_manage_chat] `Optional`
+     >- Pass True if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members,
+     report spam messages and ignore slow mode. Implied by any other administrator privilege.
+     * @param [can_delete_messages] `Optional`
+     >- Pass True if the administrator can delete messages of other users
+     * @param [can_manage_video_chats] `Optional`
+     >- Pass True if the administrator can manage video chats
+     * @param [can_restrict_members] `Optional`
+     >- Pass True if the administrator can restrict, ban or unban chat members, or access supergroup statistics
+     * @param [can_promote_members] `Optional`
+     >- Pass True if the administrator can add new administrators with a subset of their own privileges
+     or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by him)
+     * @param [can_change_info] `Optional`
+     >- Pass True if the administrator can change chat title, photo and other settings
+     * @param [can_invite_users] `Optional`
+     >- Pass True if the administrator can invite new users to the chat
+     * @param [can_post_stories] `Optional`
+     >- Pass True if the administrator can post stories to the chat
+     * @param [can_edit_stories] `Optional`
+     >- Pass True if the administrator can edit stories posted by other users, post stories to the chat page,
+     pin chat stories, and access the chat's story archive
+     * @param [can_delete_stories] `Optional`
+     >- Pass True if the administrator can delete stories posted by other users
+     * @param [can_post_messages] `Optional`
+     >- Pass True if the administrator can post messages in the channel, or access channel statistics; for channels only
+     * @param [can_edit_messages] `Optional`
+     >- Pass True if the administrator can edit messages of other users and can pin messages; for channels only
+     * @param [can_pin_messages] `Optional`
+     >- Pass True if the administrator can pin messages; for supergroups only
+     * @param [can_manage_topics] `Optional`
+     >- Pass True if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only
+     * @returns >- True on success.
+     */
+    export async function promoteChatMember(
+        {
+            chat_id,
+            user_id,
+            is_anonymous,
+            can_manage_chat,
+            can_delete_messages,
+            can_manage_video_chats,
+            can_restrict_members,
+            can_promote_members,
+            can_change_info,
+            can_invite_users,
+            can_post_stories,
+            can_edit_stories,
+            can_delete_stories,
+            can_post_messages,
+            can_edit_messages,
+            can_pin_messages,
+            can_manage_topics
+        }: {
+            chat_id: number | string;
+            user_id: number;
+            is_anonymous?: boolean;
+            can_manage_chat?: boolean;
+            can_delete_messages?: boolean;
+            can_manage_video_chats?: boolean;
+            can_restrict_members?: boolean;
+            can_promote_members?: boolean;
+            can_change_info?: boolean;
+            can_invite_users?: boolean;
+            can_post_stories?: boolean;
+            can_edit_stories?: boolean;
+            can_delete_stories?: boolean;
+            can_post_messages?: boolean;
+            can_edit_messages?: boolean;
+            can_pin_messages?: boolean;
+            can_manage_topics?: boolean;
+        }): Promise<boolean> {
+        return await callApi('promoteChatMember', {
+            chat_id,
+            user_id,
+            is_anonymous,
+            can_manage_chat,
+            can_delete_messages,
+            can_manage_video_chats,
+            can_restrict_members,
+            can_promote_members,
+            can_change_info,
+            can_invite_users,
+            can_post_stories,
+            can_edit_stories,
+            can_delete_stories,
+            can_post_messages,
+            can_edit_messages,
+            can_pin_messages,
+            can_manage_topics
+        });
+    }
 }
