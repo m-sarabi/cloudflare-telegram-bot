@@ -300,4 +300,143 @@ export namespace tg {
             reply_markup: JSON.stringify(reply_markup),
         });
     }
+
+    /**
+     * Use this method to edit only the reply markup of messages.
+     * Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited
+     * within **48 hours** from the time they were sent.
+     *
+     * [editMessageReplyMarkup - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#editmessagereplymarkup)
+     *
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message to be edited was sent
+     * @param [chat_id] `Optional`
+     * >- Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel
+     * (in the format `@channelusername`)
+     * @param [message_id] `Optional`
+     * >- Required if inline_message_id is not specified. Identifier of the message to edit
+     * @param [inline_message_id] `Optional`
+     * >- Required if chat_id and message_id are not specified. Identifier of the inline message
+     * @param [reply_markup] `Optional`
+     * >- A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).
+     * @returns >- On success, if the edited message is not an inline message,
+     * the edited [Message](https://core.telegram.org/bots/api#message) is returned, otherwise true is returned.
+     */
+    export async function editMessageReplyMarkup(
+        {
+            business_connection_id,
+            chat_id,
+            message_id,
+            inline_message_id,
+            reply_markup,
+        }: {
+            business_connection_id?: string;
+            chat_id?: number | string;
+            message_id?: number;
+            inline_message_id?: string;
+            reply_markup?: tgTypes.InlineKeyboardMarkup;
+        }): Promise<tgTypes.Message | boolean> {
+        return await callApi('editMessageReplyMarkup', {
+            business_connection_id,
+            chat_id,
+            message_id,
+            inline_message_id,
+            reply_markup: JSON.stringify(reply_markup),
+        });
+    }
+
+    /**
+     * Use this method to stop a poll which was sent by the bot.
+     *
+     * [stopPoll - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#stoppoll)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param message_id `Required`
+     * >- Identifier of the original message with the poll
+     * @param [business_connection_id] `Optional`
+     * >- Unique identifier of the business connection on behalf of which the message to be edited was sent
+     * @param [reply_markup] `Optional`
+     * >- A JSON-serialized object for a new message [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).
+     * @returns >- On success, the stopped [Poll](https://core.telegram.org/bots/api#poll) is returned.
+     */
+    export async function stopPoll(
+        {
+            chat_id,
+            message_id,
+            business_connection_id,
+            reply_markup,
+        }: {
+            chat_id: number | string;
+            message_id: number;
+            business_connection_id?: string;
+            reply_markup?: tgTypes.InlineKeyboardMarkup;
+        }): Promise<tgTypes.Poll> {
+        return await callApi('stopPoll', {
+            chat_id,
+            message_id,
+            business_connection_id,
+            reply_markup: JSON.stringify(reply_markup),
+        });
+    }
+
+    /**
+     * Use this method to delete a message, including service messages, with the following limitations:
+     * - A message can only be deleted if it was sent less than 48 hours ago.
+     * - Service messages about a supergroup, channel, or forum topic creation can't be deleted.
+     * - A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.
+     * - Bots can delete outgoing messages in private chats, groups, and supergroups.
+     * - Bots can delete incoming messages in private chats.
+     * - Bots granted can_post_messages permissions can delete outgoing messages in channels.
+     * - If the bot is an administrator of a group, it can delete any message there.
+     * - If the bot has can_delete_messages permission in a supergroup or a channel, it can delete any message there.
+     *
+     * [deleteMessage - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#deletemessage)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param message_id `Required`
+     * >- Identifier of the message to delete
+     * @returns >- true on success.
+     */
+    export async function deleteMessage(
+        {
+            chat_id,
+            message_id,
+        }: {
+            chat_id: number | string;
+            message_id: number;
+        }): Promise<boolean> {
+        return await callApi('deleteMessage', {
+            chat_id,
+            message_id,
+        });
+    }
+
+    /**
+     * Use this method to delete multiple messages simultaneously.
+     * If some of the specified messages can't be found, they are skipped.
+     *
+     * [deleteMessages - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#deletemessages)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param message_ids `Required`
+     * >- A JSON-serialized list of 1-100 identifiers of messages to delete.
+     * See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted
+     * @returns >- true on success.
+     */
+    export async function deleteMessages(
+        {
+            chat_id,
+            message_ids,
+        }: {
+            chat_id: number | string;
+            message_ids: number[];
+        }): Promise<boolean> {
+        return await callApi('deleteMessages', {
+            chat_id,
+            message_ids: JSON.stringify(message_ids),
+        });
+    }
 }
