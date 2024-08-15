@@ -2517,4 +2517,30 @@ export namespace tg {
             title
         });
     }
+
+    /**
+     * Use this method to change the description of a group, a supergroup or a channel.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
+     *
+     * [setChatDescription - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setchatdescription)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param [description] `Optional`
+     * >- New chat description, 0-255 characters
+     * @returns >- true on success.
+     */
+    export async function setChatDescription(
+        {
+            chat_id,
+            description
+        }: {
+            chat_id: number | string;
+            description?: string;
+        }): Promise<boolean> {
+        return await callApi('setChatDescription', {
+            chat_id,
+            description
+        });
+    }
 }
