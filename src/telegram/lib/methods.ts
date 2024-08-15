@@ -3349,4 +3349,50 @@ export namespace tg {
             language_code,
         });
     }
+
+    /**
+     * Use this method to change the bot's description, which is shown in the chat with the bot if the chat is empty.
+     *
+     * [setMyDescription - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setmydescription)
+     *
+     * @param [description] `Optional`
+     * >- New bot description; 0-512 characters. Pass an empty string to remove the dedicated description for the given language.
+     * @param [language_code] `Optional`
+     * >- A two-letter ISO 639-1 language code.
+     * If empty, the description will be applied to all users for whose language there is no dedicated description.
+     * @returns >- true on success.
+     */
+    export async function setMyDescription(
+        {
+            description,
+            language_code,
+        }: {
+            description?: string;
+            language_code?: string;
+        }): Promise<boolean> {
+        return await callApi('setMyDescription', {
+            description,
+            language_code,
+        });
+    }
+
+    /**
+     * Use this method to get the current bot description for the given user language.
+     *
+     * [getMyDescription - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getmydescription)
+     *
+     * @param [language_code] `Optional`
+     * >- A two-letter ISO 639-1 language code or an empty string
+     * @returns >- [BotDescription](https://core.telegram.org/bots/api#botdescription) on success.
+     */
+    export async function getMyDescription(
+        {
+            language_code,
+        }: {
+            language_code?: string;
+        }): Promise<tgTypes.BotDescription> {
+        return await callApi('getMyDescription', {
+            language_code,
+        });
+    }
 }
