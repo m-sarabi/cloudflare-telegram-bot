@@ -2452,7 +2452,7 @@ export namespace tg {
      * [setChatPhoto - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setchatphoto)
      *
      * @param chat_id `Required`
-     * >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @param photo `Required`
      * >- New chat photo, uploaded using multipart/form-data
      * @returns >- true on success.
@@ -2478,7 +2478,7 @@ export namespace tg {
      * [deleteChatPhoto - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#deletechatphoto)
      *
      * @param chat_id `Required`
-     * >- Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
      * @returns >- true on success.
      */
     export async function deleteChatPhoto(
@@ -2489,6 +2489,32 @@ export namespace tg {
         }): Promise<boolean> {
         return await callApi('deleteChatPhoto', {
             chat_id
+        });
+    }
+
+    /**
+     * Use this method to change the title of a chat. Titles can't be changed for private chats.
+     * The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights.
+     *
+     * [setChatTitle - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#setchattitle)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)
+     * @param title `Required`
+     * >- New chat title, 1-128 characters
+     * @returns >- true on success.
+     */
+    export async function setChatTitle(
+        {
+            chat_id,
+            title
+        }: {
+            chat_id: number | string;
+            title: string;
+        }): Promise<boolean> {
+        return await callApi('setChatTitle', {
+            chat_id,
+            title
         });
     }
 }
