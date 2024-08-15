@@ -30,16 +30,42 @@ export async function handleWebhook(request: Request): Promise<Response> {
 async function onUpdate(update: tgTypes.Update) {
     if (update.message) {
         const message = update.message;
-        if (message.text === 'text') {
+        let result;
+        if (message.text === 'reaction') {
             const botInto = await tg.getMe();
             const reaction: tgTypes.ReactionTypeEmoji = { type: 'emoji', emoji: '🫡' };
-            const result = await tg.setMessageReaction({
+            result = await tg.setMessageReaction({
                 chat_id: message.chat.id,
                 message_id: message.message_id,
                 reaction: [reaction]
             });
-            console.log(botInto.username, result);
-
+            console.log(botInto.username);
+        } else if (message.text === 'location') {
+            result = await tg.sendLocation({
+                chat_id: message.chat.id,
+                latitude: 35.525660354512965,
+                longitude: 51.17193735279942
+            });
+        } else if (message.text === 'message') {
+            result = await tg.sendMessage({
+                chat_id: message.chat.id,
+                text: 'message back to you!'
+            });
+        } else if (message.text === 'type') {
+            result = await tg.sendChatAction({
+                chat_id: message.chat.id,
+                action: 'typing'
+            });
+        } else if (message.text === 'venue') {
+            result = await tg.sendVenue({
+                chat_id: message.chat.id,
+                latitude: 35.525660354512965,
+                longitude: 51.17193735279942,
+                title: 'Funzen Co.',
+                address: 'گلستان، خیابان قبادی، کوچه بنفشه یک، ساختمان یاس',
+                foursquare_id: '63be6904847c3692a84b9b91'
+            });
         }
+        result && console.log(result);
     }
 }
