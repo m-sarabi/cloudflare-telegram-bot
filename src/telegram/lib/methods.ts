@@ -3019,4 +3019,25 @@ export namespace tg {
             name,
         });
     }
+
+    /**
+     * Use this method to close an open 'General' topic in a forum supergroup chat.
+     * The bot must be an administrator in the chat for this to work and must have the can_manage_topics administrator rights.
+     *
+     * [closeGeneralForumTopic - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#closegeneralforumtopic)
+     *
+     * @param chat_id `Required`
+     * >- Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)
+     * @returns >- true on success.
+     */
+    export async function closeGeneralForumTopic(
+        {
+            chat_id,
+        }: {
+            chat_id: number | string;
+        }): Promise<boolean> {
+        return await callApi('closeGeneralForumTopic', {
+            chat_id,
+        });
+    }
 }
