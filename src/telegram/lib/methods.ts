@@ -3329,4 +3329,24 @@ export namespace tg {
             language_code,
         });
     }
+
+    /**
+     * Use this method to get the current bot name for the given user language.
+     *
+     * [getMyName - On Telegram Bot API Documentation](https://core.telegram.org/bots/api#getmyname)
+     *
+     * @param [language_code] `Optional`
+     * >- A two-letter ISO 639-1 language code or an empty string
+     * @returns >- [BotName](https://core.telegram.org/bots/api#botname) on success.
+     */
+    export async function getMyName(
+        {
+            language_code,
+        }: {
+            language_code?: string;
+        }): Promise<tgTypes.BotName> {
+        return await callApi('getMyName', {
+            language_code,
+        });
+    }
 }
