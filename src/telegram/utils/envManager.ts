@@ -1,4 +1,4 @@
-import { Env } from './index';
+import { Env } from '../../index';
 
 let env: Env;
 

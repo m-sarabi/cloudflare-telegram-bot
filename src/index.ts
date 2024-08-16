@@ -1,5 +1,5 @@
-import { setEnv } from './envManagar';
-import { handleWebhook } from './handleUpdates';
+import { setEnv } from './telegram/utils/envManager';
+import { handleWebhook } from './telegram/handlers/handleUpdates';
 import { tg } from './telegram/lib/methods';
 
 // use `npm run cf-typegen` to regenerate `worker-configuration.d.ts`
@@ -28,6 +28,12 @@ export default {
                 if (result) return new Response('Webhook registered.');
                 else return new Response('Failed to register webhook.');
             } catch (error) {
+                ctx.waitUntil((async () => {
+                    return new Promise(resolve => {
+                        console.log(`Error: ${error}`);
+                        resolve(error);
+                    });
+                })());
                 return new Response(`Error: ${error}`);
             }
         } else if (url.pathname === UNREGISTER) {

@@ -1,4 +1,4 @@
-import { callApi } from './utils';
+import { callApi } from '../utils/apiManager';
 
 export namespace tg {
     /**

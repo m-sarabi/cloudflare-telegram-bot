@@ -1,4 +1,4 @@
-import { getEnv } from '../../envManagar';
+import { getEnv } from './envManager';
 
 export interface response {
     ok: boolean,
