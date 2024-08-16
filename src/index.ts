@@ -9,12 +9,13 @@ export interface Env {
     // Add more environment variables here
 }
 
+// Define constant paths for webhook management.
 const WEBHOOK: string = '/endpoint';
 const REGISTER: string = '/registerWebhook';
 const UNREGISTER: string = '/unRegisterWebhook';
 
 export default {
-    async fetch(request, env, ctx): Promise<Response> {
+    async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
         setEnv(env);
         const url: URL = new URL(request.url);
 
