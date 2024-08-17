@@ -169,16 +169,9 @@ dist
 
 .dev.vars
 .wrangler/
-wrangler.toml
 
 #ide files
 .idea
 
 # other generated files
-test
-.editorconfig
-.prettierrc
-package.json
 package-lock.json
-vitest.config.mts
-worker-configuration.d.ts
