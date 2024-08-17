@@ -175,3 +175,4 @@ dist
 
 # other generated files
 package-lock.json
+converter
