@@ -25,6 +25,7 @@ export default {
             try {
                 const result = await tg.setWebhook({
                     url: `${url.protocol}//${url.hostname}${WEBHOOK}`,
+                    secret_token: env.SECRET,
                 });
                 if (result) return new Response('Webhook registered.');
                 else return new Response('Failed to register webhook.');
