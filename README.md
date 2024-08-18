@@ -68,7 +68,7 @@ Let’s write a simple bot that replies to an inline keyboard button.
    > Explanation: This code sends a message with an inline keyboard button using the [tg.sendMessage](https://core.telegram.org/bots/api#sendmessage) method.
    <br>
 2. **Handle Inline Keyboard Press:** Modify `src/Telegram/handlers/handleCallbackQuery.ts` as follows:
-   ```
+   ```ts
    import { tg } from '../lib/methods';
 
    export async function handleCallbackQuery(callbackQuery: tgTypes.CallbackQuery) {
