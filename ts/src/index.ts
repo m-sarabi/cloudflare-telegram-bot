@@ -1,5 +1,5 @@
 import { setEnv } from './telegram/utils/envManager';
-import { handleWebhook } from './telegram/handlers/handleUpdates';
+import { handleWebhook } from './telegram/utils/handleUpdates';
 import { tg } from './telegram/lib/methods';
 
 // use `npm run cf-typegen` to regenerate `worker-configuration.d.ts`
