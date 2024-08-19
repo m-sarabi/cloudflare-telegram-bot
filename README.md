@@ -92,14 +92,13 @@ Let’s write a simple bot that replies to an inline keyboard button.
    ```
    > Explanation: This code removes the inline button and sends a follow-up message using the [tg.editMessageReplyMarkup](https://core.telegram.org/bots/api#editmessagereplymarkup) method.
    <br>
-### Register the webhook
-To register your bot’s webhook:
+### Deploy your worker and Register the webhook
+Run `wrangler deploy` to deploy your worker:
+
+To register your bot's webhook:
 1. Go to your Cloudflare dashboard and go to `workers-and-pages`
 2. Next to our project name click `Visit`
 3. In the URL append `/registerWebhook`, so it will be like `https://my-project.my-username.workers.dev/registerWebhook`, then press enter.
    - If you see the message "Webhook registered." it means you have set it correctly.
 
-### Deploy Your Worker
-
-Run `wrangler deploy` to deploy your worker:
-You can then go to the bot you created using @BotFather, click Start (or end /start command), and you should see the message with the button.
+You can then go to the bot you created on Telegram, click Start (or send /start command), and you should see the message with the button.
