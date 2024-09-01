@@ -1,5 +1,7 @@
 # Cloudflare Telegram Bot Template
 
+![GitHub repo size](https://img.shields.io/github/repo-size/m-sarabi/cloudflare-telegram-bot)
+
 This repository provides an easy-to-use, fully documented template for building Telegram bots using Cloudflare Workers, written in TypeScript.
 It is designed to balance staying as close as possible to the Telegram Bot API while providing ease of use and effortless deployment of serverless Telegram bots on the Cloudflare platform.
 
